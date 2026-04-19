@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="ams-logo.png">
+<title>How We Work — AM Systems</title>
+<meta name="description" content="Our 4-step process from strategy call to launch. See timelines, communication flow, fee structure, and answers to every common question.">
+<meta property="og:title" content="How We Work — AM Systems">
+<meta property="og:description" content="From the first call to support handoff. Every step, every question.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#39FF14;--green-dim:rgba(57,255,20,0.09);--green-border:rgba(57,255,20,0.18);--green-glow:0 0 28px rgba(57,255,20,0.28);--dark:#050505;--surface:#090909;--surface2:#0d0d0d;--border:#1a1a1a;--text:#a8a8a8;--muted:#444;--white:#ededed;--warm:#ffd98a;--warm-amber:rgba(255,180,110,0.045);--cream-wash:rgba(255,229,176,0.05);--spring:cubic-bezier(.2,.7,.2,1.1)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--dark);color:var(--text);line-height:1.6;overflow-x:hidden}
+#progress{position:fixed;top:0;left:0;height:2px;background:var(--green);width:0%;z-index:1000;transition:width .1s linear}
+nav{position:fixed;top:2px;left:0;right:0;z-index:200;padding:0 56px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.96);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nav-logo{font-size:14px;font-weight:900;color:var(--green);letter-spacing:3px;text-decoration:none}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:11.5px;color:var(--muted);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;transition:color .2s;opacity:.75}
+.nav-links a:hover,.nav-links a.active{color:var(--green);opacity:1}
+.nav-cta{background:var(--green)!important;color:#000!important;font-weight:800!important;padding:10px 24px;border-radius:100px!important;letter-spacing:.4px!important;font-size:12px!important;opacity:1!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border-radius:6px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(8,8,8,0.99);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 24px 24px;z-index:199;flex-direction:column}
+.mobile-menu a{font-size:13px;color:var(--text);text-decoration:none;padding:15px 0;border-bottom:1px solid var(--border);letter-spacing:1px;text-transform:uppercase}
+.mobile-menu a:last-child{border:none;color:var(--green);font-weight:800;font-size:14px;margin-top:16px;padding:14px 0;background:var(--green-dim);border-radius:8px;text-align:center}
+.mobile-menu.open{display:flex}
+/* Page Hero */
+.page-hero{padding:140px 80px 72px;max-width:1300px;margin:0 auto}
+.page-tag{font-size:10px;font-weight:700;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;display:block}
+.page-title{font-size:clamp(32px,4vw,58px);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:18px;letter-spacing:-.5px}
+.page-title em{color:var(--green);font-style:normal}.page-title em.grad-text{color:unset}
+.page-sub{font-size:16px;color:var(--muted);max-width:560px;line-height:1.8}
+.section-tag{font-size:10px;font-weight:700;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:block}
+.section-title{font-size:clamp(22px,2.8vw,36px);font-weight:900;color:var(--white);line-height:1.1;margin-bottom:14px;letter-spacing:-.3px}
+.section-sub{font-size:14px;color:var(--muted);line-height:1.8;max-width:560px}
+.btn-primary{background:var(--green);color:#000;font-weight:800;font-size:13px;letter-spacing:.4px;padding:15px 36px;border-radius:100px;text-decoration:none;transition:box-shadow .3s,transform .2s;display:inline-block}
+.btn-primary:hover{box-shadow:var(--green-glow);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);font-weight:700;font-size:13px;letter-spacing:.4px;padding:14px 32px;border-radius:100px;text-decoration:none;border:1px solid var(--border);transition:border-color .25s,color .25s;display:inline-block}
+.btn-ghost:hover{border-color:var(--green-border);color:var(--green)}
+/* Page nav tabs */
+.page-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin:0 80px;width:calc(100% - 160px);max-width:calc(1300px - 160px)}
+.page-tab{font-size:12px;font-weight:700;color:var(--muted);padding:14px 28px;cursor:pointer;border:none;background:transparent;letter-spacing:.5px;text-transform:uppercase;border-bottom:2px solid transparent;transition:all .2s;text-decoration:none;display:inline-block}
+.page-tab:hover{color:var(--text)}
+.page-tab.active{color:var(--green);border-bottom-color:var(--green)}
+
+/* =====================
+   PROCESS STYLES
+   ===================== */
+.overview-section{padding:72px 80px 100px;max-width:1300px;margin:0 auto}
+/* Animated process steps — vertical timeline (matches original) */
+.process-steps{display:flex;flex-direction:column;gap:0;margin-top:56px;position:relative;max-width:640px;margin-left:auto;margin-right:auto;padding-left:0}
+.process-step{display:flex;align-items:flex-start;gap:24px;text-align:left;padding:0 0 44px 0;position:relative;z-index:1}
+.process-step:last-child{padding-bottom:0}
+.process-step:not(:last-of-type)::after{content:'';position:absolute;left:39px;top:80px;bottom:0;width:1px;background:rgba(57,255,20,0.14);z-index:0;pointer-events:none}
+.flow-dot-v{position:absolute;left:34px;width:10px;height:10px;background:var(--green);border-radius:50%;z-index:4;box-shadow:0 0 10px rgba(57,255,20,0.9),0 0 22px rgba(57,255,20,0.45);pointer-events:none;opacity:0;transition:opacity .08s linear}
+.step-circle{width:80px;height:80px;border-radius:50%;border:1.5px solid var(--green-border);background:var(--dark);display:flex;align-items:center;justify-content:center;font-size:26px;position:relative;flex-shrink:0;z-index:2;transition:border-color .3s,box-shadow .3s,background .3s}
+.process-step:hover .step-circle{border-color:var(--green);box-shadow:var(--green-glow);background:var(--green-dim)}
+.step-num{position:absolute;top:-7px;right:-7px;width:22px;height:22px;background:var(--green);color:#000;font-size:10px;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.step-text{padding-top:14px;flex:1}
+.step-name{font-size:16px;font-weight:800;color:var(--white);margin-bottom:8px}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:460px}
+/* 11-step sequence */
+.sequence-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 0}
+.sequence-inner{padding:0 80px;max-width:1300px;margin:0 auto}
+.sequence-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:56px;align-items:start}
+.sequence-steps{display:flex;flex-direction:column;gap:0}
+.seq-step{display:flex;gap:20px;position:relative}
+.seq-step:not(:last-child)::after{content:'';position:absolute;left:17px;top:40px;bottom:-1px;width:1px;background:linear-gradient(to bottom,var(--green-border),transparent)}
+.seq-number{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--green-border);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--green);flex-shrink:0;position:relative;z-index:1}
+.seq-content{padding:4px 0 28px}
+.seq-title{font-size:14px;font-weight:800;color:var(--white);margin-bottom:4px}
+.seq-desc{font-size:12px;color:var(--muted);line-height:1.65}
+.seq-highlight{background:var(--green-dim);border:1px solid var(--green-border);border-radius:6px;padding:5px 10px;font-size:11px;color:var(--green);font-weight:700;display:inline-block;margin-top:6px}
+/* Sequence sidebar */
+.sequence-sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:88px}
+.info-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:24px 22px}
+.info-card-title{font-size:12px;font-weight:800;color:var(--white);margin-bottom:14px;display:flex;align-items:center;gap:8px;letter-spacing:.3px}
+.info-card-title span{font-size:16px}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #111;font-size:12px}
+.info-row:last-child{border-bottom:none}
+.info-label{color:var(--muted)}
+.info-val{color:var(--white);font-weight:700;font-size:11px}
+.info-val.green{color:var(--green)}
+/* Timeline */
+.timeline-section{padding:100px 80px;max-width:1300px;margin:0 auto}
+.timeline-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.tl-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:26px 22px;transition:border-color .25s}
+.tl-card:hover{border-color:var(--green-border)}
+.tl-system{font-size:10px;font-weight:900;color:var(--green);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;display:block}
+.tl-title{font-size:16px;font-weight:900;color:var(--white);margin-bottom:8px}
+.tl-duration{font-size:28px;font-weight:900;color:var(--green);line-height:1;margin-bottom:4px}
+.tl-unit{font-size:12px;color:var(--muted);margin-bottom:18px}
+.tl-items{list-style:none;display:flex;flex-direction:column;gap:7px}
+.tl-items li{font-size:12px;color:var(--text);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.tl-items li::before{content:'→';color:var(--green);font-size:11px;flex-shrink:0;margin-top:1px}
+.tl-note{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin-top:28px;display:flex;align-items:flex-start;gap:14px}
+.tl-note-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.tl-note-text{font-size:13px;color:var(--muted);line-height:1.75}
+.tl-note-text strong{color:var(--white)}
+/* Comms */
+.comms-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 0}
+.comms-inner{padding:0 80px;max-width:1300px;margin:0 auto}
+.comms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.comms-card{background:var(--dark);border:1px solid var(--border);border-radius:14px;padding:26px 22px;transition:border-color .25s,transform .25s}
+.comms-card:hover{border-color:var(--green-border);transform:translateY(-3px)}
+.comms-icon{font-size:28px;margin-bottom:14px;display:block}
+.comms-label{font-size:10px;font-weight:700;color:var(--green);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.comms-title{font-size:15px;font-weight:900;color:var(--white);margin-bottom:8px}
+.comms-desc{font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* =====================
+   SECTION DIVIDER
+   ===================== */
+.section-divider{padding:0 80px;max-width:1300px;margin:0 auto}
+.divider-line{border:none;border-top:1px solid var(--border);margin:0}
+.divider-label{text-align:center;margin-top:-12px}
+.divider-label span{background:var(--dark);padding:0 18px;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:3px;text-transform:uppercase}
+
+/* =====================
+   FAQ STYLES
+   ===================== */
+.faq-section{padding:80px 80px 100px;max-width:1300px;margin:0 auto}
+.faq-layout{display:flex;flex-direction:column;gap:32px}
+.faq-nav-bar{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:28px;border-bottom:1px solid var(--border)}
+.faq-nav-bar a{font-size:11px;font-weight:700;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:100px;border:1px solid var(--border);transition:all .2s;white-space:nowrap;letter-spacing:.3px}
+.faq-nav-bar a:hover{color:var(--text);border-color:#333}
+.faq-nav-bar a.active{color:var(--green);background:var(--green-dim);border-color:var(--green-border)}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-question{width:100%;background:transparent;border:none;color:var(--white);font-family:'Inter',system-ui,sans-serif;font-size:15px;font-weight:800;text-align:left;padding:26px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;line-height:1.35;transition:color .2s}
+.faq-question:hover{color:var(--green)}
+.faq-question.open{color:var(--green)}
+.faq-chevron{width:20px;height:20px;flex-shrink:0;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s,border-color .2s,background .2s}
+.faq-question.open .faq-chevron{transform:rotate(180deg);border-color:var(--green-border);background:var(--green-dim)}
+.faq-chevron svg{width:10px;height:10px;fill:none;stroke:var(--muted);stroke-width:2.5;transition:stroke .2s}
+.faq-question.open .faq-chevron svg{stroke:var(--green)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-answer.open{max-height:1200px}
+.faq-answer-inner{padding:0 0 28px}
+.faq-answer-inner p{font-size:14px;color:var(--text);line-height:1.85;margin-bottom:14px}
+.faq-answer-inner p:last-child{margin-bottom:0}
+.faq-answer-inner strong{color:var(--white)}
+.faq-steps{list-style:none;display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.faq-steps li{font-size:13px;color:var(--text);display:flex;align-items:flex-start;gap:12px;line-height:1.55}
+.faq-step-num{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--green-border);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:var(--green);flex-shrink:0}
+.faq-step-content strong{color:var(--white);font-size:13px}
+.faq-step-content span{font-size:12px;color:var(--muted);display:block;margin-top:1px}
+.faq-exceptions{list-style:none;display:flex;flex-direction:column;gap:7px;margin:12px 0;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.faq-exceptions li{font-size:13px;color:var(--muted);display:flex;align-items:flex-start;gap:8px;line-height:1.55}
+.faq-exceptions li::before{content:'•';color:var(--green);font-size:16px;line-height:1;flex-shrink:0}
+.faq-protection{font-size:12px;color:#555;font-style:italic;margin-top:10px;border-left:2px solid var(--border);padding-left:10px;line-height:1.7}
+.faq-guarantee-badge{background:var(--green-dim);border:1px solid var(--green-border);border-radius:10px;padding:14px 18px;margin:14px 0;font-size:13px;color:#5a7a50;line-height:1.7}
+.faq-guarantee-badge strong{color:var(--white)}
+
+/* Contact */
+.contact-section{background:var(--surface);border-top:1px solid var(--border)}
+.contact-inner{padding:100px 80px;max-width:1300px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.contact-left h2{font-size:clamp(24px,3vw,40px);font-weight:900;color:var(--white);margin-bottom:14px;letter-spacing:-.3px;line-height:1.1}
+.contact-left h2 em{color:var(--green);font-style:normal}.contact-left h2 em.grad-text{color:unset;-webkit-text-fill-color:transparent}
+.contact-left p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:28px;max-width:420px}
+.contact-cards{display:flex;flex-direction:column;gap:14px}
+.contact-card{background:var(--dark);border:1px solid var(--border);border-radius:14px;padding:22px 20px;display:flex;align-items:center;gap:16px;transition:border-color .25s,transform .25s;text-decoration:none}
+.contact-card:hover{border-color:var(--green-border);transform:translateX(4px)}
+.contact-card-icon{font-size:22px;flex-shrink:0}
+.contact-card-text{font-size:13px;color:var(--white);font-weight:700}
+.contact-card-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.contact-card-arrow{margin-left:auto;font-size:16px;color:var(--muted);transition:color .2s}
+.contact-card:hover .contact-card-arrow{color:var(--green)}
+.guarantee-callout{background:linear-gradient(135deg,#0d120b 0%,#111 100%);border:1px solid var(--green-border);border-radius:18px;padding:36px 32px;position:relative;overflow:hidden}
+.guarantee-callout::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(57,255,20,0.08) 0%,transparent 70%);pointer-events:none}
+.gc-icon{font-size:36px;margin-bottom:14px;display:block;position:relative;z-index:1}
+.gc-title{font-size:18px;font-weight:900;color:var(--green);margin-bottom:10px;position:relative;z-index:1}
+.gc-body{font-size:13.5px;color:#6a8a60;line-height:1.8;position:relative;z-index:1}
+.gc-body strong{color:var(--white)}
+/* Footer */
+footer{padding:32px 80px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-brand{font-size:13px;font-weight:900;color:var(--green);letter-spacing:3px}
+.footer-tagline{font-size:11px;color:var(--muted);margin-top:4px}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.footer-links a{font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--green)}
+.footer-copy{font-size:10px;color:#1c1c1c}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:900;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);cursor:pointer;text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .65s ease,transform .65s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.stagger-child{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.stagger-child.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1100px){nav{padding:0 32px}.page-hero,.overview-section,.sequence-inner,.timeline-section,.comms-inner,.faq-section,.contact-inner,.section-divider{padding-left:40px;padding-right:40px}.page-tabs{margin:0 40px;width:calc(100% - 80px)}.sequence-grid{grid-template-columns:1fr;gap:40px}.sequence-sidebar{position:static}.timeline-grid{grid-template-columns:1fr}.comms-grid{grid-template-columns:1fr}.faq-layout{gap:24px}.contact-grid{grid-template-columns:1fr;gap:40px}}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.page-hero{padding:100px 20px 56px}.overview-section,.sequence-inner,.timeline-section,.comms-inner,.faq-section,.contact-inner,.section-divider{padding-left:20px;padding-right:20px}.page-tabs{margin:0 20px;width:calc(100% - 40px);overflow-x:auto;-webkit-overflow-scrolling:touch}.process-step{gap:18px;padding-bottom:36px}.process-step:not(:last-of-type)::after{left:31px;top:64px}.flow-dot-v{left:26px}.step-circle{width:64px;height:64px;font-size:22px}.step-text{padding-top:6px}.step-name{font-size:14px;margin-bottom:6px}.step-desc{font-size:12px}.faq-nav-bar{gap:6px}.faq-nav-bar a{font-size:10px;padding:6px 10px}.faq-question{font-size:14px;padding:20px 0}.faq-answer-inner p{font-size:13px}.faq-answer-inner{max-width:100%}.sequence-steps .seq-content{padding-bottom:20px}.tl-duration{font-size:22px}.comms-grid{grid-template-columns:1fr 1fr}.guarantee-callout{padding:28px 20px}.page-title{font-size:28px}.cta-btns{flex-direction:column;align-items:center}footer{padding:24px 20px;flex-direction:column;text-align:center}}
+@media(max-width:500px){.comms-grid{grid-template-columns:1fr}.timeline-grid{grid-template-columns:1fr}.contact-cards{gap:10px}}
+@media(prefers-reduced-motion:reduce){.fade-up,.stagger-child{opacity:1;transform:none;transition:none;animation:none}}
+
+/* ── GRADIENT TEXT ── */
+.grad-text{background:linear-gradient(135deg,#39FF14 0%,#00e676 40%,#b2ff59 70%,#ffffff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-text-alt{background:linear-gradient(135deg,#ffffff 0%,#b2ff59 50%,#39FF14 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── FLOATING PARTICLES ── */
+.particles-container{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.particle{position:absolute;width:3px;height:3px;background:#39FF14;border-radius:50%;opacity:0;animation:floatUp var(--dur) var(--delay) infinite}
+.particle.glow{width:4px;height:4px;box-shadow:0 0 8px #39FF14,0 0 18px rgba(57,255,20,0.5),0 0 30px rgba(57,255,20,0.15)}
+@keyframes floatUp{0%{opacity:0;transform:translateY(0) scale(0.5)}10%{opacity:var(--op)}90%{opacity:var(--op)}100%{opacity:0;transform:translateY(var(--travel)) scale(0.2)}}
+
+/* ── CURSOR GLOW ── */
+.cursor-glow{position:fixed;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle,rgba(57,255,20,1) 0%,rgba(0,230,118,0.75) 30%,rgba(178,255,89,0.35) 60%,transparent 100%);box-shadow:0 0 12px rgba(57,255,20,0.55),0 0 24px rgba(0,230,118,0.2);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0}
+.cursor-trail{position:fixed;border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:opacity 1.2s ease-out;opacity:0}
+.cursor-glow.active{opacity:1}
+@media(max-width:768px){.cursor-glow{display:none}}
+@media(prefers-reduced-motion:reduce){.cursor-glow{display:none}}
+
+/* ── FULL PAGE PARTICLES ── */
+.page-particles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.page-particles .particle{position:absolute;width:2px;height:2px;background:#39FF14;border-radius:50%;opacity:0;animation:driftParticle var(--dur) var(--delay) infinite linear}
+.page-particles .particle.glow{width:3px;height:3px;box-shadow:0 0 6px #39FF14,0 0 14px rgba(57,255,20,0.35)}
+@keyframes driftParticle{0%{opacity:0;transform:translate(0,0)}15%{opacity:var(--op)}85%{opacity:var(--op)}100%{opacity:0;transform:translate(var(--dx),var(--dy))}}
+
+/* ── COZY SHELL v1 (warm ambient + focus + softer hover + grain) ── */
+.warm-wash{position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 60% 55% at 30% 40%,var(--cream-wash) 0%,transparent 65%),radial-gradient(ellipse 45% 60% at 78% 72%,var(--warm-amber) 0%,transparent 70%)}
+.warm-particle{position:absolute;width:3px;height:3px;background:var(--warm);border-radius:50%;opacity:0;animation:floatUp var(--dur) var(--delay) infinite;box-shadow:0 0 6px rgba(255,217,138,0.45)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.035;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.sys-card,.use-case-card,.case-study-card,.tier,.for-who-card{transition:transform .3s var(--spring),border-color .3s,box-shadow .35s var(--spring)}
+.sys-card:hover,.use-case-card:hover,.case-study-card:hover,.tier:hover,.for-who-card:hover{box-shadow:0 20px 48px rgba(57,255,20,0.07),0 14px 36px rgba(255,190,120,0.08)}
+.btn-primary:hover{box-shadow:var(--green-glow),0 10px 26px rgba(255,190,120,0.14)}
+.btn-secondary{transition:border-color .25s,color .25s,box-shadow .3s var(--spring)}
+.btn-secondary:hover{box-shadow:inset 0 0 0 1px rgba(255,217,138,0.12),0 8px 22px rgba(255,190,120,0.06)}
+:focus-visible{outline:2px solid var(--warm);outline-offset:3px;border-radius:6px}
+a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question:focus-visible,.tab-btn:focus-visible,.btn-primary:focus-visible,.btn-secondary:focus-visible,.sys-link-btn:focus-visible,input:focus-visible,.nav-links a:focus-visible{outline:2px solid var(--warm);outline-offset:3px}
+[data-aos]{pointer-events:auto}
+@media(prefers-reduced-motion:reduce){.grain,.warm-particle,.warm-wash{display:none}}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden">
+  <!-- Lead Engine: gear/cog -->
+  <symbol id="ic-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+  </symbol>
+  <!-- Sales Engine: dollar/trending-up -->
+  <symbol id="ic-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+  </symbol>
+  <!-- Business OS: brain/cpu -->
+  <symbol id="ic-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+  </symbol>
+  <!-- Target/crosshair -->
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+  </symbol>
+  <!-- Shield/guarantee -->
+  <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+  </symbol>
+  <!-- Store/shop -->
+  <symbol id="ic-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l1-4h16l1 4"/><path d="M3 9v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9"/><path d="M9 21V13h6v8"/><path d="M3 9c0 1.1.9 2 2 2s2-.9 2-2"/><path d="M7 9c0 1.1.9 2 2 2s2-.9 2-2"/><path d="M11 9c0 1.1.9 2 2 2s2-.9 2-2"/><path d="M15 9c0 1.1.9 2 2 2s2-.9 2-2"/>
+  </symbol>
+  <!-- Building/office -->
+  <symbol id="ic-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="2" width="16" height="20" rx="1"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M9 22v-4h6v4"/>
+  </symbol>
+  <!-- Trending up -->
+  <symbol id="ic-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+  </symbol>
+  <!-- Construction/build -->
+  <symbol id="ic-build" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="6" width="20" height="8" rx="1"/><path d="M17 14v7"/><path d="M7 14v7"/><path d="M17 3v3"/><path d="M7 3v3"/><path d="M10 14 12 6"/><path d="M14 14 12 6"/>
+  </symbol>
+  <!-- User/person -->
+  <symbol id="ic-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+  </symbol>
+  <!-- Robot/bot -->
+  <symbol id="ic-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="8" width="18" height="12" rx="2"/><circle cx="9" cy="14" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1.5" fill="currentColor" stroke="none"/><line x1="12" y1="4" x2="12" y2="8"/><circle cx="12" cy="3" r="1"/>
+  </symbol>
+  <!-- Chart/analytics -->
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/>
+  </symbol>
+  <!-- Wrench -->
+  <symbol id="ic-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+  </symbol>
+  <!-- Plug/integration -->
+  <symbol id="ic-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a6 6 0 0 1-12 0V8z"/>
+  </symbol>
+  <!-- Rocket/launch -->
+  <symbol id="ic-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+  </symbol>
+  <!-- Mail -->
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/>
+  </symbol>
+  <!-- Clock -->
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </symbol>
+  <!-- Folder -->
+  <symbol id="ic-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+  </symbol>
+  <!-- Refresh/cycle -->
+  <symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+  </symbol>
+  <!-- Clipboard -->
+  <symbol id="ic-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/>
+  </symbol>
+  <!-- Lightbulb/idea -->
+  <symbol id="ic-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>
+  </symbol>
+  <!-- Film/video -->
+  <symbol id="ic-film" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/><line x1="17" y1="17" x2="22" y2="17"/>
+  </symbol>
+  <!-- Play -->
+  <symbol id="ic-play" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <polygon points="5 3 19 12 5 21 5 3"/>
+  </symbol>
+</svg>
+
+
+<a href="https://wa.me/639706791242" target="_blank" class="wa-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.428a.5.5 0 0 0 .609.61l5.652-1.48A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.874 9.874 0 0 1-5.034-1.374l-.36-.215-3.735.979.997-3.646-.235-.374A9.859 9.859 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/></svg></a>
+<div id="progress"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html" style="display:flex;align-items:center;gap:1px;text-decoration:none;filter:drop-shadow(0 0 6px rgba(57,255,20,0.25))"><img src="ams-logo.png" alt="AM Systems" style="height:64px;width:auto"><span style="font-size:15px;font-weight:900;color:#39FF14;letter-spacing:1.5px">SYSTEMS</span></a>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html" class="active">FAQ</a>
+    <a href="https://wa.me/639706791242" target="_blank" class="nav-cta">Book a Call</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="faq.html">FAQ</a>
+  <a href="https://wa.me/639706791242" target="_blank">Book a Call</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero fade-up" style="position:relative;overflow:hidden"><div class="warm-wash"></div><div class="particles-container" data-count="25"></div>
+  <span class="page-tag">Process &amp; FAQ</span>
+  <h1 class="page-title">How we work — and<br>what you need to <em class="grad-text" style="-webkit-text-fill-color:transparent">know</em></h1>
+  <p class="page-sub">From the first call to support handoff. Every step, every question.</p>
+</section>
+
+<!-- IN-PAGE TABS -->
+<div class="page-tabs" id="pageTabs">
+  <a class="page-tab active" href="#process" onclick="switchTab('process',this)">Our Process</a>
+  <a class="page-tab" href="#faq" onclick="switchTab('faq',this)">Common Questions</a>
+</div>
+
+<!-- ============================
+     PROCESS CONTENT
+     ============================ -->
+<div id="tab-process">
+
+  <!-- 4-STEP ANIMATED TIMELINE -->
+  <section class="overview-section">
+    <span class="section-tag fade-up">How We Work</span>
+    <h2 class="section-title fade-up">Four Steps. No Surprises.</h2>
+    <p class="section-sub fade-up">From the first call to a live system — you know exactly what's happening at every stage and what comes next.</p>
+    <div class="process-steps fade-up">
+      <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-target"/></svg><span class="step-num">01</span></div><div class="step-text"><div class="step-name">Strategy Call</div><p class="step-desc">Free 30-minute call. We map your bottleneck and scope exactly what gets built.</p></div></div>
+      <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-brain"/></svg><span class="step-num">02</span></div><div class="step-text"><div class="step-name">System Design</div><p class="step-desc">Architected around your business — not a template. Every component has a reason.</p></div></div>
+      <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-gear"/></svg><span class="step-num">03</span></div><div class="step-text"><div class="step-name">Build &amp; Automate</div><p class="step-desc">We build, connect, and configure. Weekly updates, no bottlenecks.</p></div></div>
+      <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-rocket"/></svg><span class="step-num">04</span></div><div class="step-text"><div class="step-name">Launch &amp; Optimize</div><p class="step-desc">We go live, then refine based on real performance data during support.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 11-STEP SEQUENCE -->
+  <section class="sequence-section">
+    <div class="sequence-inner">
+      <span class="section-tag fade-up">Step by Step</span>
+      <h2 class="section-title fade-up">The full engagement sequence</h2>
+      <p class="section-sub fade-up">Every step, in order — from your first message to the end of your support period.</p>
+      <div class="sequence-grid">
+        <div class="sequence-steps">
+          <div class="seq-step stagger-child"><div class="seq-number">1</div><div class="seq-content"><div class="seq-title">Discovery &amp; alignment</div><p class="seq-desc">Call to understand your business and goals. We listen first.</p></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">2</div><div class="seq-content"><div class="seq-title">Proposal issued</div><p class="seq-desc">Written proposal: scope, deliverables, timeline, price. No vague quotes.</p></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">3</div><div class="seq-content"><div class="seq-title">Proposal approval</div><p class="seq-desc">You review, confirm, or adjust. Nothing is locked yet.</p></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">4</div><div class="seq-content"><div class="seq-title">Contract signing</div><p class="seq-desc">Formal agreement protects both sides. Scope and terms locked in writing.</p></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">5</div><div class="seq-content"><div class="seq-title">Project kickoff</div><p class="seq-desc">50% upfront secures your slot. Work starts after confirmation.</p><span class="seq-highlight">50% upfront fee collected here</span></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">6</div><div class="seq-content"><div class="seq-title">Client intake &amp; asset submission</div><p class="seq-desc">Intake document sent. You provide copy, branding, credentials, and existing assets.</p></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">7</div><div class="seq-content"><div class="seq-title">Asset confirmation</div><p class="seq-desc">We review submissions. Missing items flagged before build.</p></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">8</div><div class="seq-content"><div class="seq-title">Build phase</div><p class="seq-desc">Full build to agreed scope. Regular check-ins throughout.</p></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">9</div><div class="seq-content"><div class="seq-title">Delivery &amp; review</div><p class="seq-desc">We present the system. You test. In-scope revisions addressed.</p></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">10</div><div class="seq-content"><div class="seq-title">Final fee &amp; handover</div><p class="seq-desc">After approval, final 50% collected. Full documentation and access transferred.</p><span class="seq-highlight">Final 50% fee collected here</span></div></div>
+          <div class="seq-step stagger-child"><div class="seq-number">11</div><div class="seq-content"><div class="seq-title">Support period</div><p class="seq-desc">Support window begins — 14 to 90 days depending on tier. Fixes, questions, guidance.</p></div></div>
+        </div>
+        <div class="sequence-sidebar">
+          <div class="info-card stagger-child">
+            <div class="info-card-title"><span style="color:var(--green)"><svg width="16px" height="16px" style="flex-shrink:0"><use href="#ic-clipboard"/></svg></span> What we need from you</div>
+            <div class="info-row"><span class="info-label">Brand assets</span><span class="info-val">Logo, colors, fonts</span></div>
+            <div class="info-row"><span class="info-label">Copy &amp; messaging</span><span class="info-val">Or we guide you</span></div>
+            <div class="info-row"><span class="info-label">Tool credentials</span><span class="info-val">As needed per scope</span></div>
+            <div class="info-row"><span class="info-label">Feedback windows</span><span class="info-val">Within 48 hrs</span></div>
+            <div class="info-row"><span class="info-label">Decision makers</span><span class="info-val green">Available &amp; responsive</span></div>
+          </div>
+          <div class="info-card stagger-child">
+            <div class="info-card-title"><span style="color:var(--green)"><svg width="16px" height="16px" style="flex-shrink:0"><use href="#ic-shield"/></svg></span> Our commitment to you</div>
+            <div class="info-row"><span class="info-label">Scope changes</span><span class="info-val">Always discussed first</span></div>
+            <div class="info-row"><span class="info-label">Timeline updates</span><span class="info-val">Proactively flagged</span></div>
+            <div class="info-row"><span class="info-label">Communication</span><span class="info-val green">Within 24 hrs</span></div>
+            <div class="info-row"><span class="info-label">Delivery guarantee</span><span class="info-val green">Up to 50% refund</span></div>
+          </div>
+          <div class="info-card stagger-child">
+            <div class="info-card-title"><span style="color:var(--green)"><svg width="16px" height="16px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></span> Fee structure</div>
+            <div class="info-row"><span class="info-label">Upfront (Step 5)</span><span class="info-val green">50%</span></div>
+            <div class="info-row"><span class="info-label">On delivery (Step 10)</span><span class="info-val green">50%</span></div>
+            <div class="info-row"><span class="info-label">Hidden fees</span><span class="info-val">None</span></div>
+            <div class="info-row"><span class="info-label">Hourly rates</span><span class="info-val">None — fixed price</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <span class="section-tag fade-up">Timeline Clarity</span>
+    <h2 class="section-title fade-up">How long does it take?</h2>
+    <p class="section-sub fade-up">Timelines vary by system and tier, but every project starts with a locked-in delivery date so you can plan around it.</p>
+    <div class="timeline-grid">
+      <div class="tl-card stagger-child">
+        <span class="tl-system">Lead Engine</span>
+        <div class="tl-title">Lead capture &amp; funnel systems</div>
+        <div class="tl-duration">1–4</div>
+        <div class="tl-unit">weeks depending on tier</div>
+        <ul class="tl-items">
+          <li>Starter: ~1–2 weeks</li>
+          <li>Growth: ~2–3 weeks</li>
+          <li>Full Build: ~3–4 weeks</li>
+        </ul>
+      </div>
+      <div class="tl-card stagger-child">
+        <span class="tl-system">Sales Engine</span>
+        <div class="tl-title">Conversion &amp; follow-up systems</div>
+        <div class="tl-duration">3–10</div>
+        <div class="tl-unit">weeks depending on tier</div>
+        <ul class="tl-items">
+          <li>Starter: ~3–5 weeks</li>
+          <li>Growth: ~5–7 weeks</li>
+          <li>Full Build: ~7–10 weeks</li>
+        </ul>
+      </div>
+      <div class="tl-card stagger-child">
+        <span class="tl-system">Business OS</span>
+        <div class="tl-title">Operations &amp; internal infrastructure</div>
+        <div class="tl-duration">6–20</div>
+        <div class="tl-unit">weeks depending on tier</div>
+        <ul class="tl-items">
+          <li>Foundation: ~6–9 weeks</li>
+          <li>Full System: ~10–14 weeks</li>
+          <li>Enterprise: ~14–20 weeks</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-note fade-up">
+      <span class="tl-note-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;color:#e8a308"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+      <p class="tl-note-text"><strong>Timelines depend on your responsiveness.</strong> Delayed assets, slow approvals, or late feedback push delivery — covered under guarantee exceptions.</p>
+    </div>
+  </section>
+
+</div><!-- end #tab-process -->
+
+<!-- ============================
+     FAQ CONTENT
+     ============================ -->
+<div id="tab-faq" style="display:none">
+  <section class="faq-section">
+    <div class="faq-layout">
+      <div class="faq-nav-bar" id="faqNavBar">
+        <a href="#q1" class="active">Is this right for us?</a>
+        <a href="#q2">Existing team or tools</a>
+        <a href="#q3">How long does it take?</a>
+        <a href="#q4">What to prepare?</a>
+        <a href="#q5">The full process</a>
+        <a href="#q6">Start with one system?</a>
+        <a href="#q7">After delivery</a>
+        <a href="#q8">Fee structure</a>
+        <a href="#q9">Refund policy</a>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" id="q1">
+          <button class="faq-question open" onclick="toggleFaq(this)">Is this right for our type of business?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer open"><div class="faq-answer-inner">
+            <p>AM Systems is built for businesses that are past the "just getting started" stage — ones that have a real offer, some existing traction, and want to scale without burning out or hiring a bloated team.</p>
+            <p>If you're still validating your idea or haven't made your first sale, this isn't the right fit yet. But if you're bringing in revenue and the bottleneck is infrastructure — how leads come in, how they convert, how your team operates — that's exactly what we solve.</p>
+            <p>Not sure where you fit? Book a strategy call. We'll tell you honestly whether we're the right match.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">Do you build systems for retail and multi-branch stores?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Yes. Under Business OS we build <strong>MAD Store Ops — a custom Store Operations &amp; Inventory System</strong> for retail, wholesale, and multi-branch businesses. It covers the 8 core modules most Filipino stores actually need: Inventory Management, Order Entry, Stocktake Sessions, Restock &amp; Delivery Log, Supplier Management, Purchase Orders, Branch Transfers, and an Operations Dashboard.</p>
+            <p>It's designed for how Filipino stores really run — multi-branch visibility, supplier workflow, and live inventory built in from day one.</p>
+            <p><strong>Why clients choose us over monthly subscriptions:</strong> SaaS platforms charge you forever. AM Systems builds the system <strong>once</strong> and you own it forever. For stores that stay in business 2+ years, owning is already cheaper than renting.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item" id="q2">
+          <button class="faq-question" onclick="toggleFaq(this)">What if we already have a team or tools in place?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Having an existing team or tools isn't a problem — in many cases, it's an advantage. We work with what you already have wherever possible. For Lead Engine and Sales Engine, we deliver primarily through GoHighLevel — a proven all-in-one platform. For Business OS, we build custom systems using our own MAD Store Ops stack. If you're already using other tools, we integrate where it makes sense.</p>
+            <p>If what you have isn't working, we'll tell you — and we'll help you migrate cleanly rather than layering more complexity on a broken foundation.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item" id="q3">
+          <button class="faq-question" onclick="toggleFaq(this)">How long does a typical engagement take?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>It depends on the system and tier, but here's a general range:</p>
+            <p><strong>Lead Engine:</strong> 2–6 weeks &nbsp;|&nbsp; <strong>Sales Engine:</strong> 3–7 weeks &nbsp;|&nbsp; <strong>Business OS:</strong> 4–10 weeks</p>
+            <p>Every project starts with a locked-in delivery date so you can plan around it. The biggest factor in timeline accuracy is your responsiveness — fast feedback, complete assets, and accessible decision-makers always mean a faster delivery.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item" id="q4">
+          <button class="faq-question" onclick="toggleFaq(this)">What do we need to prepare before starting?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>After the contract is signed and the upfront fee is confirmed, we send you a client intake document that lists exactly what we need. In general, expect to provide: <strong>brand assets</strong> (logo, colors, fonts), <strong>messaging &amp; copy</strong>, <strong>tool credentials</strong> as needed, and any <strong>existing materials</strong> you want us to reference or migrate from.</p>
+            <p>If you don't have some of these, we can work around it — but having them ready speeds things up significantly.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item" id="q5">
+          <button class="faq-question" onclick="toggleFaq(this)">What does the full process look like from start to finish?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Every engagement follows the same 11-step sequence:</p>
+            <ol class="faq-steps">
+              <li><span class="faq-step-num">1</span><div class="faq-step-content"><strong>Discovery &amp; alignment</strong><span>Initial call to understand your business, goals, and current systems.</span></div></li>
+              <li><span class="faq-step-num">2</span><div class="faq-step-content"><strong>Proposal issued</strong><span>Written proposal with scope, deliverables, timeline, and investment.</span></div></li>
+              <li><span class="faq-step-num">3</span><div class="faq-step-content"><strong>Proposal approval</strong><span>You review and confirm. Adjustments handled here before anything is signed.</span></div></li>
+              <li><span class="faq-step-num">4</span><div class="faq-step-content"><strong>Contract signing</strong><span>Formal agreement signed. Scope, timeline, and terms locked in writing.</span></div></li>
+              <li><span class="faq-step-num">5</span><div class="faq-step-content"><strong>Project kickoff — 50% upfront fee</strong><span>Upfront fee secures your slot. Work begins only after confirmation.</span></div></li>
+              <li><span class="faq-step-num">6</span><div class="faq-step-content"><strong>Client intake &amp; asset submission</strong><span>We send the intake document. You provide all required assets.</span></div></li>
+              <li><span class="faq-step-num">7</span><div class="faq-step-content"><strong>Asset confirmation</strong><span>We review submissions and flag anything missing before the build begins.</span></div></li>
+              <li><span class="faq-step-num">8</span><div class="faq-step-content"><strong>Build phase</strong><span>We build the full system to the agreed scope with regular check-ins.</span></div></li>
+              <li><span class="faq-step-num">9</span><div class="faq-step-content"><strong>Delivery &amp; review</strong><span>We present the completed system. You test and review. Revisions addressed within scope.</span></div></li>
+              <li><span class="faq-step-num">10</span><div class="faq-step-content"><strong>Final fee &amp; handover</strong><span>Remaining 50% collected on approved delivery. Full docs and access transferred.</span></div></li>
+              <li><span class="faq-step-num">11</span><div class="faq-step-content"><strong>Support period</strong><span>Dedicated post-delivery window — 14 to 90 days depending on your tier.</span></div></li>
+            </ol>
+          </div></div>
+        </div>
+
+        <div class="faq-item" id="q6">
+          <button class="faq-question" onclick="toggleFaq(this)">Can we start with just one system?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Yes — and that's usually the right move. Most clients start with the system that addresses their biggest constraint right now. Each system is designed to work on its own and to integrate cleanly with the others when you're ready to expand.</p>
+            <p>There's no pressure to commit to all three upfront — build what you need now, grow into the rest.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item" id="q7">
+          <button class="faq-question" onclick="toggleFaq(this)">What happens after delivery? Do you disappear?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>No. Every project includes a dedicated support period — 14 to 90 days depending on the tier. During that window, you have direct access to raise questions, flag issues, or get help understanding how the system works.</p>
+            <p>We also deliver full system documentation with every project. You shouldn't need to depend on us indefinitely because we make sure you understand and own what we built. Ongoing maintenance is available as an add-on after the support period.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item" id="q8">
+          <button class="faq-question" onclick="toggleFaq(this)">How does the fee structure work?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>50% to start, 50% on delivery. No complicated milestone structures. We tie half our fee to the outcome — so we only get fully paid when the agreed scope is delivered.</p>
+            <div class="faq-guarantee-badge"><strong>Delivery Guarantee:</strong> If we fail to deliver the agreed scope within the agreed timeline due to our fault, we refund up to 50% of the total project value.</div>
+            <p>This guarantee does not apply in cases of:</p>
+            <ul class="faq-exceptions">
+              <li>Client delays — late feedback, approvals, or missing assets</li>
+              <li>Changes requested outside the agreed scope</li>
+              <li>Third-party platform limitations or issues outside our control</li>
+            </ul>
+            <p class="faq-protection">All deliverables are based strictly on the agreed scope defined in the proposal.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item" id="q9">
+          <button class="faq-question" onclick="toggleFaq(this)">What is your refund policy?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>All projects require a 50% upfront fee to secure the engagement and begin planning, system design, and resource allocation.</p>
+            <p>This upfront fee is non-refundable once work has commenced — it covers the time, planning, and resources allocated specifically to your project from day one.</p>
+            <p>If a cancellation occurs before work has started, a partial refund may be considered at our discretion.</p>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div><!-- end #tab-faq -->
+
+<!-- CONTACT -->
+<section class="contact-section" style="position:relative;overflow:hidden"><div class="warm-wash"></div>
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <div class="contact-left">
+          <h2>Still have<br><em class="grad-text">questions?</em></h2>
+          <p>Ask us anything before you commit. No pitch — just an honest conversation about fit.</p>
+        </div>
+        <div class="contact-cards">
+          <a href="https://wa.me/639706791242" target="_blank" class="contact-card">
+            <span class="contact-card-icon" style="color:#25D366"><svg width="22px" height="22px" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.428a.5.5 0 0 0 .609.61l5.652-1.48A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.874 9.874 0 0 1-5.034-1.374l-.36-.215-3.735.979.997-3.646-.235-.374A9.859 9.859 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/></svg></span>
+            <div><div class="contact-card-text">WhatsApp</div><div class="contact-card-sub">+63 970 679 1242 — fastest response</div></div>
+            <span class="contact-card-arrow">→</span>
+          </a>
+          <a href="mailto:supportamtsociety@gmail.com" class="contact-card">
+            <span class="contact-card-icon" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-mail"/></svg></span>
+            <div><div class="contact-card-text">Email</div><div class="contact-card-sub">supportamtsociety@gmail.com</div></div>
+            <span class="contact-card-arrow">→</span>
+          </a>
+          <a href="https://wa.me/639706791242" target="_blank" class="contact-card">
+            <span class="contact-card-icon" style="color:#ff4444"><svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="contact-card-text">Book a Strategy Call</div><div class="contact-card-sub">30 minutes — no commitment required</div></div>
+            <span class="contact-card-arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="guarantee-callout fade-up">
+        <span class="gc-icon" style="color:var(--green)"><svg width="36px" height="36px" style="flex-shrink:0"><use href="#ic-shield"/></svg></span>
+        <div class="gc-title">Delivery Guarantee</div>
+        <p class="gc-body">We build it right or we refund. Miss the scope or timeline <strong>due to our fault</strong>? <strong>We refund up to 50% of project value.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand" style="display:flex;align-items:center;gap:2px"><img src="ams-logo.png" alt="AM Systems" style="height:44px;width:auto;filter:drop-shadow(0 0 3px rgba(57,255,20,0.18))"><span style="font-size:13px;font-weight:900;color:#39FF14;letter-spacing:1.5px;text-shadow:0 0 4px rgba(57,255,20,0.12)">SYSTEMS</span></div>
+    <div class="footer-tagline">Built for businesses that are serious about growth.</div>
+  </div>
+  <div class="footer-links">
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://wa.me/639706791242" target="_blank" style="color:var(--green)">Book a Call</a>
+  </div>
+  <div class="footer-copy">© 2026 AM Systems · Philippines</div>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('progress');
+  const h=document.documentElement;
+  const pct=(h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  el.style.width=pct+'%';
+});
+// Mobile menu
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+// Tab switching
+function switchTab(tab, el){
+  event.preventDefault();
+  document.getElementById('tab-process').style.display = tab==='process' ? '' : 'none';
+  document.getElementById('tab-faq').style.display = tab==='faq' ? '' : 'none';
+  document.querySelectorAll('.page-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  window.scrollTo({top: document.getElementById('pageTabs').offsetTop - 80, behavior:'smooth'});
+}
+// FAQ accordion
+function toggleFaq(btn){
+  const answer=btn.nextElementSibling;
+  const isOpen=btn.classList.contains('open');
+  document.querySelectorAll('.faq-question').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open');});
+  if(!isOpen){btn.classList.add('open');answer.classList.add('open');}
+}
+// FAQ pill nav active on scroll
+const faqItems=document.querySelectorAll('.faq-item');
+const navLinks=document.querySelectorAll('.faq-nav-bar a');
+function updateActiveNav(){
+  let current='';
+  faqItems.forEach(item=>{if(item.getBoundingClientRect().top<160)current='#'+item.id;});
+  navLinks.forEach(link=>{link.classList.toggle('active',link.getAttribute('href')===current);});
+}
+window.addEventListener('scroll',updateActiveNav);
+// Hash routing: faq.html#faq or faq.html#q1 etc
+const hash=window.location.hash;
+if(hash==='#faq'){
+  switchTab('faq', document.querySelectorAll('.page-tab')[1]);
+} else if(hash && document.querySelector(hash)){
+  switchTab('faq', document.querySelectorAll('.page-tab')[1]);
+  setTimeout(()=>{
+    const t=document.querySelector(hash);
+    if(t){t.scrollIntoView({behavior:'smooth',block:'start'});const btn=t.querySelector('.faq-question');if(btn&&!btn.classList.contains('open'))btn.click();}
+  },400);
+}
+// Scroll animations
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.fade-up,.stagger-child').forEach((el,i)=>{
+  if(el.classList.contains('stagger-child')){el.style.transitionDelay=(i%6)*0.08+'s';}
+  observer.observe(el);
+});
+
+// Process flow dot animation — vertical, uniform timing, hides over circles
+(function(){
+  var container=document.querySelector('.process-steps');
+  if(!container)return;
+  var circles=Array.from(container.querySelectorAll('.step-circle'));
+  if(!circles.length)return;
+  var NUM=3;
+  var vDots=[];
+  for(var i=0;i<NUM;i++){var d=document.createElement('span');d.className='flow-dot-v';container.appendChild(d);vDots.push(d);}
+  var masterT=0,SPEED=0.0022,frameCount=0;
+  var zones=[],startY=0,endY=0;
+  function refreshZones(){
+    var cr=container.getBoundingClientRect();
+    if(cr.height===0)return;
+    zones=circles.map(function(c){
+      var r=c.getBoundingClientRect();
+      return{top:r.top-cr.top,bottom:r.bottom-cr.top};
+    });
+    startY=(zones[0].top+zones[0].bottom)/2;
+    endY=(zones[zones.length-1].top+zones[zones.length-1].bottom)/2;
+  }
+  refreshZones();
+  setTimeout(refreshZones,300);setTimeout(refreshZones,800);
+  window.addEventListener('resize',refreshZones);
+  function animateV(){
+    if(endY<=startY||!zones.length)return;
+    masterT=(masterT+SPEED)%1;
+    var range=endY-startY;
+    var fadeEdge=12;
+    var last=zones[zones.length-1];
+    vDots.forEach(function(d,i){
+      var cp=(masterT+i/NUM)%1;
+      var absY=startY+cp*range;
+      d.style.top=(absY-5)+'px';
+      var inSkip=zones.slice(0,-1).some(function(z){return absY>=z.top&&absY<=z.bottom;});
+      if(inSkip){d.style.opacity='0';return;}
+      if(absY>=last.top){
+        var p=(absY-last.top)/Math.max(1,(last.bottom-last.top)/2);
+        d.style.opacity=Math.max(0,1-p).toFixed(2);
+        return;
+      }
+      if(absY<startY+fadeEdge){
+        d.style.opacity=Math.max(0,(absY-startY)/fadeEdge).toFixed(2);
+        return;
+      }
+      d.style.opacity='1';
+    });
+  }
+  function frame(){
+    frameCount++;
+    if(frameCount%120===0)refreshZones();
+    animateV();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+
+
+/* ── PARTICLES ── */
+(function(){
+  var containers = document.querySelectorAll('.particles-container');
+  containers.forEach(function(c){
+    var count = parseInt(c.dataset.count || '40');
+    for(var i=0;i<count;i++){
+      var p = document.createElement('div');
+      p.className = 'particle' + (Math.random()>0.5?' glow':'');
+      p.style.left = Math.random()*100+'%';
+      p.style.top = Math.random()*100+'%';
+      p.style.setProperty('--dur', (8+Math.random()*12)+'s');
+      p.style.setProperty('--delay', (Math.random()*8)+'s');
+      p.style.setProperty('--op', (0.3+Math.random()*0.5).toFixed(2));
+      p.style.setProperty('--travel', (-80-Math.random()*200)+'px');
+      c.appendChild(p);
+    }
+  });
+})();
+
+</script>
+
+<script>
+/* ── FULL PAGE PARTICLES ── */
+(function(){
+  var fp=document.createElement('div');
+  fp.className='page-particles';
+  document.body.insertBefore(fp,document.body.firstChild);
+  for(var i=0;i<60;i++){
+    var p=document.createElement('div');
+    p.className='particle'+(Math.random()>0.5?' glow':'');
+    p.style.left=Math.random()*100+'%';
+    p.style.top=Math.random()*100+'%';
+    p.style.setProperty('--dur',(12+Math.random()*20)+'s');
+    p.style.setProperty('--delay',(Math.random()*15)+'s');
+    p.style.setProperty('--op',(0.25+Math.random()*0.4).toFixed(2));
+    p.style.setProperty('--dx',(Math.random()*120-60)+'px');
+    p.style.setProperty('--dy',(-100-Math.random()*300)+'px');
+    fp.appendChild(p);
+  }
+})();
+
+/* ── CURSOR GLOW + TRAIL ── */
+(function(){
+  if(window.innerWidth<768||matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var colors=[
+    'rgba(57,255,20,0.8)',
+    'rgba(0,230,118,0.7)',
+    'rgba(178,255,89,0.6)',
+    'rgba(0,255,136,0.5)',
+    'rgba(57,255,20,0.45)',
+    'rgba(0,230,118,0.4)',
+    'rgba(178,255,89,0.35)',
+    'rgba(0,255,136,0.3)',
+    'rgba(57,255,20,0.25)',
+    'rgba(0,230,118,0.2)',
+    'rgba(178,255,89,0.15)',
+    'rgba(57,255,20,0.1)'
+  ];
+  var g=document.createElement('div');
+  g.className='cursor-glow';
+  document.body.appendChild(g);
+  var mx=0,my=0,gx=0,gy=0;
+  var trails=[];
+  for(var i=0;i<12;i++){
+    var t=document.createElement('div');
+    t.className='cursor-trail';
+    var s=10-i*0.6;
+    t.style.width=s+'px';t.style.height=s+'px';
+    t.style.background='radial-gradient(circle,'+colors[i]+',transparent)';
+    t.style.boxShadow='0 0 '+(8-i*0.5)+'px '+colors[i];
+    document.body.appendChild(t);
+    trails.push({el:t,x:0,y:0});
+  }
+  document.addEventListener('mousemove',function(e){
+    mx=e.clientX;my=e.clientY;
+    if(!g.classList.contains('active'))g.classList.add('active');
+  });
+  document.addEventListener('mouseleave',function(){
+    g.classList.remove('active');
+    trails.forEach(function(t){t.el.style.opacity='0'});
+  });
+  (function tick(){
+    gx=mx;gy=my;
+    g.style.left=gx+'px';g.style.top=gy+'px';
+    var px=mx,py=my;
+    trails.forEach(function(t,i){
+      var speed=0.15-i*0.01;
+      t.x+=(px-t.x)*speed;t.y+=(py-t.y)*speed;
+      t.el.style.left=t.x+'px';t.el.style.top=t.y+'px';
+      t.el.style.opacity='1';
+      px=t.x;py=t.y;
+    });
+    requestAnimationFrame(tick);
+  })();
+})();
+</script>
+
+<!-- ── Cozy Shell CDNs (AOS for reveals) ── -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script>
+/* ── COZY SHELL runtime (grain, warm particles, AOS init) ── */
+(function(){
+  var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!reduced){
+    var g=document.createElement('div');g.className='grain';document.body.appendChild(g);
+    document.querySelectorAll('.particles-container').forEach(function(c){
+      var base=parseInt(c.dataset.count||'20',10);
+      var n=Math.max(3,Math.round(base*0.22));
+      for(var i=0;i<n;i++){
+        var p=document.createElement('div');p.className='warm-particle';
+        var dur=9+Math.random()*9,delay=-Math.random()*dur,op=0.28+Math.random()*0.35,travel=-(70+Math.random()*90);
+        p.style.left=(Math.random()*100)+'%';
+        p.style.bottom=(Math.random()*80)+'%';
+        p.style.setProperty('--dur',dur+'s');
+        p.style.setProperty('--delay',delay+'s');
+        p.style.setProperty('--op',op);
+        p.style.setProperty('--travel',travel+'vh');
+        c.appendChild(p);
+      }
+    });
+  }
+  window.addEventListener('load',function(){
+    if(window.AOS){try{AOS.init({duration:700,once:true,easing:'ease-out',offset:60,disable:reduced});}catch(e){}}
+  });
+})();
+</script>
+
+<script>
+/* AM Systems Hybrid Chatbot — self-contained widget
+   Drop-in: <script src="chatbot.js" defer><\/script>
+   Works on all pages. No external deps. */
+(function(){
+  if (window.__AMS_CHATBOT__) return; window.__AMS_CHATBOT__ = true;
+
+  var WA = "https://wa.me/639706791242";
+  var EMAIL = "supportamtsociety@gmail.com";
+
+  /* ---------- STYLES ---------- */
+  var css = `
+  .wa-float{display:none !important}
+  .ams-bot-btn{position:fixed !important;bottom:calc(24px + env(safe-area-inset-bottom,0px)) !important;right:calc(24px + env(safe-area-inset-right,0px)) !important;z-index:2147483646 !important;width:60px !important;height:60px !important;border-radius:50% !important;background:#39FF14 !important;border:none !important;cursor:pointer !important;display:flex !important;align-items:center !important;justify-content:center !important;box-shadow:0 4px 20px rgba(57,255,20,.45) !important;transition:transform .2s,box-shadow .2s;font-family:Inter,system-ui,sans-serif;visibility:visible !important;opacity:1 !important;pointer-events:auto !important;margin:0 !important;padding:0 !important}
+  .ams-bot-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(57,255,20,.6)}
+  .ams-bot-btn svg{width:28px;height:28px;fill:#0a0a0a}
+  .ams-bot-dot{position:absolute;top:4px;right:4px;width:10px;height:10px;border-radius:50%;background:#ff3b3b;border:2px solid #0a0a0a}
+  .ams-bot-panel{position:fixed !important;bottom:calc(96px + env(safe-area-inset-bottom,0px)) !important;right:calc(24px + env(safe-area-inset-right,0px)) !important;z-index:2147483647 !important;width:380px;max-width:calc(100vw - 32px);height:580px;max-height:calc(100vh - 140px);background:#0a0a0a;border:1px solid rgba(57,255,20,.25);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(57,255,20,.08);display:none;flex-direction:column;overflow:hidden;font-family:Inter,system-ui,sans-serif;color:#fff}
+  .ams-bot-panel.open{display:flex;animation:ams-pop .25s ease-out}
+  @keyframes ams-pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+  .ams-bot-head{padding:16px 18px;background:linear-gradient(135deg,#111 0%,#0a0a0a 100%);border-bottom:1px solid rgba(57,255,20,.15);display:flex;align-items:center;gap:12px}
+  .ams-bot-avatar{width:38px;height:38px;border-radius:50%;background:#39FF14;display:flex;align-items:center;justify-content:center;color:#0a0a0a;font-weight:700;font-size:14px;flex-shrink:0}
+  .ams-bot-title{font-weight:600;font-size:14px;color:#fff;line-height:1.2}
+  .ams-bot-sub{font-size:11px;color:#39FF14;display:flex;align-items:center;gap:5px;margin-top:2px}
+  .ams-bot-sub::before{content:"";width:6px;height:6px;border-radius:50%;background:#39FF14;box-shadow:0 0 6px #39FF14}
+  .ams-bot-close{margin-left:auto;background:none;border:none;color:#888;cursor:pointer;font-size:22px;line-height:1;padding:4px 8px;border-radius:6px;transition:background .15s}
+  .ams-bot-close:hover{background:rgba(255,255,255,.06);color:#fff}
+  .ams-bot-body{flex:1;overflow-y:auto;padding:18px;scroll-behavior:smooth}
+  .ams-bot-body::-webkit-scrollbar{width:6px}
+  .ams-bot-body::-webkit-scrollbar-thumb{background:rgba(57,255,20,.25);border-radius:3px}
+  .ams-msg{max-width:86%;padding:10px 14px;border-radius:14px;font-size:13.5px;line-height:1.5;margin-bottom:10px;word-wrap:break-word;animation:ams-in .3s ease-out}
+  @keyframes ams-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .ams-msg.bot{background:#161616;border:1px solid rgba(255,255,255,.06);color:#e8e8e8;border-top-left-radius:4px}
+  .ams-msg.user{background:#39FF14;color:#0a0a0a;margin-left:auto;border-top-right-radius:4px;font-weight:500}
+  .ams-msg strong{color:#39FF14}
+  .ams-msg.bot a{color:#39FF14;text-decoration:none;border-bottom:1px dashed #39FF14}
+  .ams-opts{display:flex;flex-direction:column;gap:8px;margin:6px 0 14px}
+  .ams-opt{background:#0a0a0a;border:1px solid rgba(57,255,20,.3);color:#fff;padding:10px 14px;border-radius:10px;font-size:13px;cursor:pointer;text-align:left;font-family:inherit;transition:all .2s;font-weight:500}
+  .ams-opt:hover{background:rgba(57,255,20,.08);border-color:#39FF14;transform:translateX(3px)}
+  .ams-typing{display:flex;gap:4px;padding:12px 14px;background:#161616;border-radius:14px;border-top-left-radius:4px;width:fit-content;margin-bottom:10px;border:1px solid rgba(255,255,255,.06)}
+  .ams-typing span{width:6px;height:6px;background:#39FF14;border-radius:50%;animation:ams-blink 1.2s infinite}
+  .ams-typing span:nth-child(2){animation-delay:.2s}
+  .ams-typing span:nth-child(3){animation-delay:.4s}
+  @keyframes ams-blink{0%,60%,100%{opacity:.3}30%{opacity:1}}
+  .ams-bot-foot{padding:10px 12px;border-top:1px solid rgba(255,255,255,.06);background:#0a0a0a;display:flex;gap:6px;flex-wrap:wrap}
+  .ams-quick{background:transparent;border:1px solid rgba(255,255,255,.12);color:#aaa;padding:6px 11px;border-radius:20px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .15s}
+  .ams-quick:hover{border-color:#39FF14;color:#39FF14}
+  .ams-search{width:100%;background:#111;border:1px solid rgba(57,255,20,.2);color:#fff;padding:10px 12px;border-radius:10px;font-size:13px;font-family:inherit;margin-bottom:10px;outline:none}
+  .ams-search:focus{border-color:#39FF14}
+  .ams-reco{background:linear-gradient(135deg,rgba(57,255,20,.08),rgba(57,255,20,.02));border:1px solid rgba(57,255,20,.35);border-radius:12px;padding:14px;margin:4px 0 12px}
+  .ams-reco h4{margin:0 0 6px;color:#39FF14;font-size:14px;font-weight:600}
+  .ams-reco p{margin:0 0 10px;font-size:12.5px;color:#ccc;line-height:1.5}
+  .ams-reco-price{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px}
+  .ams-reco-btn{display:inline-block;background:#39FF14;color:#0a0a0a;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;margin-right:6px}
+  .ams-reco-btn.alt{background:transparent;color:#39FF14;border:1px solid #39FF14}
+  @media(max-width:768px){.ams-bot-btn{width:56px !important;height:56px !important;right:calc(18px + env(safe-area-inset-right,0px)) !important;bottom:calc(18px + env(safe-area-inset-bottom,0px)) !important}.ams-bot-btn svg{width:26px !important;height:26px !important}}
+  @media(max-width:500px){.ams-bot-panel{right:12px !important;left:12px !important;width:auto;max-width:none;bottom:calc(84px + env(safe-area-inset-bottom,0px)) !important;height:calc(100vh - 160px);max-height:calc(100vh - 160px)}}
+  @media(prefers-reduced-motion:reduce){.ams-bot-panel,.ams-msg,.ams-typing span{animation:none}}
+  `;
+  var s = document.createElement('style'); s.textContent = css; document.head.appendChild(s);
+
+  /* ---------- DOM ---------- */
+  document.querySelectorAll('.wa-float').forEach(function(el){ el.remove(); });
+
+  var btn = document.createElement('button');
+  btn.className = 'ams-bot-btn';
+  btn.setAttribute('aria-label','Open chat');
+  btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 9h10v2H7V9zm6 5H7v-2h6v2zm4-6H7V6h10v2z"/></svg><span class="ams-bot-dot"></span>';
+  btn.setAttribute('style',
+    'position:fixed !important;' +
+    'bottom:calc(20px + env(safe-area-inset-bottom,0px)) !important;' +
+    'right:calc(20px + env(safe-area-inset-right,0px)) !important;' +
+    'z-index:2147483646 !important;' +
+    'width:58px !important;height:58px !important;' +
+    'border-radius:50% !important;background:#39FF14 !important;' +
+    'border:none !important;cursor:pointer !important;' +
+    'display:flex !important;align-items:center !important;justify-content:center !important;' +
+    'box-shadow:0 4px 20px rgba(57,255,20,.45) !important;' +
+    'visibility:visible !important;opacity:1 !important;pointer-events:auto !important;' +
+    'margin:0 !important;padding:0 !important;'
+  );
+  document.body.appendChild(btn);
+
+  function reassert(){
+    if (!document.body.contains(btn)) document.body.appendChild(btn);
+    btn.style.setProperty('display','flex','important');
+    btn.style.setProperty('visibility','visible','important');
+    btn.style.setProperty('opacity','1','important');
+    document.querySelectorAll('.wa-float').forEach(function(el){ el.remove(); });
+  }
+  window.addEventListener('load', reassert);
+  window.addEventListener('resize', reassert);
+  setTimeout(reassert, 500);
+  setTimeout(reassert, 1500);
+
+  var panel = document.createElement('div');
+  panel.className = 'ams-bot-panel';
+  panel.innerHTML = '<div class="ams-bot-head">' +
+    '<div class="ams-bot-avatar">AM</div>' +
+    '<div><div class="ams-bot-title">AM Systems Assistant</div>' +
+    '<div class="ams-bot-sub">Online \u2022 Replies instantly</div></div>' +
+    '<button class="ams-bot-close" aria-label="Close">&times;</button></div>' +
+    '<div class="ams-bot-body" id="ams-bot-body"></div>' +
+    '<div class="ams-bot-foot">' +
+    '<button class="ams-quick" data-act="menu">Main menu</button>' +
+    '<button class="ams-quick" data-act="faq">FAQ</button>' +
+    '<button class="ams-quick" data-act="human">Talk to human</button></div>';
+  document.body.appendChild(panel);
+
+  var body = panel.querySelector('#ams-bot-body');
+  var dot  = btn.querySelector('.ams-bot-dot');
+
+  btn.addEventListener('click', function(){
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open')) { dot.style.display='none'; if(!body.children.length) start(); }
+  });
+  panel.querySelector('.ams-bot-close').addEventListener('click', function(){ panel.classList.remove('open'); });
+  panel.querySelectorAll('.ams-quick').forEach(function(q){
+    q.addEventListener('click', function(){
+      var a = q.getAttribute('data-act');
+      if (a==='menu') start();
+      if (a==='faq')  showFAQ();
+      if (a==='human') talkHuman();
+    });
+  });
+
+  /* ---------- HELPERS ---------- */
+  function scroll(){ body.scrollTop = body.scrollHeight; }
+  function userMsg(t){ var d=document.createElement('div'); d.className='ams-msg user'; d.textContent=t; body.appendChild(d); scroll(); }
+  function botMsg(html, cb){
+    var typ=document.createElement('div'); typ.className='ams-typing'; typ.innerHTML='<span></span><span></span><span></span>';
+    body.appendChild(typ); scroll();
+    setTimeout(function(){
+      typ.remove();
+      var d=document.createElement('div'); d.className='ams-msg bot'; d.innerHTML=html; body.appendChild(d); scroll();
+      if(cb) cb();
+    }, 550);
+  }
+  function options(arr, handler){
+    var wrap=document.createElement('div'); wrap.className='ams-opts';
+    arr.forEach(function(o){
+      var b=document.createElement('button'); b.className='ams-opt'; b.textContent=o.label;
+      b.addEventListener('click', function(){
+        wrap.remove();
+        userMsg(o.label);
+        handler(o.value);
+      });
+      wrap.appendChild(b);
+    });
+    body.appendChild(wrap); scroll();
+  }
+  function reco(title, desc, price, ctaLabel, ctaHref){
+    var d=document.createElement('div'); d.className='ams-reco';
+    d.innerHTML='<h4>'+title+'</h4><p>'+desc+'</p><div class="ams-reco-price">'+price+'</div>'+
+      '<a class="ams-reco-btn" href="'+ctaHref+'" target="_blank" rel="noopener">'+ctaLabel+'</a>'+
+      '<a class="ams-reco-btn alt" href="pricing.html">See pricing</a>';
+    body.appendChild(d); scroll();
+  }
+  function clear(){ body.innerHTML=''; }
+
+  /* ---------- FLOWS ---------- */
+  function start(){
+    clear();
+    botMsg("Hey! I'm the AM Systems assistant. What are you looking for today?", function(){
+      options([
+        {label:'\ud83c\udf10 Build a website',      value:'web'},
+        {label:'\u26a1 Automate my business',  value:'auto'},
+        {label:'\ud83c\udfd7\ufe0f Get a full system',    value:'full'},
+        {label:'\ud83d\udc40 Just exploring',       value:'explore'}
+      ], routeMain);
+    });
+  }
+
+  function routeMain(v){
+    if (v==='web')    return flowWeb();
+    if (v==='auto')   return flowAuto();
+    if (v==='full')   return flowFull();
+    if (v==='explore')return flowExplore();
+  }
+
+  function flowWeb(){
+    botMsg("Got it \u2014 a website. What kind of site do you need?", function(){
+      options([
+        {label:'Simple landing page',     value:'landing'},
+        {label:'Multi-page business site',value:'multi'},
+        {label:'Custom / complex build',  value:'custom'}
+      ], function(kind){
+        botMsg("Perfect. Do you already have branding (logo, colors, copy)?", function(){
+          options([
+            {label:'Yes, all ready',   value:'ready'},
+            {label:'Partially',        value:'part'},
+            {label:'No, starting from scratch', value:'none'}
+          ], function(brand){
+            var tier, price, desc;
+            if (kind==='landing'){ tier='Lead Engine Starter'; price='\u20b130,000 \u2022 1\u20132 weeks'; desc='A high-converting single-page site with lead capture, mobile-optimized and built for speed.'; }
+            else if (kind==='multi'){ tier='Lead Engine Growth'; price='\u20b145,000 \u2022 2\u20133 weeks'; desc='Multi-page business site with lead forms, sections for services, portfolio, and contact \u2014 fully responsive.'; }
+            else { tier='Lead Engine Full Build'; price='\u20b160,000 \u2022 3\u20134 weeks'; desc='Custom-designed site with animations, CMS, advanced lead capture, and conversion-optimized UX.'; }
+            botMsg("Based on that, here's what fits you:", function(){
+              reco(tier, desc, price, 'Chat on WhatsApp', WA);
+              followUp();
+            });
+          });
+        });
+      });
+    });
+  }
+
+  function flowAuto(){
+    botMsg("Nice \u2014 automation saves serious hours. What's eating the most of your time right now?", function(){
+      options([
+        {label:'Lead capture & follow-up', value:'leads'},
+        {label:'Client onboarding / ops',  value:'ops'},
+        {label:'Reporting & data entry',   value:'data'}
+      ], function(pain){
+        botMsg("How big is your team?", function(){
+          options([
+            {label:'Just me / solo',    value:'solo'},
+            {label:'2\u20135 people',        value:'small'},
+            {label:'6+ people',         value:'big'}
+          ], function(size){
+            var tier, price, desc;
+            if (size==='solo'){ tier='Sales Engine Starter'; price='\u20b180,000 \u2022 3\u20135 weeks'; desc='Automated lead intake, follow-up sequences, and CRM flow \u2014 built so you stop dropping leads.'; }
+            else if (size==='small'){ tier='Sales Engine Growth'; price='\u20b1115,000 \u2022 5\u20137 weeks'; desc='Full sales pipeline automation, multi-channel follow-ups, team dashboards, and client handoff workflows.'; }
+            else { tier='Sales Engine Full Build'; price='\u20b1150,000 \u2022 7\u201310 weeks'; desc='Enterprise-grade sales automation with assignments, reporting, and integrations across your stack.'; }
+            botMsg("Here's the fit for you:", function(){
+              reco(tier, desc, price, 'Chat on WhatsApp', WA);
+              followUp();
+            });
+          });
+        });
+      });
+    });
+  }
+
+  function flowFull(){
+    botMsg("Let's build you a real system. Which areas of the business need to run on autopilot?", function(){
+      options([
+        {label:'Operations & workflows',  value:'ops'},
+        {label:'CRM + sales + ops',       value:'crm'},
+        {label:'Everything \u2014 full OS',    value:'all'}
+      ], function(area){
+        botMsg("How would you describe your business size?", function(){
+          options([
+            {label:'Small (under 10 staff)', value:'s'},
+            {label:'Medium (10\u201350 staff)',   value:'m'},
+            {label:'Large (50+ staff)',      value:'l'}
+          ], function(size){
+            var tier, price, desc;
+            if (area==='ops' || size==='s'){ tier='Business OS Foundation'; price='\u20b1150,000 \u2022 6\u20139 weeks'; desc='Core workflows automated \u2014 task management, internal comms, client ops, and the foundations of a real operating system.'; }
+            else if (area==='crm' || size==='m'){ tier='Business OS Full System'; price='\u20b1280,000 \u2022 10\u201314 weeks'; desc='Complete operating system: CRM, sales engine, ops, reporting dashboards, and team workflows \u2014 all connected.'; }
+            else { tier='Business OS Enterprise'; price='\u20b1400,000+ \u2022 14\u201320 weeks'; desc='Custom enterprise build \u2014 multi-department workflows, deep integrations, role-based dashboards, and dedicated architecture.'; }
+            botMsg("Here's your match:", function(){
+              reco(tier, desc, price, 'Chat on WhatsApp', WA);
+              followUp();
+            });
+          });
+        });
+      });
+    });
+  }
+
+  function flowExplore(){
+    botMsg("No problem \u2014 happy to help you look around. What would you like to do?", function(){
+      options([
+        {label:'\ud83d\udccb Read FAQ',           value:'faq'},
+        {label:'\ud83d\udd0d Search help',        value:'search'},
+        {label:'\ud83d\udcac Talk to a human',    value:'human'},
+        {label:'\ud83c\udfe0 See main services',  value:'services'}
+      ], function(v){
+        if (v==='faq') showFAQ();
+        if (v==='search') helpSearch();
+        if (v==='human') talkHuman();
+        if (v==='services'){
+          botMsg("We offer three core services: <strong>Lead Engine</strong> (websites & lead capture), <strong>Sales Engine</strong> (sales automation), and <strong>Business OS</strong> (full operating systems). Check out <a href='services.html'>services.html</a> or <a href='pricing.html'>pricing.html</a> for details.", followUp);
+        }
+      });
+    });
+  }
+
+  function followUp(){
+    setTimeout(function(){
+      options([
+        {label:'Talk to a human now',  value:'human'},
+        {label:'See FAQ',              value:'faq'},
+        {label:'Start over',           value:'menu'}
+      ], function(v){
+        if (v==='human') talkHuman();
+        if (v==='faq')   showFAQ();
+        if (v==='menu')  start();
+      });
+    }, 700);
+  }
+
+  /* ---------- FAQ / SUPPORT LAYER ---------- */
+  var FAQ = [
+    {q:"How much does a project cost?", a:"It depends on scope. Lead Engine starts at \u20b130,000, Sales Engine at \u20b180,000, and Business OS at \u20b1150,000. Full pricing is on our <a href='pricing.html'>pricing page</a>."},
+    {q:"How long does a project take?", a:"Lead Engine: 1\u20134 weeks. Sales Engine: 3\u201310 weeks. Business OS: 6\u201320 weeks depending on the tier."},
+    {q:"Do you work with clients outside the Philippines?", a:"Yes \u2014 we serve clients globally but our pricing is built for the PH market, which means you get custom-grade work at a fraction of US/AU rates."},
+    {q:"What's your process?", a:"Four steps: Strategy Call \u2192 System Design \u2192 Build & Automate \u2192 Launch & Optimize. See the full breakdown on our <a href='faq.html'>process page</a>."},
+    {q:"Do you offer revisions?", a:"Yes. Every package includes rounds of revisions during the build phase. Scope is locked after the strategy call so expectations stay clear."},
+    {q:"Do you offer ongoing support?", a:"Yes \u2014 we offer monthly maintenance plans from \u20b115,000\u2013\u20b150,000/month for updates, monitoring, and continuous optimization."},
+    {q:"Can I see past work?", a:"Absolutely. Check our <a href='portfolio.html'>portfolio page</a> for case studies with real metrics and outcomes."},
+    {q:"How do we get started?", a:"Easiest path is to book a free strategy call via <a href='"+WA+"' target='_blank'>WhatsApp</a> or email <strong>"+EMAIL+"</strong>. We'll scope the project and send a proposal within 48 hours."}
+  ];
+
+  function showFAQ(){
+    botMsg("Here are the most common questions. Tap one:", function(){
+      var opts = FAQ.map(function(f,i){ return {label:f.q, value:i}; });
+      opts.push({label:'\ud83d\udd0d Search help', value:'search'});
+      opts.push({label:'\ud83d\udcac Talk to human', value:'human'});
+      opts.push({label:'\u2190 Main menu', value:'menu'});
+      options(opts, function(v){
+        if (v==='search') return helpSearch();
+        if (v==='human')  return talkHuman();
+        if (v==='menu')   return start();
+        botMsg(FAQ[v].a, function(){
+          setTimeout(showFAQ, 400);
+        });
+      });
+    });
+  }
+
+  function helpSearch(){
+    botMsg("Type a keyword (e.g. <em>price</em>, <em>timeline</em>, <em>support</em>) and hit Enter:", function(){
+      var input = document.createElement('input');
+      input.type='text'; input.className='ams-search'; input.placeholder='Search\u2026';
+      body.appendChild(input); input.focus(); scroll();
+      input.addEventListener('keydown', function(e){
+        if (e.key==='Enter' && input.value.trim()){
+          var q = input.value.trim().toLowerCase();
+          input.disabled = true;
+          userMsg(input.value.trim());
+          var hits = FAQ.filter(function(f){ return (f.q+' '+f.a).toLowerCase().indexOf(q) !== -1; });
+          if (!hits.length){
+            botMsg("No match for that. Try a different keyword, or I can connect you with the team directly.", function(){
+              options([
+                {label:'Talk to human', value:'h'},
+                {label:'Show all FAQ',  value:'f'},
+                {label:'Main menu',     value:'m'}
+              ], function(v){
+                if (v==='h') talkHuman();
+                if (v==='f') showFAQ();
+                if (v==='m') start();
+              });
+            });
+          } else {
+            botMsg("Found "+hits.length+" match"+(hits.length>1?'es':'')+":", function(){
+              hits.forEach(function(f){
+                botMsg("<strong>"+f.q+"</strong><br>"+f.a);
+              });
+              setTimeout(followUp, hits.length*600);
+            });
+          }
+        }
+      });
+    });
+  }
+
+  function talkHuman(){
+    botMsg("Connecting you with the AM Systems team. You can reach us instantly on WhatsApp or email:", function(){
+      var d=document.createElement('div'); d.className='ams-reco';
+      d.innerHTML = '<h4>Talk to us directly</h4>'+
+        '<p>We usually reply within a few hours during PH business time.</p>'+
+        '<a class="ams-reco-btn" href="'+WA+'" target="_blank" rel="noopener">WhatsApp</a>'+
+        '<a class="ams-reco-btn alt" href="mailto:'+EMAIL+'">Email</a>';
+      body.appendChild(d); scroll();
+      setTimeout(function(){
+        options([
+          {label:'\u2190 Back to menu', value:'m'},
+          {label:'See FAQ',        value:'f'}
+        ], function(v){ if(v==='m') start(); if(v==='f') showFAQ(); });
+      }, 700);
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
