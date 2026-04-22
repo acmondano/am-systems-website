@@ -227,8 +227,9 @@ footer{padding:32px 80px;border-top:1px solid var(--border);display:flex;justify
 @media(max-width:900px){.typewriter{white-space:normal;max-width:none;overflow:visible;border-right:none;animation:none}}
 
 /* ── CURSOR GLOW ── */
-.cursor-glow{position:fixed;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,rgba(57,255,20,0.55) 0%,rgba(0,230,118,0.28) 40%,rgba(178,255,89,0.12) 70%,transparent 100%);box-shadow:0 0 8px rgba(57,255,20,0.25),0 0 16px rgba(0,230,118,0.08);mix-blend-mode:screen;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0}
-.cursor-trail{position:fixed;border-radius:50%;pointer-events:none;mix-blend-mode:screen;z-index:9998;transform:translate(-50%,-50%);transition:opacity 1.2s ease-out;opacity:0}
+.cursor-glow{position:fixed;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,rgba(57,255,20,0.55) 0%,rgba(0,230,118,0.28) 40%,rgba(178,255,89,0.12) 70%,transparent 100%);box-shadow:0 0 8px rgba(57,255,20,0.25),0 0 16px rgba(0,230,118,0.08);mix-blend-mode:screen;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:opacity .15s ease}
+.cursor-trail{position:fixed;border-radius:50%;pointer-events:none;mix-blend-mode:screen;z-index:9998;transform:translate(-50%,-50%);transition:opacity .15s ease;opacity:0}
+.cursor-glow.over-text,.cursor-trail.over-text{opacity:0!important}
 .cursor-glow.active{opacity:1}
 @media(max-width:768px){.cursor-glow{display:none}}
 @media(prefers-reduced-motion:reduce){.cursor-glow{display:none}}
@@ -636,7 +637,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
 <div style="background:var(--surface);border-bottom:1px solid var(--border)">
 <div class="section fade-up">
   <span class="section-tag">Quick Answers</span>
-  <div class="section-title"><span class="grad-text">Common Questions</span></div>
+  <div class="section-title"><span class="grad-text">Frequently Asked Questions</span></div>
   <div class="section-sub" style="margin-bottom:36px">The ones every serious prospect asks before reaching out.</div>
   <div class="mini-faq">
     <details class="faq-item fade-up">
@@ -1031,9 +1032,17 @@ document.querySelectorAll('.stats-grid').forEach(el=>cntObs.observe(el));
     document.body.appendChild(t);
     trails.push({el:t,x:0,y:0});
   }
+  var textSel='p,span,a,li,h1,h2,h3,h4,h5,h6,em,strong,small,td,th,dt,dd,label,blockquote,cite,figcaption';
+  var overText=false;
   document.addEventListener('mousemove',function(e){
     mx=e.clientX;my=e.clientY;
     if(!g.classList.contains('active'))g.classList.add('active');
+    var hit=e.target&&e.target.closest&&e.target.closest(textSel);
+    if(!!hit!==overText){
+      overText=!!hit;
+      g.classList.toggle('over-text',overText);
+      trails.forEach(function(t){t.el.classList.toggle('over-text',overText)});
+    }
   });
   document.addEventListener('mouseleave',function(){
     g.classList.remove('active');
@@ -1047,7 +1056,7 @@ document.querySelectorAll('.stats-grid').forEach(el=>cntObs.observe(el));
       var speed=0.15-i*0.01;
       t.x+=(px-t.x)*speed;t.y+=(py-t.y)*speed;
       t.el.style.left=t.x+'px';t.el.style.top=t.y+'px';
-      t.el.style.opacity='1';
+      if(!t.el.classList.contains('over-text'))t.el.style.opacity='1';
       px=t.x;py=t.y;
     });
     requestAnimationFrame(tick);

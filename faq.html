@@ -126,10 +126,6 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:200;padding:0 56px;height:68px
    ===================== */
 .faq-section{padding:80px 80px 100px;max-width:1300px;margin:0 auto}
 .faq-layout{display:flex;flex-direction:column;gap:32px}
-.faq-nav-bar{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:28px;border-bottom:1px solid var(--border)}
-.faq-nav-bar a{font-size:11px;font-weight:700;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:100px;border:1px solid var(--border);transition:all .2s;white-space:nowrap;letter-spacing:.3px}
-.faq-nav-bar a:hover{color:var(--text);border-color:#333}
-.faq-nav-bar a.active{color:var(--green);background:var(--green-dim);border-color:var(--green-border)}
 .faq-list{display:flex;flex-direction:column;gap:0}
 .faq-item{border-bottom:1px solid var(--border);overflow:hidden}
 .faq-item:first-child{border-top:1px solid var(--border)}
@@ -195,7 +191,7 @@ footer{padding:32px 80px;border-top:1px solid var(--border);display:flex;justify
 .stagger-child{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
 .stagger-child.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1100px){nav{padding:0 32px}.page-hero,.overview-section,.sequence-inner,.timeline-section,.comms-inner,.faq-section,.contact-inner,.section-divider{padding-left:40px;padding-right:40px}.page-tabs{margin:0 40px;width:calc(100% - 80px)}.sequence-grid{grid-template-columns:1fr;gap:40px}.sequence-sidebar{position:static}.timeline-grid{grid-template-columns:1fr}.comms-grid{grid-template-columns:1fr}.faq-layout{gap:24px}.contact-grid{grid-template-columns:1fr;gap:40px}}
-@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.page-hero{padding:100px 20px 56px}.overview-section,.sequence-inner,.timeline-section,.comms-inner,.faq-section,.contact-inner,.section-divider{padding-left:20px;padding-right:20px}.page-tabs{margin:0 20px;width:calc(100% - 40px);overflow-x:auto;-webkit-overflow-scrolling:touch}.process-step{gap:18px;padding-bottom:36px}.process-step:not(:last-of-type)::after{left:31px;top:64px}.flow-dot-v{left:26px}.step-circle{width:64px;height:64px;font-size:22px}.step-text{padding-top:6px}.step-name{font-size:14px;margin-bottom:6px}.step-desc{font-size:12px}.faq-nav-bar{gap:6px}.faq-nav-bar a{font-size:10px;padding:6px 10px}.faq-question{font-size:14px;padding:20px 0}.faq-answer-inner p{font-size:13px}.faq-answer-inner{max-width:100%}.sequence-steps .seq-content{padding-bottom:20px}.tl-duration{font-size:22px}.comms-grid{grid-template-columns:1fr 1fr}.guarantee-callout{padding:28px 20px}.page-title{font-size:28px}.cta-btns{flex-direction:column;align-items:center}footer{padding:24px 20px;flex-direction:column;text-align:center}}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.page-hero{padding:100px 20px 56px}.overview-section,.sequence-inner,.timeline-section,.comms-inner,.faq-section,.contact-inner,.section-divider{padding-left:20px;padding-right:20px}.page-tabs{margin:0 20px;width:calc(100% - 40px);overflow-x:auto;-webkit-overflow-scrolling:touch}.process-step{gap:18px;padding-bottom:36px}.process-step:not(:last-of-type)::after{left:31px;top:64px}.flow-dot-v{left:26px}.step-circle{width:64px;height:64px;font-size:22px}.step-text{padding-top:6px}.step-name{font-size:14px;margin-bottom:6px}.step-desc{font-size:12px}.faq-question{font-size:14px;padding:20px 0}.faq-answer-inner p{font-size:13px}.faq-answer-inner{max-width:100%}.sequence-steps .seq-content{padding-bottom:20px}.tl-duration{font-size:22px}.comms-grid{grid-template-columns:1fr 1fr}.guarantee-callout{padding:28px 20px}.page-title{font-size:28px}.cta-btns{flex-direction:column;align-items:center}footer{padding:24px 20px;flex-direction:column;text-align:center}}
 @media(max-width:500px){.comms-grid{grid-template-columns:1fr}.timeline-grid{grid-template-columns:1fr}.contact-cards{gap:10px}}
 @media(prefers-reduced-motion:reduce){.fade-up,.stagger-child{opacity:1;transform:none;transition:none;animation:none}}
 
@@ -375,7 +371,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
 <!-- IN-PAGE TABS -->
 <div class="page-tabs" id="pageTabs">
   <a class="page-tab active" href="#process" onclick="switchTab('process',this)">Our Process</a>
-  <a class="page-tab" href="#faq" onclick="switchTab('faq',this)">Common Questions</a>
+  <a class="page-tab" href="#faq" onclick="switchTab('faq',this)">Frequently Asked Questions</a>
 </div>
 
 <!-- ============================
@@ -498,17 +494,6 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
 <div id="tab-faq" style="display:none">
   <section class="faq-section">
     <div class="faq-layout">
-      <div class="faq-nav-bar" id="faqNavBar">
-        <a href="#q1" class="active">Is this right for us?</a>
-        <a href="#q2">Existing team or tools</a>
-        <a href="#q3">How long does it take?</a>
-        <a href="#q4">What to prepare?</a>
-        <a href="#q5">The full process</a>
-        <a href="#q6">Start with one system?</a>
-        <a href="#q7">After delivery</a>
-        <a href="#q8">Fee structure</a>
-        <a href="#q9">Refund policy</a>
-      </div>
       <div class="faq-list">
 
         <div class="faq-item" id="q1">
@@ -762,15 +747,6 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-question').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open');});
   if(!isOpen){btn.classList.add('open');answer.classList.add('open');}
 }
-// FAQ pill nav active on scroll
-const faqItems=document.querySelectorAll('.faq-item');
-const navLinks=document.querySelectorAll('.faq-nav-bar a');
-function updateActiveNav(){
-  let current='';
-  faqItems.forEach(item=>{if(item.getBoundingClientRect().top<160)current='#'+item.id;});
-  navLinks.forEach(link=>{link.classList.toggle('active',link.getAttribute('href')===current);});
-}
-window.addEventListener('scroll',updateActiveNav);
 // Hash routing: faq.html#faq or faq.html#q1 etc
 const hash=window.location.hash;
 if(hash==='#faq'){
