@@ -227,8 +227,8 @@ footer{padding:32px 80px;border-top:1px solid var(--border);display:flex;justify
 @media(max-width:900px){.typewriter{white-space:normal;max-width:none;overflow:visible;border-right:none;animation:none}}
 
 /* ── CURSOR GLOW ── */
-.cursor-glow{position:fixed;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle,rgba(57,255,20,1) 0%,rgba(0,230,118,0.75) 30%,rgba(178,255,89,0.35) 60%,transparent 100%);box-shadow:0 0 12px rgba(57,255,20,0.55),0 0 24px rgba(0,230,118,0.2);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0}
-.cursor-trail{position:fixed;border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:opacity 1.2s ease-out;opacity:0}
+.cursor-glow{position:fixed;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,rgba(57,255,20,0.55) 0%,rgba(0,230,118,0.28) 40%,rgba(178,255,89,0.12) 70%,transparent 100%);box-shadow:0 0 8px rgba(57,255,20,0.25),0 0 16px rgba(0,230,118,0.08);mix-blend-mode:screen;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0}
+.cursor-trail{position:fixed;border-radius:50%;pointer-events:none;mix-blend-mode:screen;z-index:9998;transform:translate(-50%,-50%);transition:opacity 1.2s ease-out;opacity:0}
 .cursor-glow.active{opacity:1}
 @media(max-width:768px){.cursor-glow{display:none}}
 @media(prefers-reduced-motion:reduce){.cursor-glow{display:none}}
