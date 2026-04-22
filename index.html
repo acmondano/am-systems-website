@@ -257,8 +257,7 @@ a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question
 
 /* ── Hero shader nebula (WebGL2 fullscreen fragment shader — replaces hero network canvas) ── */
 .hero-starfield{position:absolute;inset:0;z-index:0;pointer-events:none;display:block}
-@media(max-width:900px){.hero-starfield{display:none}.hero-scroll-hint{display:none}}
-@media(prefers-reduced-motion:reduce){.hero-starfield{display:none}.hero-scroll-hint{animation:none}}
+@media(prefers-reduced-motion:reduce){.hero-scroll-hint{animation:none}}
 
 /* ── HOW IT WORKS section (standalone, moved out of hero) ── */
 .how-it-works{padding:110px 80px 100px;position:relative;background:linear-gradient(to bottom,rgba(10,10,10,0.4),transparent 60%);border-top:1px solid var(--border)}
@@ -1077,8 +1076,8 @@ document.querySelectorAll('.stats-grid').forEach(el=>cntObs.observe(el));
   function initHeroStarfield(){
     LOG('init called, readyState=', document.readyState, 'innerWidth=', window.innerWidth);
 
-    /* Desktop-only guard (mobile gets the CSS fallbacks under .hero::before and .warm-wash) */
-    if(window.innerWidth < 900){ LOG('bail: viewport < 900px'); return; }
+    /* Mobile gets a lower DPR cap (see resize() below) so the fragment shader cost stays
+       manageable on mid-range phones; no hard viewport bail — black hero would look broken. */
 
     /* Note: we intentionally do NOT bail on prefers-reduced-motion. The shader is a slow
        ambient cloud drift with no flashing/seizure risk. The CSS-driven grain, warm-particle,
@@ -1272,7 +1271,8 @@ document.querySelectorAll('.stats-grid').forEach(el=>cntObs.observe(el));
       var rect = hero.getBoundingClientRect();
       var w = Math.max(1, Math.floor(rect.width));
       var h = Math.max(1, Math.floor(rect.height));
-      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);                  // cap DPR — shader is expensive at 2×
+      var dprCap = window.innerWidth < 900 ? 1.0 : 1.5;                        // mobile gets 1.0×, desktop 1.5× — shader is expensive at 2×
+      var dpr = Math.min(window.devicePixelRatio || 1, dprCap);
       canvas.width  = Math.floor(w * dpr);
       canvas.height = Math.floor(h * dpr);
       canvas.style.width  = w + 'px';
