@@ -32,20 +32,28 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:200;padding:0 56px;height:68px
 .mobile-menu a:hover{color:var(--green)}
 .mobile-menu a:last-child{border:none;color:var(--green);font-weight:800;font-size:14px;margin-top:16px;padding:14px 0;background:var(--green-dim);border-radius:8px;text-align:center}
 .mobile-menu.open{display:flex}
-.hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;align-items:center;padding:120px 80px 80px;gap:56px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 40% 40%,rgba(0,60,20,0.7) 0%,rgba(0,40,15,0.4) 25%,rgba(0,25,10,0.2) 45%,transparent 70%);pointer-events:none}
-.hero-left{position:relative;z-index:2}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 80px 60px;position:relative;overflow:hidden}
+/* Text-readability vignette — soft dark center darkens the indigo shader just enough that the headline stays legible when flares drift past. Faint blue undertone blends into the deep-space palette instead of reading as a warm-gray patch. */
+.hero::before{content:'';position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(3,4,10,0.55) 0%,rgba(3,4,10,0.32) 32%,rgba(3,4,10,0.12) 58%,transparent 82%),linear-gradient(to bottom,transparent 55%,rgba(5,5,5,0.55) 82%,var(--dark) 100%);pointer-events:none}
+/* Hero particle layer — keep it minimal and cool-white so it reads as ambient dust, not a party. */
+.hero .hero-particles-min .particle{background:rgba(200,215,245,0.55);box-shadow:none;width:2px;height:2px}
+.hero .hero-particles-min .particle.glow{background:rgba(220,230,255,0.75);box-shadow:0 0 4px rgba(180,200,240,0.35);width:2px;height:2px}
+.hero-inner{position:relative;z-index:2;max-width:900px;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;background:var(--green-dim);border:1px solid var(--green-border);color:var(--green);font-size:10px;font-weight:700;letter-spacing:2px;padding:7px 18px;border-radius:100px;margin-bottom:28px;opacity:0;animation:fadeUp .5s .1s forwards}
 .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse-dot 2s infinite;flex-shrink:0}
-.hero h1{font-size:clamp(36px,4.8vw,66px);font-weight:900;color:var(--white);line-height:1.03;margin-bottom:22px;margin-top:8px;opacity:0;animation:fadeUp .55s .15s forwards;letter-spacing:-.5px}
+.hero h1{font-size:clamp(40px,5.4vw,78px);font-weight:900;color:var(--white);line-height:1.02;margin-bottom:26px;margin-top:8px;opacity:0;animation:fadeUp .55s .15s forwards;letter-spacing:-.8px;max-width:14ch}
 .hero h1 em{color:var(--green);font-style:normal;display:block}.hero h1 em.grad-text{color:unset;-webkit-text-fill-color:transparent}
-.hero-sub{font-size:16px;color:#505050;line-height:1.8;max-width:440px;margin-bottom:40px;opacity:0;animation:fadeUp .55s .3s forwards}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadeUp .55s .38s forwards}
+.hero-sub{font-size:17px;color:#7a7a7a;line-height:1.7;max-width:540px;margin:0 auto 44px;opacity:0;animation:fadeUp .55s .3s forwards}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp .55s .38s forwards}
 .btn-primary{background:var(--green);color:#000;font-weight:800;font-size:13px;letter-spacing:.4px;padding:15px 36px;border-radius:100px;text-decoration:none;transition:box-shadow .3s,transform .2s;display:inline-block}
 .btn-primary:hover{box-shadow:var(--green-glow);transform:translateY(-2px)}
-.btn-secondary{border:1px solid #1e1e1e;color:#404040;font-weight:600;font-size:13px;letter-spacing:.4px;padding:15px 36px;border-radius:100px;text-decoration:none;transition:border-color .2s,color .2s;display:inline-block}
-.btn-secondary:hover{border-color:var(--green-border);color:var(--green)}
-.hero-right{position:relative;z-index:2;opacity:0;animation:fadeUp .6s .52s forwards}
+.btn-secondary{border:1px solid rgba(255,255,255,0.22);color:#d8d8d8;background:rgba(255,255,255,0.03);font-weight:600;font-size:13px;letter-spacing:.4px;padding:15px 36px;border-radius:100px;text-decoration:none;transition:border-color .2s,color .2s,background .2s;display:inline-block}
+.btn-secondary:hover{border-color:var(--green);color:var(--green);background:rgba(57,255,20,0.05)}
+.hero-scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .6s 1.4s forwards,floaty 2.6s 2.0s infinite ease-in-out;z-index:3;text-decoration:none;padding:6px 10px;border-radius:8px;transition:opacity .25s}
+.hero-scroll-hint:hover{opacity:1!important}
+.hsh-label{font-size:9px;font-weight:700;color:var(--muted);letter-spacing:3px;text-transform:uppercase}
+.hsh-chev{display:block;width:8px;height:8px;border-right:1.5px solid var(--green);border-bottom:1.5px solid var(--green);transform:rotate(45deg);opacity:.8}
+@keyframes floaty{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,5px)}}
 .sys-visual{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px 22px;position:relative;overflow:hidden}
 .sys-visual::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(57,255,20,0.06) 0%,transparent 65%);pointer-events:none}
 .sv-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
@@ -115,7 +123,7 @@ hr.divider{border:none;border-top:1px solid var(--border)}
 .sys-link-btn:hover{border-color:var(--green-border);color:var(--green)}
 .sys-link-btn.sys-link-green{background:var(--green-dim);border-color:var(--green-border);color:var(--green)}
 .sys-link-btn.sys-link-green:hover{background:var(--green);color:#000}
-.sys-card-highlight{border-color:rgba(57,255,20,0.30)!important;background:linear-gradient(160deg,#0d120b 0%,#111 100%)!important}
+.sys-card-highlight{border-color:rgba(57,255,20,0.30)!important;background-color:#0e0e11}
 .sys-card-highlight .sys-link-btn.sys-link-green{background:var(--green);color:#000}
 .sys-card-highlight .sys-link-btn.sys-link-green:hover{box-shadow:var(--green-glow)}
 .forwho-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -198,9 +206,9 @@ footer{padding:32px 80px;border-top:1px solid var(--border);display:flex;justify
 @keyframes glow-pulse{0%,100%{box-shadow:0 0 22px rgba(57,255,20,0.32)}50%{box-shadow:0 0 48px rgba(57,255,20,0.7)}}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .65s ease,transform .65s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
-@media(max-width:1100px){nav{padding:0 32px}.hero{grid-template-columns:1fr;padding:96px 24px 60px;gap:32px}.hero-right{display:block;opacity:1;animation:none}.hero-mobile-visual{display:none!important}.systems-grid,.forwho-grid,.why-grid{grid-template-columns:1fr 1fr}.pricing-preview-grid{grid-template-columns:1fr 1fr}.outcome-wrap{grid-template-columns:1fr;gap:36px}.trust-three{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.section{padding:72px 40px}.trust-strip{padding:60px 40px}.stats-section{padding:60px 40px}.guarantee{padding:36px 40px}}
+@media(max-width:1100px){nav{padding:0 32px}.hero{padding:96px 24px 60px}.hero-mobile-visual{display:none!important}.systems-grid,.forwho-grid,.why-grid{grid-template-columns:1fr 1fr}.pricing-preview-grid{grid-template-columns:1fr 1fr}.outcome-wrap{grid-template-columns:1fr;gap:36px}.trust-three{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.section{padding:72px 40px}.trust-strip{padding:60px 40px}.stats-section{padding:60px 40px}.guarantee{padding:36px 40px}}
 @media(max-width:768px){.systems-grid,.forwho-grid,.why-grid,.pricing-preview-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.hamburger{display:flex}.section{padding:60px 20px}.trust-strip{padding:48px 20px}.stats-section{padding:48px 20px}.guarantee{padding:32px 20px;flex-direction:column;gap:16px}.cta-section{padding:80px 20px}.hero h1{font-size:32px;letter-spacing:-.3px}.hero-sub{font-size:15px}.hero-btns{flex-direction:column}.btn-primary,.btn-secondary{text-align:center;width:100%;padding:15px;font-size:14px}.sys-cta-row{flex-direction:column}.sys-link-btn{flex:none;width:100%}.cta-main-btn{padding:16px 24px;font-size:14px;width:100%;text-align:center;display:block}.stat-num{font-size:38px}.trust-headline{font-size:20px}.faq-q-text{font-size:14px}.sys-visual{padding:20px 16px}.sv-row{padding:11px 12px}.sv-name{font-size:12px}.sv-sub{font-size:10px}.sv-badge{font-size:9px;padding:3px 8px}footer{padding:24px 20px;flex-direction:column;text-align:center}}
-@media(prefers-reduced-motion:reduce){.fade-up,.stagger-child,.trust-headline,.trust-sub,.trust-block,.stat-card{opacity:1;transform:none;transition:none;animation:none}.hero h1,.hero-sub,.hero-btns,.hero-right{opacity:1;animation:none}.wa-float{animation:none}.cta-main-btn{animation:none}}
+@media(prefers-reduced-motion:reduce){.fade-up,.stagger-child,.trust-headline,.trust-sub,.trust-block,.stat-card{opacity:1;transform:none;transition:none;animation:none}.hero h1,.hero-sub,.hero-btns,.hero-scroll-hint{opacity:1;animation:none}.wa-float{animation:none}.cta-main-btn{animation:none}}
 
 /* ── GRADIENT TEXT ── */
 .grad-text{background:linear-gradient(135deg,#39FF14 0%,#00e676 40%,#b2ff59 70%,#ffffff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -246,6 +254,103 @@ a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question
 .lottie-pulse{position:absolute;top:30px;left:50%;transform:translateX(-50%);width:160px;height:160px;pointer-events:none;opacity:.45;z-index:1;mix-blend-mode:screen}
 @media(max-width:768px){.lottie-pulse{width:110px;height:110px;top:20px}}
 @media(prefers-reduced-motion:reduce){.grain,.warm-particle,.warm-wash,.lottie-pulse{display:none}}
+
+/* ── Hero shader nebula (WebGL2 fullscreen fragment shader — replaces hero network canvas) ── */
+.hero-starfield{position:absolute;inset:0;z-index:0;pointer-events:none;display:block}
+@media(max-width:900px){.hero-starfield{display:none}.hero-scroll-hint{display:none}}
+@media(prefers-reduced-motion:reduce){.hero-starfield{display:none}.hero-scroll-hint{animation:none}}
+
+/* ── HOW IT WORKS section (standalone, moved out of hero) ── */
+.how-it-works{padding:110px 80px 100px;position:relative;background:linear-gradient(to bottom,rgba(10,10,10,0.4),transparent 60%);border-top:1px solid var(--border)}
+.hiw-header{text-align:center;max-width:680px;margin:0 auto 56px}
+.hiw-eyebrow{font-size:10px;font-weight:700;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:block}
+.hiw-title{font-size:clamp(28px,3.4vw,44px);font-weight:900;color:var(--white);letter-spacing:-.5px;line-height:1.12;margin-bottom:18px}
+.hiw-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:560px;margin:0 auto}
+.hiw-card-wrap{max-width:680px;margin:0 auto;position:relative}
+.hiw-card-wrap::before{content:'';position:absolute;inset:-24px;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(57,255,20,0.05),transparent 70%);pointer-events:none;z-index:0}
+.hiw-card-wrap .sys-visual{position:relative;z-index:1}
+@media(max-width:900px){.how-it-works{padding:80px 24px 72px}.hiw-header{margin-bottom:40px}}
+
+/* ── BEFORE / AFTER comparison ── */
+.before-after{padding:100px 80px;position:relative;background:linear-gradient(to bottom,transparent,rgba(8,8,8,.5) 40%,transparent);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+.ba-header{text-align:center;max-width:720px;margin:0 auto 56px;position:relative;z-index:2}
+.ba-eyebrow{font-size:10px;font-weight:700;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:inline-block}
+.ba-title{font-size:clamp(26px,3.3vw,42px);font-weight:900;color:var(--white);letter-spacing:-.4px;line-height:1.18;margin-bottom:16px}
+.ba-sub{font-size:15px;color:var(--text);line-height:1.7;max-width:560px;margin:0 auto}
+.ba-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:28px;align-items:stretch;max-width:1180px;margin:0 auto;position:relative;z-index:1}
+.ba-grid::before{content:'';position:absolute;top:50%;left:14%;right:14%;height:1px;background:linear-gradient(90deg,transparent,rgba(239,68,68,.22) 28%,rgba(57,255,20,.35) 72%,transparent);transform:scaleX(0);transform-origin:center;transition:transform 1.1s var(--spring) .25s;z-index:0;pointer-events:none}
+.ba-grid.ba-grid-in::before{transform:scaleX(1)}
+.ba-col{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px 26px;position:relative;overflow:hidden;display:flex;flex-direction:column;opacity:0;transition:transform .7s var(--spring),opacity .6s ease,border-color .4s}
+.ba-before{transform:translateX(-36px);border-color:rgba(239,68,68,0.14)}
+.ba-after{transform:translateX(36px);border-color:rgba(57,255,20,0.2)}
+.ba-col.ba-in{opacity:1;transform:translateX(0)}
+.ba-vs{opacity:0;transition:opacity .5s ease .2s}
+.ba-grid.ba-grid-in .ba-vs{opacity:1}
+.ba-before::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(239,68,68,.06),transparent 70%);pointer-events:none}
+.ba-after::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(57,255,20,.055),transparent 70%);pointer-events:none}
+.ba-label{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;border-radius:100px;width:fit-content;margin-bottom:20px;position:relative;z-index:1}
+.ba-before .ba-label{color:#fca5a5;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.22)}
+.ba-after .ba-label{color:var(--green);background:rgba(57,255,20,.08);border:1px solid rgba(57,255,20,.28)}
+.ba-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ba-dot-red{background:#f87171;box-shadow:0 0 8px rgba(239,68,68,.6)}
+.ba-dot-green{background:var(--green);box-shadow:0 0 8px rgba(57,255,20,.65);animation:pulse-dot 1.8s ease-in-out infinite}
+.ba-chaos{position:relative;display:flex;flex-wrap:wrap;gap:9px;padding:4px 0 18px;align-content:flex-start;z-index:1}
+.ba-tool{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;background:#0a0a0a;border:1px dashed rgba(239,68,68,.35);border-radius:10px;font-size:12px;color:#9a9a9a;font-weight:500;position:relative;transform:rotate(var(--r,0deg));animation:chaosFloat 4.2s ease-in-out var(--delay,0s) infinite;white-space:nowrap}
+.ba-tool:hover{border-color:rgba(239,68,68,.55);color:#ccc}
+@keyframes chaosFloat{0%,100%{transform:rotate(var(--r,0deg)) translateY(0)}50%{transform:rotate(var(--r,0deg)) translateY(-3px)}}
+.ba-pain,.ba-wins{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px;position:relative;z-index:1;margin-top:auto}
+.ba-pain li,.ba-wins li{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.55;color:#bababa;padding:10px 0;border-top:1px solid rgba(255,255,255,.04)}
+.ba-pain li:first-child,.ba-wins li:first-child{border-top:1px solid rgba(255,255,255,.06);margin-top:14px}
+.ba-pain li::before{content:'✕';color:#f87171;font-weight:700;flex-shrink:0;width:14px;text-align:center;font-size:12px;line-height:1.6}
+.ba-wins li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;width:14px;text-align:center;font-size:13px;line-height:1.55}
+.ba-flow{padding:4px 0 10px;position:relative;z-index:1;display:flex;flex-direction:column;gap:5px}
+.ba-flow-step{display:flex;align-items:center;gap:11px;padding:11px 14px;background:#0a0a0a;border:1px solid rgba(57,255,20,.15);border-radius:10px;font-size:13px;font-weight:600;color:#e6e6e6}
+.ba-flow-icon{width:28px;height:28px;border-radius:8px;background:rgba(57,255,20,.09);border:1px solid rgba(57,255,20,.24);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0}
+.ba-flow-arrow{display:flex;justify-content:center;opacity:.55;padding:0}
+.ba-flow-arrow svg{width:14px;height:14px;color:var(--green)}
+.ba-vs{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:86px;position:relative;z-index:2}
+.ba-vs-chip{width:72px;height:72px;border-radius:50%;background:radial-gradient(circle,rgba(57,255,20,.24),rgba(57,255,20,.04) 70%);border:1px solid rgba(57,255,20,.38);display:flex;align-items:center;justify-content:center;color:var(--green);font-size:20px;font-weight:900;letter-spacing:1px;box-shadow:0 0 28px rgba(57,255,20,.22),inset 0 0 18px rgba(57,255,20,.1);animation:vsPulse 2.6s ease-in-out infinite}
+@keyframes vsPulse{0%,100%{box-shadow:0 0 28px rgba(57,255,20,.22),inset 0 0 18px rgba(57,255,20,.1);transform:scale(1)}50%{box-shadow:0 0 48px rgba(57,255,20,.38),inset 0 0 24px rgba(57,255,20,.16);transform:scale(1.06)}}
+@media(max-width:1100px){.before-after{padding:80px 40px}.ba-grid{gap:20px}}
+@media(max-width:900px){.before-after{padding:70px 24px 80px}.ba-grid{grid-template-columns:1fr;gap:14px}.ba-vs{flex-direction:row;min-width:0;padding:4px 0;order:2}.ba-before{order:1;transform:translateX(0)!important}.ba-vs{order:2}.ba-after{order:3;transform:translateX(0)!important}.ba-vs-chip{width:54px;height:54px;font-size:16px}.ba-col{padding:22px 18px}.ba-flow-step{font-size:12.5px;padding:10px 12px}.ba-tool{font-size:11.5px;padding:6px 10px}}
+@media(prefers-reduced-motion:reduce){.ba-tool,.ba-vs-chip,.ba-dot-green,.ba-col{animation:none;transform:none!important;transition:none}}
+
+/* ── TESTIMONIAL cards (placeholder-ready) ── */
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1180px;margin:0 auto;align-items:stretch}
+.testimonial-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:18px;position:relative;transition:transform .35s var(--spring),border-color .3s,box-shadow .35s}
+.testimonial-card::before{content:'"';position:absolute;top:12px;right:22px;font-size:64px;line-height:1;color:var(--green);opacity:.14;font-family:Georgia,serif;font-weight:900;pointer-events:none}
+.testimonial-card:hover{transform:translateY(-4px);border-color:rgba(57,255,20,.22);box-shadow:0 18px 40px rgba(57,255,20,.05),0 8px 22px rgba(0,0,0,.3)}
+.tc-quote{font-size:14.5px;line-height:1.65;color:#d8d8d8;font-weight:400;margin:0;font-style:italic;flex:1}
+.tc-author{display:flex;align-items:center;gap:12px;margin:0;padding-top:14px;border-top:1px solid rgba(255,255,255,.05)}
+.tc-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,rgba(57,255,20,.18),rgba(57,255,20,.04));border:1px solid rgba(57,255,20,.28);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;flex-shrink:0}
+.tc-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+.tc-name{font-size:13px;font-weight:700;color:var(--white)}
+.tc-role{font-size:11px;color:var(--muted);letter-spacing:.2px}
+.tc-metric{font-size:11px;font-weight:700;color:var(--green);letter-spacing:1px;text-transform:uppercase;padding:6px 10px;background:rgba(57,255,20,.06);border:1px solid rgba(57,255,20,.18);border-radius:6px;width:fit-content}
+.tc-disclaimer{text-align:center;margin:36px auto 0;max-width:600px;font-size:12px;color:var(--muted);font-style:italic;letter-spacing:.3px}
+@media(max-width:1100px){.testimonial-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card{padding:24px 20px}.tc-quote{font-size:13.5px}}
+
+/* ── SPOTLIGHT CARD (ported from easemize/spotlight-card — galactic blue→violet palette, matches hero shader). Per-card local coords + :hover gating so only the hovered card lights up. ── */
+.spotlight-card{position:relative;isolation:isolate;--sc-base:210;--sc-spread:70;--sc-border:1;--sc-size:280;--sc-sat:85;--sc-light:66;--sc-x:50%;--sc-y:50%;--sc-xp:.5;--sc-hue:calc(var(--sc-base) + (var(--sc-xp) * var(--sc-spread)));--sc-bsize:calc(var(--sc-border) * 1px);--sc-spot:calc(var(--sc-size) * 1px)}
+.spotlight-card{background-image:radial-gradient(var(--sc-spot) var(--sc-spot) at var(--sc-x) var(--sc-y),hsl(var(--sc-hue) calc(var(--sc-sat) * 1%) calc(var(--sc-light) * 1%) / 0),transparent 70%);background-repeat:no-repeat;background-position:0 0;background-size:100% 100%;transition:background-image .25s ease}
+.spotlight-card:hover{background-image:radial-gradient(var(--sc-spot) var(--sc-spot) at var(--sc-x) var(--sc-y),hsl(var(--sc-hue) calc(var(--sc-sat) * 1%) calc(var(--sc-light) * 1%) / 0.0665),transparent 70%)}
+.spotlight-card::before,.spotlight-card::after{pointer-events:none;content:'';position:absolute;inset:calc(var(--sc-bsize) * -1);border:var(--sc-bsize) solid transparent;border-radius:inherit;background-repeat:no-repeat;background-size:calc(100% + (2 * var(--sc-bsize))) calc(100% + (2 * var(--sc-bsize)));background-position:50% 50%;-webkit-mask:linear-gradient(transparent,transparent),linear-gradient(#fff,#fff);mask:linear-gradient(transparent,transparent),linear-gradient(#fff,#fff);-webkit-mask-clip:padding-box,border-box;mask-clip:padding-box,border-box;-webkit-mask-composite:destination-out;mask-composite:exclude;z-index:3;opacity:0;transition:opacity .25s ease}
+.spotlight-card:hover::before{opacity:0.475}
+.spotlight-card:hover::after{opacity:0.475}
+.spotlight-card::before{background-image:radial-gradient(calc(var(--sc-spot) * 0.8) calc(var(--sc-spot) * 0.8) at var(--sc-x) var(--sc-y),hsl(var(--sc-hue) calc(var(--sc-sat) * 1%) calc(var(--sc-light) * 1%)),transparent 100%);filter:brightness(1.14) saturate(1.08)}
+.spotlight-card::after{background-image:radial-gradient(calc(var(--sc-spot) * 0.32) calc(var(--sc-spot) * 0.32) at var(--sc-x) var(--sc-y),hsl(0 0% 100% / 0.428),transparent 100%)}
+.spotlight-card > *{position:relative;z-index:2}
+@media(pointer:coarse){.spotlight-card::before,.spotlight-card::after{display:none}.spotlight-card,.spotlight-card:hover{background-image:none}}
+
+/* ── LETTER-REVEAL on headlines ── */
+.hl-word{display:inline-block;white-space:nowrap}
+.hl-char{display:inline-block;opacity:0;transform:translateY(.5em);animation:hlReveal .55s var(--spring) forwards}
+@keyframes hlReveal{0%{opacity:0;transform:translateY(.5em)}100%{opacity:1;transform:translateY(0)}}
+.grad-text .hl-char{background:linear-gradient(135deg,#39FF14 0%,#00e676 40%,#b2ff59 70%,#ffffff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.grad-text-alt .hl-char{background:linear-gradient(135deg,#ffffff 0%,#b2ff59 50%,#39FF14 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+h1[data-split-done]{opacity:1!important;animation:none!important}
+@media(prefers-reduced-motion:reduce){.hl-char{opacity:1!important;transform:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -368,24 +473,29 @@ a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question
 </div>
 
 <!-- HERO -->
-<section class="hero" id="hero-section"><div class="warm-wash"></div><div class="particles-container" data-count="50"></div>
-  <div class="hero-left">
+<section class="hero" id="hero-section"><div class="particles-container hero-particles-min" data-count="25"></div>
+  <div class="hero-inner">
     <h1>Systems That Turn<br><em class="grad-text" style="-webkit-text-fill-color:transparent">Attention Into Revenue.</em></h1>
     <p class="hero-sub"><span class="typewriter" style="display:inline-block">Fixed-price. Scoped to outcomes. Built by the people who deliver.</span></p>
     <div class="hero-btns">
       <a href="https://calendly.com/arvinmondano/30min" target="_blank" class="btn-primary">Book a Free Strategy Call →</a>
       <a href="pricing.html" class="btn-secondary">View Pricing</a>
     </div>
-    <div class="hero-mobile-visual">
-      <div class="hmv-row"><div class="hmv-icon" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-gear"/></svg></div>Lead Engine — Traffic becomes qualified leads</div>
-      <div class="hmv-arrow">↓</div>
-      <div class="hmv-row"><div class="hmv-icon" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></div>Sales Engine — Leads become paying clients</div>
-      <div class="hmv-arrow">↓</div>
-      <div class="hmv-row"><div class="hmv-icon" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-brain"/></svg></div>Business OS — Your operation runs itself</div>
-      <div class="hmv-result"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;color:var(--green)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Scalable Revenue. Built for your business.</div>
-    </div>
   </div>
-  <div class="hero-right">
+  <a href="#how-it-works" class="hero-scroll-hint" aria-label="Scroll to How It Works">
+    <span class="hsh-label">How It Works</span>
+    <span class="hsh-chev"></span>
+  </a>
+</section>
+
+<!-- HOW IT WORKS (moved out of hero, now a standalone reveal section) -->
+<section class="how-it-works" id="how-it-works" data-aos="fade-up" data-aos-duration="700">
+  <div class="hiw-header">
+    <span class="hiw-eyebrow">How It Works</span>
+    <h2 class="hiw-title">From <span class="grad-text">Traffic</span> to a <span class="grad-text">Scalable Revenue System</span></h2>
+    <p class="hiw-sub">Three systems, one engine. Each tier is outcome-scoped and delivered as a fixed-price build — no retainers, no surprises.</p>
+  </div>
+  <div class="hiw-card-wrap">
     <div class="sys-visual">
       <div class="sv-header"><div class="sv-title">How It Works</div><div class="sv-live"><span class="sv-live-dot"></span>Outcome-Based</div></div>
       <div class="sv-row"><div class="sv-emoji" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-gear"/></svg></div><div class="sv-info"><div class="sv-name">Lead Engine</div><div class="sv-sub">Funnel · Capture · CRM</div></div><div class="sv-badge">Traffic → Leads</div></div>
@@ -411,6 +521,62 @@ a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question
   </div>
 </div>
 
+<!-- BEFORE / AFTER -->
+<section class="before-after" id="before-after">
+  <div class="ba-header fade-up">
+    <span class="ba-eyebrow">Before vs After</span>
+    <h2 class="ba-title">From <span class="grad-text">Scattered Tools</span> to <span class="grad-text">One Revenue System</span></h2>
+    <p class="ba-sub">The difference between growth and chaos is infrastructure. Here's what changes the moment you stop patching and start building.</p>
+  </div>
+  <div class="ba-grid">
+    <div class="ba-col ba-before">
+      <div class="ba-label"><span class="ba-dot ba-dot-red"></span>Before AM Systems</div>
+      <div class="ba-chaos">
+        <span class="ba-tool" style="--r:-3deg;--delay:0s">✉️ Gmail</span>
+        <span class="ba-tool" style="--r:2deg;--delay:.6s">📊 Sheets</span>
+        <span class="ba-tool" style="--r:-1deg;--delay:.2s">💬 WhatsApp</span>
+        <span class="ba-tool" style="--r:3deg;--delay:.9s">📅 Calendly</span>
+        <span class="ba-tool" style="--r:-2deg;--delay:.4s">📝 Notion</span>
+        <span class="ba-tool" style="--r:1deg;--delay:1.1s">⚡ Zapier</span>
+        <span class="ba-tool" style="--r:-3deg;--delay:.3s">📇 Airtable</span>
+        <span class="ba-tool" style="--r:2deg;--delay:.75s">💌 Mailchimp</span>
+      </div>
+      <ul class="ba-pain">
+        <li>Leads get lost between inboxes and chats</li>
+        <li>Follow-ups forgotten — deals go cold</li>
+        <li>5+ dashboards, no single source of truth</li>
+        <li>2+ hours a day on manual admin</li>
+      </ul>
+    </div>
+    <div class="ba-vs" aria-hidden="true"><div class="ba-vs-chip">VS</div></div>
+    <div class="ba-col ba-after">
+      <div class="ba-label"><span class="ba-dot ba-dot-green"></span>After AM Systems</div>
+      <div class="ba-flow">
+        <div class="ba-flow-step">
+          <div class="ba-flow-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          Lead captured automatically
+        </div>
+        <div class="ba-flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="ba-flow-step">
+          <div class="ba-flow-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          Nurtured on autopilot
+        </div>
+        <div class="ba-flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="ba-flow-step">
+          <div class="ba-flow-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Closed — revenue booked
+        </div>
+      </div>
+      <ul class="ba-wins">
+        <li>Every inquiry captured in under 60 seconds</li>
+        <li>Structured follow-up runs on its own</li>
+        <li>One owned dashboard, one source of truth</li>
+        <li>Hours freed, revenue compounding</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- STATS -->
 <div class="stats-section">
   <div class="stats-grid">
@@ -428,17 +594,17 @@ a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question
   <div class="section-title">Three Systems. One Outcome: <span class="grad-text">Revenue.</span></div>
   <div class="section-sub">Fixed-price. Scoped to outcomes. Each system is built around a specific bottleneck — no padding, no features you didn't ask for.</div>
   <div class="systems-grid">
-    <div class="sys-card stagger-child">
+    <div class="sys-card spotlight-card stagger-child">
       <div class="sys-icon" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-gear"/></svg></div>
       <div class="sys-name">Lead Engine</div>
       <div class="sys-tagline">Catch every visitor, qualify them, follow up automatically. No more leaks.</div>
     </div>
-    <div class="sys-card sys-card-highlight stagger-child">
+    <div class="sys-card spotlight-card sys-card-highlight stagger-child">
       <div class="sys-icon" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></div>
       <div class="sys-name">Sales Engine</div>
       <div class="sys-tagline">Automated pipeline that nurtures, follows up, and converts — without you managing every deal.</div>
     </div>
-    <div class="sys-card stagger-child">
+    <div class="sys-card spotlight-card stagger-child">
       <div class="sys-icon" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-brain"/></svg></div>
       <div class="sys-name">Business OS</div>
       <div class="sys-tagline">Replace spreadsheets and chaos with one owned operating system — including <strong style="color:var(--green)">MAD Store Ops</strong> for retail and multi-branch businesses.</div>
@@ -458,10 +624,10 @@ a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question
   <div class="section-title">Built for Businesses<br>Ready to <span class="grad-text">Scale.</span></div>
   <div class="section-sub">For businesses with traction — losing revenue because the systems aren't in place yet.</div>
   <div class="forwho-grid">
-    <div class="forwho-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-building"/></svg></span><div class="forwho-type">Service Businesses</div><div class="forwho-desc">Getting inquiries, losing them to slow response and no follow-up. The gap between interested and paid is leaking revenue.</div><div class="forwho-range">→ Lead Engine + Sales Engine</div></div>
-    <div class="forwho-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-trending"/></svg></span><div class="forwho-type">Growing Agencies</div><div class="forwho-desc">Works at 5 clients. Breaks at 15. You need infrastructure that scales without hiring more ops staff.</div><div class="forwho-range">→ Sales Engine + Business OS</div></div>
-    <div class="forwho-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-target"/></svg></span><div class="forwho-type">Coaches & Offer Owners</div><div class="forwho-desc">Great offer, manual closing. You need a machine that finds, warms, and closes — consistently.</div><div class="forwho-range">→ Lead Engine + Sales Engine</div></div>
-    <div class="forwho-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-store"/></svg></span><div class="forwho-type">Retail & Multi-Branch Stores</div><div class="forwho-desc">Running branches on notebooks and group chats. You need one owned system for inventory, suppliers, and transfers — not a SaaS subscription.</div><div class="forwho-range">→ Business OS · Store Operations</div></div>
+    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-building"/></svg></span><div class="forwho-type">Service Businesses</div><div class="forwho-desc">Getting inquiries, losing them to slow response and no follow-up. The gap between interested and paid is leaking revenue.</div><div class="forwho-range">→ Lead Engine + Sales Engine</div></div>
+    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-trending"/></svg></span><div class="forwho-type">Growing Agencies</div><div class="forwho-desc">Works at 5 clients. Breaks at 15. You need infrastructure that scales without hiring more ops staff.</div><div class="forwho-range">→ Sales Engine + Business OS</div></div>
+    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-target"/></svg></span><div class="forwho-type">Coaches & Offer Owners</div><div class="forwho-desc">Great offer, manual closing. You need a machine that finds, warms, and closes — consistently.</div><div class="forwho-range">→ Lead Engine + Sales Engine</div></div>
+    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-store"/></svg></span><div class="forwho-type">Retail & Multi-Branch Stores</div><div class="forwho-desc">Running branches on notebooks and group chats. You need one owned system for inventory, suppliers, and transfers — not a SaaS subscription.</div><div class="forwho-range">→ Business OS · Store Operations</div></div>
   </div>
 </div>
 </div>
@@ -527,6 +693,119 @@ document.addEventListener('click',e=>{const menu=document.getElementById('mobile
 window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
 const animObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');animObs.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up,.trust-headline,.trust-sub,.trust-block,.stat-card,.stagger-child').forEach(el=>animObs.observe(el));
+
+/* ── BEFORE/AFTER scroll-in reveal ── */
+(function(){
+  var grid=document.querySelector('.ba-grid');
+  if(!grid) return;
+  var baObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        grid.classList.add('ba-grid-in');
+        var cols=grid.querySelectorAll('.ba-col');
+        cols.forEach(function(c,i){ setTimeout(function(){ c.classList.add('ba-in'); }, i*140); });
+        baObs.unobserve(grid);
+      }
+    });
+  },{threshold:0.15,rootMargin:'0px 0px -60px 0px'});
+  baObs.observe(grid);
+})();
+
+/* ── LETTER-BY-LETTER headline reveal ── */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('h1').forEach(function(h1){
+    if(h1.dataset.splitDone) return;
+    var idx=0;
+    var walk=function(node){
+      if(node.nodeType===3){
+        var text=node.textContent;
+        if(!text.length) return;
+        var frag=document.createDocumentFragment();
+        text.split(/(\s+)/).forEach(function(tok){
+          if(!tok) return;
+          if(/^\s+$/.test(tok)){ frag.appendChild(document.createTextNode(tok)); return; }
+          var word=document.createElement('span');
+          word.className='hl-word';
+          for(var i=0;i<tok.length;i++){
+            var span=document.createElement('span');
+            span.className='hl-char';
+            span.style.animationDelay=(idx*22)+'ms';
+            span.textContent=tok.charAt(i);
+            word.appendChild(span);
+            idx++;
+          }
+          frag.appendChild(word);
+        });
+        node.parentNode.replaceChild(frag,node);
+      } else if(node.nodeType===1 && node.tagName!=='BR' && node.tagName!=='IMG'){
+        var kids=[].slice.call(node.childNodes);
+        kids.forEach(walk);
+      }
+    };
+    var kids=[].slice.call(h1.childNodes);
+    kids.forEach(walk);
+    h1.dataset.splitDone='1';
+    h1.style.opacity='1';
+    h1.style.animation='none';
+  });
+})();
+
+/* ── SPOTLIGHT CARD cursor tracker (per-card local coords; only hovered card lights) ── */
+(function(){
+  if(matchMedia('(pointer: coarse)').matches) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var cards=[].slice.call(document.querySelectorAll('.spotlight-card'));
+  if(!cards.length) return;
+  cards.forEach(function(card){
+    var raf=null, px=0, py=0, rect=null;
+    card.addEventListener('pointerenter', function(){ rect=card.getBoundingClientRect(); }, {passive:true});
+    card.addEventListener('pointermove', function(e){
+      if(!rect) rect=card.getBoundingClientRect();
+      px=e.clientX-rect.left; py=e.clientY-rect.top;
+      if(raf) return;
+      raf=requestAnimationFrame(function(){
+        raf=null;
+        card.style.setProperty('--sc-x', px.toFixed(1)+'px');
+        card.style.setProperty('--sc-y', py.toFixed(1)+'px');
+        card.style.setProperty('--sc-xp', (px/Math.max(rect.width,1)).toFixed(3));
+      });
+    }, {passive:true});
+    card.addEventListener('pointerleave', function(){ rect=null; }, {passive:true});
+  });
+})();
+
+/* ── MAGNETIC .btn-primary ── */
+(function(){
+  if(matchMedia('(pointer: coarse)').matches) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var btns=[].slice.call(document.querySelectorAll('.btn-primary'));
+  if(!btns.length) return;
+  var radius=90, strength=0.32;
+  var raf=null, mx=0, my=0;
+  document.addEventListener('mousemove', function(e){
+    mx=e.clientX; my=e.clientY;
+    if(raf) return;
+    raf=requestAnimationFrame(function(){
+      raf=null;
+      btns.forEach(function(btn){
+        var r=btn.getBoundingClientRect();
+        var cx=r.left+r.width/2, cy=r.top+r.height/2;
+        var dx=mx-cx, dy=my-cy;
+        var dist=Math.hypot(dx,dy);
+        if(dist<radius){
+          var pull=(1-dist/radius)*strength;
+          btn.style.transform='translate('+(dx*pull).toFixed(2)+'px,'+(dy*pull).toFixed(2)+'px)';
+        } else if(btn.style.transform){
+          btn.style.transform='';
+        }
+      });
+    });
+  }, {passive:true});
+  document.addEventListener('mouseleave', function(){
+    btns.forEach(function(b){b.style.transform='';});
+  });
+})();
 function animateCounter(el){const target=parseInt(el.dataset.target);const suffix=el.dataset.suffix||'';const prefix=el.dataset.prefix||'';let cur=0;const dur=1800,step=16,inc=target/(dur/step);const t=setInterval(()=>{cur=Math.min(cur+inc,target);el.textContent=prefix+Math.floor(cur)+suffix;if(cur>=target)clearInterval(t)},step)}
 const cntObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-target]').forEach(animateCounter);cntObs.unobserve(e.target)}})},{threshold:0.3});
 document.querySelectorAll('.stats-grid').forEach(el=>cntObs.observe(el));
@@ -683,19 +962,7 @@ document.querySelectorAll('.stats-grid').forEach(el=>cntObs.observe(el));
     requestAnimationFrame(draw);
   }
 
-  /* ── HERO – visible nodes + connections ── */
-  buildNetwork('hero-section',{
-    nodes:    85,
-    rightBias:0.5,
-    gridOp:   0,
-    lineOp:   0.28,
-    nodeOp:   1.0,
-    intensity:1.5,
-    ovLeft:   0.35,
-    ovMid:    0.35,
-    ovRight:  0.35,
-    ovEdge:   0.35
-  });
+  /* ── HERO – network canvas retired in favor of WebGL starfield (see initHeroStarfield below) ── */
 
   /* ── CTA / CONTACT – uniform dark overlay ── */
   buildNetwork('contact',{
@@ -795,6 +1062,262 @@ document.querySelectorAll('.stats-grid').forEach(el=>cntObs.observe(el));
 <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie_light.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script defer>
+/* ── HERO SHADER — GALACTIC NEBULA + LIGHT STREAKS ──
+   Fullscreen WebGL2 fragment shader. Adapted from Matthias Hurrle (@atzedent)
+   "Animated Shader Hero" (MIT-style community component on 21st.dev). Keeps
+   Hurrle's signature 11-iteration radial light-streak loop but replaces the
+   original warm-orange cloud field with a deep-space nebula + pinpoint
+   starfield in cool indigo/violet/white. Brand green (#39FF14) is intentionally
+   absent from the shader so headline + CTA remain the site's green accents.
+   Single fullscreen quad, no Three.js dependency. */
+(function(){
+  var LOG = function(){ if(window.console) console.log.apply(console, ['[hero-shader]'].concat([].slice.call(arguments))); };
+
+  function initHeroStarfield(){
+    LOG('init called, readyState=', document.readyState, 'innerWidth=', window.innerWidth);
+
+    /* Desktop-only guard (mobile gets the CSS fallbacks under .hero::before and .warm-wash) */
+    if(window.innerWidth < 900){ LOG('bail: viewport < 900px'); return; }
+
+    /* Note: we intentionally do NOT bail on prefers-reduced-motion. The shader is a slow
+       ambient cloud drift with no flashing/seizure risk. The CSS-driven grain, warm-particle,
+       and typewriter effects still respect reduced-motion via their own media queries. */
+
+    var hero = document.getElementById('hero-section');
+    if(!hero){ LOG('bail: #hero-section missing'); return; }
+
+    var canvas = document.createElement('canvas');
+    canvas.className = 'hero-starfield';
+    hero.insertBefore(canvas, hero.firstChild);
+
+    var gl = canvas.getContext('webgl2', { alpha: false, antialias: false, premultipliedAlpha: true });
+    if(!gl){
+      LOG('bail: WebGL2 context unavailable — browser may not support WebGL2');
+      canvas.remove();
+      return;
+    }
+    LOG('WebGL2 context acquired:', gl.getParameter(gl.VERSION));
+
+    /* ── Shaders ── */
+    var vertexSrc = '#version 300 es\n' +
+      'precision highp float;\n' +
+      'in vec4 position;\n' +
+      'void main(){ gl_Position = position; }\n';
+
+    /* Fragment shader — GALACTIC NEBULA + LIGHT STREAKS (Hurrle structure, deep-space palette):
+         · Layer 1: Drifting FBM nebula (replaces Hurrle's "clouds") — deep indigo/violet gas
+         · Layer 2: 11-iteration radial light-streak loop (Hurrle's signature) — cool white/blue
+         · Layer 3: Pinpoint starfield — two densities, sine twinkle
+         · Layer 4: Two shooting-star meteors — staggered 7s cycles
+         · Layer 5: Edge vignette — pulls focus to centre for headline readability */
+    var fragmentSrc = '#version 300 es\n' +
+      'precision highp float;\n' +
+      'out vec4 O;\n' +
+      'uniform vec2 resolution;\n' +
+      'uniform float time;\n' +
+      '#define FC gl_FragCoord.xy\n' +
+      '#define T time\n' +
+      '#define R resolution\n' +
+      '#define MN min(R.x, R.y)\n' +
+      'float rnd(vec2 p){\n' +
+      '  p = fract(p * vec2(12.9898, 78.233));\n' +
+      '  p += dot(p, p + 34.56);\n' +
+      '  return fract(p.x * p.y);\n' +
+      '}\n' +
+      'float noise(in vec2 p){\n' +
+      '  vec2 i = floor(p), f = fract(p), u = f*f*(3.0 - 2.0*f);\n' +
+      '  float a = rnd(i);\n' +
+      '  float b = rnd(i + vec2(1,0));\n' +
+      '  float c = rnd(i + vec2(0,1));\n' +
+      '  float d = rnd(i + 1.0);\n' +
+      '  return mix(mix(a,b,u.x), mix(c,d,u.x), u.y);\n' +
+      '}\n' +
+      'float fbm(vec2 p){\n' +
+      '  float t = 0.0, a = 1.0;\n' +
+      '  mat2 m = mat2(1.0, -0.5, 0.2, 1.2);\n' +
+      '  for(int i=0; i<5; i++){\n' +
+      '    t += a * noise(p);\n' +
+      '    p *= 2.0 * m;\n' +
+      '    a *= 0.5;\n' +
+      '  }\n' +
+      '  return t;\n' +
+      '}\n' +
+      /* Nebula — same recursive structure as Hurrle "clouds" but tuned for drifting gas. */
+      'float nebula(vec2 p){\n' +
+      '  float d = 1.0, t = 0.0;\n' +
+      '  for(float i = 0.0; i < 3.0; i++){\n' +
+      '    float a = d * fbm(i*10.0 + p.x*0.2 + 0.2*(1.0+i)*p.y + d + i*i + p);\n' +
+      '    t = mix(t, d, a);\n' +
+      '    d = a;\n' +
+      '    p *= 2.0 / (i + 1.0);\n' +
+      '  }\n' +
+      '  return t;\n' +
+      '}\n' +
+      /* Pinpoint star field — one candidate per cell with sine twinkle. */
+      'float stars(vec2 uv, float scale, float thr, float tw){\n' +
+      '  vec2 p = uv * scale;\n' +
+      '  vec2 cell = floor(p);\n' +
+      '  vec2 f = fract(p);\n' +
+      '  float hash = rnd(cell);\n' +
+      '  if(hash < thr) return 0.0;\n' +
+      '  vec2 starPos = vec2(rnd(cell + 17.3), rnd(cell + 29.1));\n' +
+      '  float d = length(f - starPos);\n' +
+      '  float size = 0.04 + (hash - thr) * 0.10;\n' +
+      '  float b = 1.0 - smoothstep(0.0, size, d);\n' +
+      '  float twinkle = 0.55 + 0.45 * sin(T * tw + hash * 14.7);\n' +
+      '  return b * twinkle;\n' +
+      '}\n' +
+      /* Shooting-star meteor — 7s cycle, 1.8s visible window, tapered trail. */
+      'float meteor(vec2 uv, float seed){\n' +
+      '  float cycleLen = 7.0;\n' +
+      '  float t = mod(T + seed * 3.1, cycleLen);\n' +
+      '  if(t > 1.8) return 0.0;\n' +
+      '  float progress = t / 1.8;\n' +
+      '  float angle = 2.55 + seed * 0.55;\n' +
+      '  vec2 dir = vec2(cos(angle), sin(angle));\n' +
+      '  vec2 entry = vec2(1.35 + seed*0.35, 0.65 - seed*0.75);\n' +
+      '  vec2 exitP = entry + dir * 2.9;\n' +
+      '  vec2 pos   = mix(entry, exitP, progress);\n' +
+      '  float head = exp(-length(uv - pos) * 85.0);\n' +
+      '  vec2 toP   = uv - pos;\n' +
+      '  float along = -dot(toP, dir);\n' +
+      '  float perp  = length(toP + dir * along);\n' +
+      '  float trail = 0.0;\n' +
+      '  float trailLen = 0.30;\n' +
+      '  if(along > 0.0 && along < trailLen){\n' +
+      '    trail = exp(-perp * 120.0) * (1.0 - along / trailLen) * 0.55;\n' +
+      '  }\n' +
+      '  float fadeLife = smoothstep(0.0, 0.12, progress) * (1.0 - smoothstep(0.80, 1.0, progress));\n' +
+      '  return (head + trail) * fadeLife;\n' +
+      '}\n' +
+      'void main(void){\n' +
+      '  vec2 uv = (FC - 0.5*R) / MN;\n' +
+      '  vec2 st = uv * vec2(2.0, 1.0);\n' +
+      '  vec2 uv0 = uv;\n' +                                                         // keep original uv for vignette + stars
+      '  vec3 col = vec3(0.0);\n' +
+      '  /* ── Layer 1: Drifting galactic nebula — navy base → royal blue mid → cyan bright cores. */\n' +
+      '  float bg = nebula(vec2(st.x + T*0.14, -st.y + T*0.05));\n' +
+      '  col += vec3(bg*0.016, bg*0.030, bg*0.080);\n' +                               // deep navy base wash
+      '  col += vec3(bg*bg*0.012, bg*bg*0.040, bg*bg*0.095);\n' +                       // royal-blue mid-density pockets\n' +
+      '  float peak = pow(max(bg, 0.0), 3.2);\n' +                                      // sharp peak — only the brightest spots glow
+      '  col += vec3(peak*0.02772, peak*0.1008, peak*0.13104);\n' +                     // cyan/teal bright cores (another 10% dim)\n'
+      '  /* ── Layer 2: 11-iteration streak loop at 50% intensity — visible but not laser-bright. */\n' +
+      '  uv *= 1.0 - 0.22 * (sin(T*0.18) * 0.5 + 0.5);\n' +
+      '  for(float i = 1.0; i < 12.0; i++){\n' +
+      '    uv += 0.08 * cos(i * vec2(0.1 + 0.01*i, 0.8) + i*i + T*0.4 + 0.08*uv.x);\n' +
+      '    vec2 p = uv;\n' +
+      '    float d = length(p);\n' +
+      '    vec3 streakRGB = (cos(sin(i) * vec3(1.0, 2.0, 3.0)) + 1.0);\n' +
+      '    col += 0.0009 / (d + 0.20) * streakRGB * vec3(0.48, 0.62, 0.90);\n' +       // 50% of bright-version, blue tint
+      '    float b = noise(i + p + bg * 1.731);\n' +
+      '    col += 0.0011 * b / length(max(p, vec2(b * p.x * 0.02, p.y))) * vec3(0.52, 0.66, 0.95);\n' +
+      '  }\n' +
+      '  /* ── Layer 3: Pinpoint starfield — denser to match watercolor-galaxy reference. */\n' +
+      '  col += vec3(0.92, 0.96, 1.05) * stars(uv0,  90.0, 0.958, 1.4) * 0.72;\n' +
+      '  col += vec3(0.86, 0.94, 1.18) * stars(uv0,  44.0, 0.982, 0.9) * 0.95;\n' +
+      '  col += vec3(1.00, 0.98, 0.92) * stars(uv0,  18.0, 0.993, 0.5) * 0.693;\n' +
+      '  /* ── Layer 4: Two shooting meteors — blue/galactic tint, slightly dimmed. */\n' +
+      '  float m1 = meteor(uv0, 0.13);\n' +
+      '  float m2 = meteor(uv0, 1.53);\n' +
+      '  col += vec3(0.55, 0.78, 1.15) * m1 * 0.95;\n' +                                // primary cool-blue meteor
+      '  col += vec3(0.48, 0.70, 1.08) * m2 * 0.85;\n' +                                // secondary deeper-blue meteor
+      '  /* ── Layer 5: Centre vignette — holds text zone calmer while edges stay rich. */\n' +
+      '  float vg = 1.0 - smoothstep(0.0, 0.85, length(uv0));\n' +
+      '  col *= 0.42 + 0.58 * (1.0 - vg);\n' +                                           // centre ~42%, edges 100%
+      '  /* ── Layer 6: Bottom fade — lerps toward body-dark so hero meets next section cleanly. */\n' +
+      '  float yNorm = FC.y / R.y;\n' +
+      '  float botFade = smoothstep(0.0, 0.30, yNorm);\n' +
+      '  col *= botFade;\n' +
+      '  O = vec4(col, 1.0);\n' +
+      '}\n';
+
+    function compile(src, type){
+      var s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){
+        if(window.console) console.error('[hero-shader] compile error:', gl.getShaderInfoLog(s));
+        gl.deleteShader(s);
+        return null;
+      }
+      return s;
+    }
+
+    var vs = compile(vertexSrc, gl.VERTEX_SHADER);
+    var fs = compile(fragmentSrc, gl.FRAGMENT_SHADER);
+    if(!vs || !fs){ canvas.remove(); return; }
+
+    var program = gl.createProgram();
+    gl.attachShader(program, vs);
+    gl.attachShader(program, fs);
+    gl.linkProgram(program);
+    if(!gl.getProgramParameter(program, gl.LINK_STATUS)){
+      if(window.console) console.error('[hero-shader] link error:', gl.getProgramInfoLog(program));
+      canvas.remove();
+      return;
+    }
+
+    /* Fullscreen quad — a single triangle-strip covering NDC */
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,1, -1,-1, 1,1, 1,-1]), gl.STATIC_DRAW);
+
+    var posLoc   = gl.getAttribLocation(program, 'position');
+    var uResLoc  = gl.getUniformLocation(program, 'resolution');
+    var uTimeLoc = gl.getUniformLocation(program, 'time');
+
+    /* Sizing: pixel-buffer matches hero element × DPR (capped), CSS size fills hero */
+    function resize(){
+      var rect = hero.getBoundingClientRect();
+      var w = Math.max(1, Math.floor(rect.width));
+      var h = Math.max(1, Math.floor(rect.height));
+      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);                  // cap DPR — shader is expensive at 2×
+      canvas.width  = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas.style.width  = w + 'px';
+      canvas.style.height = h + 'px';
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    if(typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(hero);
+
+    var t0 = performance.now();
+    function render(){
+      if(document.hidden){ requestAnimationFrame(render); return; }
+      var now = (performance.now() - t0) * 0.001;
+      gl.clearColor(0, 0, 0, 1);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.useProgram(program);
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.enableVertexAttribArray(posLoc);
+      gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+      gl.uniform2f(uResLoc, canvas.width, canvas.height);
+      gl.uniform1f(uTimeLoc, now);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      requestAnimationFrame(render);
+    }
+    render();
+    LOG('shader running — render loop started at', canvas.width, '×', canvas.height);
+  }
+
+  /* Wrap the public entry point so any runtime error surfaces in the console
+     instead of silently leaving a black hero. */
+  function safeInit(){
+    try { initHeroStarfield(); }
+    catch(err){ if(window.console) console.error('[hero-shader] fatal:', err); }
+  }
+
+  /* Mount-binding: run immediately if the window has already loaded, else wait for `load`.
+     Without this check the shader could miss its cue if this deferred script executes after load. */
+  if(document.readyState === 'complete'){
+    safeInit();
+  } else {
+    window.addEventListener('load', safeInit, { once: true });
+  }
+})();
+</script>
 <script>
 /* ── COZY SHELL runtime ── */
 (function(){
@@ -853,9 +1376,10 @@ document.querySelectorAll('.stats-grid').forEach(el=>cntObs.observe(el));
     if(window.gsap && window.ScrollTrigger && !reduced){
       try{
         gsap.registerPlugin(ScrollTrigger);
-        var visual=document.querySelector('.hero-right .sys-visual');
+        /* gentle rise on the how-it-works card as it enters the viewport */
+        var visual=document.querySelector('.how-it-works .sys-visual');
         if(visual && window.innerWidth>1100){
-          gsap.to(visual,{yPercent:-6,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:0.6}});
+          gsap.from(visual,{y:40,opacity:0,duration:.9,ease:'power2.out',scrollTrigger:{trigger:'.how-it-works',start:'top 78%',toggleActions:'play none none none'}});
         }
       }catch(e){}
     }

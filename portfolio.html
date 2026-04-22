@@ -141,6 +141,15 @@ footer{padding:32px 80px;border-top:1px solid var(--border);display:flex;justify
 a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question:focus-visible,.tab-btn:focus-visible,.btn-primary:focus-visible,.btn-secondary:focus-visible,.sys-link-btn:focus-visible,input:focus-visible,.nav-links a:focus-visible{outline:2px solid var(--warm);outline-offset:3px}
 [data-aos]{pointer-events:auto}
 @media(prefers-reduced-motion:reduce){.grain,.warm-particle,.warm-wash{display:none}}
+
+/* ── LETTER-REVEAL on headlines ── */
+.hl-word{display:inline-block;white-space:nowrap}
+.hl-char{display:inline-block;opacity:0;transform:translateY(.5em);animation:hlReveal .55s var(--spring) forwards}
+@keyframes hlReveal{0%{opacity:0;transform:translateY(.5em)}100%{opacity:1;transform:translateY(0)}}
+.grad-text .hl-char{background:linear-gradient(135deg,#39FF14 0%,#00e676 40%,#b2ff59 70%,#ffffff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.grad-text-alt .hl-char{background:linear-gradient(135deg,#ffffff 0%,#b2ff59 50%,#39FF14 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+h1[data-split-done]{opacity:1!important;animation:none!important}
+@media(prefers-reduced-motion:reduce){.hl-char{opacity:1!important;transform:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -510,6 +519,71 @@ document.querySelectorAll('.fade-up,.stagger-child').forEach((el,i)=>{
   if(el.classList.contains('stagger-child')){el.style.transitionDelay=(i%4)*0.12+'s';}
   observer.observe(el);
 });
+
+/* ── LETTER-BY-LETTER headline reveal ── */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('h1').forEach(function(h1){
+    if(h1.dataset.splitDone) return;
+    var idx=0;
+    var walk=function(node){
+      if(node.nodeType===3){
+        var text=node.textContent;
+        if(!text.length) return;
+        var frag=document.createDocumentFragment();
+        text.split(/(\s+)/).forEach(function(tok){
+          if(!tok) return;
+          if(/^\s+$/.test(tok)){ frag.appendChild(document.createTextNode(tok)); return; }
+          var word=document.createElement('span');
+          word.className='hl-word';
+          for(var i=0;i<tok.length;i++){
+            var span=document.createElement('span');
+            span.className='hl-char';
+            span.style.animationDelay=(idx*22)+'ms';
+            span.textContent=tok.charAt(i);
+            word.appendChild(span);
+            idx++;
+          }
+          frag.appendChild(word);
+        });
+        node.parentNode.replaceChild(frag,node);
+      } else if(node.nodeType===1 && node.tagName!=='BR' && node.tagName!=='IMG'){
+        [].slice.call(node.childNodes).forEach(walk);
+      }
+    };
+    [].slice.call(h1.childNodes).forEach(walk);
+    h1.dataset.splitDone='1';
+    h1.style.opacity='1';
+    h1.style.animation='none';
+  });
+})();
+
+/* ── MAGNETIC .btn-primary ── */
+(function(){
+  if(matchMedia('(pointer: coarse)').matches) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var btns=[].slice.call(document.querySelectorAll('.btn-primary'));
+  if(!btns.length) return;
+  var radius=90, strength=0.32, raf=null, mx=0, my=0;
+  document.addEventListener('mousemove', function(e){
+    mx=e.clientX; my=e.clientY;
+    if(raf) return;
+    raf=requestAnimationFrame(function(){
+      raf=null;
+      btns.forEach(function(btn){
+        var r=btn.getBoundingClientRect();
+        var cx=r.left+r.width/2, cy=r.top+r.height/2;
+        var dx=mx-cx, dy=my-cy;
+        var dist=Math.hypot(dx,dy);
+        if(dist<radius){
+          var pull=(1-dist/radius)*strength;
+          btn.style.transform='translate('+(dx*pull).toFixed(2)+'px,'+(dy*pull).toFixed(2)+'px)';
+        } else if(btn.style.transform){ btn.style.transform=''; }
+      });
+    });
+  }, {passive:true});
+  document.addEventListener('mouseleave', function(){ btns.forEach(function(b){b.style.transform='';}); });
+})();
 
 
 /* ── PARTICLES ── */
