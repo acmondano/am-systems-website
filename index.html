@@ -351,6 +351,31 @@ a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question
 .grad-text-alt .hl-char{background:linear-gradient(135deg,#ffffff 0%,#b2ff59 50%,#39FF14 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 h1[data-split-done]{opacity:1!important;animation:none!important}
 @media(prefers-reduced-motion:reduce){.hl-char{opacity:1!important;transform:none!important;animation:none!important}}
+
+/* ── SURGICAL PER-SERVICE ACCENTS (Lead=violet · Sales=amber · Business OS=cyan) ── */
+.sys-card-lead{--accent:#a78bfa;--accent-dim:rgba(167,139,250,0.08);--accent-border:rgba(167,139,250,0.30);--accent-glow:rgba(167,139,250,0.14)}
+.sys-card-sales{--accent:#ffb066;--accent-dim:rgba(255,176,102,0.08);--accent-border:rgba(255,176,102,0.30);--accent-glow:rgba(255,176,102,0.14)}
+.sys-card-bos{--accent:#5fa8ff;--accent-dim:rgba(95,168,255,0.08);--accent-border:rgba(95,168,255,0.30);--accent-glow:rgba(95,168,255,0.14)}
+.sys-card-lead .sys-icon,.sys-card-sales .sys-icon,.sys-card-bos .sys-icon{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent)}
+.sys-card-lead:hover,.sys-card-sales:hover,.sys-card-bos:hover{border-color:var(--accent-border);box-shadow:0 20px 48px var(--accent-glow)}
+.sys-card-highlight.sys-card-sales{border-color:var(--accent-border)!important}
+
+/* For-Whom chip: neutralize default, colorize per-service spans */
+.forwho-range{color:var(--muted)}
+.forwho-range .svc-lead{color:#a78bfa;font-weight:800}
+.forwho-range .svc-sales{color:#ffb066;font-weight:800}
+.forwho-range .svc-bos{color:#5fa8ff;font-weight:800}
+
+/* HOW IT WORKS — per-service accent on the icon tile ONLY (text + badges stay green) */
+.sv-row-lead .sv-emoji{background:rgba(167,139,250,0.10);border-color:rgba(167,139,250,0.28);color:#a78bfa}
+.sv-row-sales .sv-emoji{background:rgba(255,176,102,0.10);border-color:rgba(255,176,102,0.28);color:#ffb066}
+.sv-row-bos .sv-emoji{background:rgba(95,168,255,0.10);border-color:rgba(95,168,255,0.28);color:#5fa8ff}
+
+/* Trust-three outcome blocks — per-service accent on icon */
+.trust-block-lead{--accent:#a78bfa}
+.trust-block-sales{--accent:#ffb066}
+.trust-block-bos{--accent:#5fa8ff}
+.trust-block-lead .trust-block-icon,.trust-block-sales .trust-block-icon,.trust-block-bos .trust-block-icon{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -498,11 +523,11 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
   <div class="hiw-card-wrap">
     <div class="sys-visual">
       <div class="sv-header"><div class="sv-title">How It Works</div><div class="sv-live"><span class="sv-live-dot"></span>Outcome-Based</div></div>
-      <div class="sv-row"><div class="sv-emoji" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-gear"/></svg></div><div class="sv-info"><div class="sv-name">Lead Engine</div><div class="sv-sub">Funnel · Capture · CRM</div></div><div class="sv-badge">Traffic → Leads</div></div>
+      <div class="sv-row sv-row-lead"><div class="sv-emoji"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-gear"/></svg></div><div class="sv-info"><div class="sv-name">Lead Engine</div><div class="sv-sub">Funnel · Capture · CRM</div></div><div class="sv-badge">Traffic → Leads</div></div>
       <div class="sv-connector"><div class="sv-conn-arrow"><span></span><span></span></div></div>
-      <div class="sv-row"><div class="sv-emoji" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></div><div class="sv-info"><div class="sv-name">Sales Engine</div><div class="sv-sub">Nurture · Follow-Up · Convert</div></div><div class="sv-badge">Leads → Clients</div></div>
+      <div class="sv-row sv-row-sales"><div class="sv-emoji"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></div><div class="sv-info"><div class="sv-name">Sales Engine</div><div class="sv-sub">Nurture · Follow-Up · Convert</div></div><div class="sv-badge">Leads → Clients</div></div>
       <div class="sv-connector"><div class="sv-conn-arrow"><span></span><span></span></div></div>
-      <div class="sv-row"><div class="sv-emoji" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-brain"/></svg></div><div class="sv-info"><div class="sv-name">Business OS</div><div class="sv-sub">Store Operations · Inventory · Multi-Branch</div></div><div class="sv-badge">Operations</div></div>
+      <div class="sv-row sv-row-bos"><div class="sv-emoji"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-brain"/></svg></div><div class="sv-info"><div class="sv-name">Business OS</div><div class="sv-sub">Store Operations · Inventory · Multi-Branch</div></div><div class="sv-badge">Operations</div></div>
       <div class="sv-result"><div class="sv-result-icon" style="color:var(--green);display:flex"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;color:var(--green)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="sv-result-label">Scalable Revenue System</div><div class="sv-result-sub">Built, automated, and optimized for your business</div></div></div>
     </div>
   </div>
@@ -514,9 +539,9 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
     <div class="trust-headline">Most businesses don't have a traffic problem.<br>They have a <span class="grad-text">system problem.</span></div>
     <div class="trust-sub">The revenue gap isn't your marketing. It's the absence of a system catching leads, following up fast, and closing them on autopilot. That's what we build.</div>
     <div class="trust-three">
-      <div class="trust-block"><span class="trust-block-icon" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-target"/></svg></span><div class="trust-block-title">Capture Every Lead</div><div class="trust-block-desc">Every inquiry gets captured, responded to, and nurtured automatically — even while you sleep.</div></div>
-      <div class="trust-block"><span class="trust-block-icon" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></span><div class="trust-block-title">Convert More Clients</div><div class="trust-block-desc">Structured pipelines nurture cold leads into paying clients — without you writing the same email twice.</div></div>
-      <div class="trust-block"><span class="trust-block-icon" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-gear"/></svg></span><div class="trust-block-title">Scale Without Chaos</div><div class="trust-block-desc">One system replaces scattered tools and manual work. Growth stops creating chaos.</div></div>
+      <div class="trust-block trust-block-lead"><span class="trust-block-icon"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-gear"/></svg></span><div class="trust-block-title">Capture Every Lead</div><div class="trust-block-desc">Every inquiry gets captured, responded to, and nurtured automatically — even while you sleep.</div></div>
+      <div class="trust-block trust-block-sales"><span class="trust-block-icon"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></span><div class="trust-block-title">Convert More Clients</div><div class="trust-block-desc">Structured pipelines nurture cold leads into paying clients — without you writing the same email twice.</div></div>
+      <div class="trust-block trust-block-bos"><span class="trust-block-icon"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-brain"/></svg></span><div class="trust-block-title">Scale Without Chaos</div><div class="trust-block-desc">One system replaces scattered tools and manual work. Growth stops creating chaos.</div></div>
     </div>
   </div>
 </div>
@@ -594,18 +619,18 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
   <div class="section-title">Three Systems. One Outcome: <span class="grad-text">Revenue.</span></div>
   <div class="section-sub">Fixed-price. Scoped to outcomes. Each system is built around a specific bottleneck — no padding, no features you didn't ask for.</div>
   <div class="systems-grid">
-    <div class="sys-card spotlight-card stagger-child">
-      <div class="sys-icon" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-gear"/></svg></div>
+    <div class="sys-card sys-card-lead spotlight-card stagger-child">
+      <div class="sys-icon"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-gear"/></svg></div>
       <div class="sys-name">Lead Engine</div>
       <div class="sys-tagline">Catch every visitor, qualify them, follow up automatically. No more leaks.</div>
     </div>
-    <div class="sys-card spotlight-card sys-card-highlight stagger-child">
-      <div class="sys-icon" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></div>
+    <div class="sys-card sys-card-sales spotlight-card sys-card-highlight stagger-child">
+      <div class="sys-icon"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></div>
       <div class="sys-name">Sales Engine</div>
       <div class="sys-tagline">Automated pipeline that nurtures, follows up, and converts — without you managing every deal.</div>
     </div>
-    <div class="sys-card spotlight-card stagger-child">
-      <div class="sys-icon" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-brain"/></svg></div>
+    <div class="sys-card sys-card-bos spotlight-card stagger-child">
+      <div class="sys-icon"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-brain"/></svg></div>
       <div class="sys-name">Business OS</div>
       <div class="sys-tagline">Replace spreadsheets and chaos with one owned operating system — including <strong style="color:var(--green)">MAD Store Ops</strong> for retail and multi-branch businesses.</div>
     </div>
@@ -624,10 +649,10 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
   <div class="section-title">Built for Businesses<br>Ready to <span class="grad-text">Scale.</span></div>
   <div class="section-sub">For businesses with traction — losing revenue because the systems aren't in place yet.</div>
   <div class="forwho-grid">
-    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-building"/></svg></span><div class="forwho-type">Service Businesses</div><div class="forwho-desc">Getting inquiries, losing them to slow response and no follow-up. The gap between interested and paid is leaking revenue.</div><div class="forwho-range">→ Lead Engine + Sales Engine</div></div>
-    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-trending"/></svg></span><div class="forwho-type">Growing Agencies</div><div class="forwho-desc">Works at 5 clients. Breaks at 15. You need infrastructure that scales without hiring more ops staff.</div><div class="forwho-range">→ Sales Engine + Business OS</div></div>
-    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-target"/></svg></span><div class="forwho-type">Coaches & Offer Owners</div><div class="forwho-desc">Great offer, manual closing. You need a machine that finds, warms, and closes — consistently.</div><div class="forwho-range">→ Lead Engine + Sales Engine</div></div>
-    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-store"/></svg></span><div class="forwho-type">Retail & Multi-Branch Stores</div><div class="forwho-desc">Running branches on notebooks and group chats. You need one owned system for inventory, suppliers, and transfers — not a SaaS subscription.</div><div class="forwho-range">→ Business OS · Store Operations</div></div>
+    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-building"/></svg></span><div class="forwho-type">Service Businesses</div><div class="forwho-desc">Getting inquiries, losing them to slow response and no follow-up. The gap between interested and paid is leaking revenue.</div><div class="forwho-range">→ <span class="svc-lead">Lead Engine</span> + <span class="svc-sales">Sales Engine</span></div></div>
+    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-trending"/></svg></span><div class="forwho-type">Growing Agencies</div><div class="forwho-desc">Works at 5 clients. Breaks at 15. You need infrastructure that scales without hiring more ops staff.</div><div class="forwho-range">→ <span class="svc-sales">Sales Engine</span> + <span class="svc-bos">Business OS</span></div></div>
+    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-target"/></svg></span><div class="forwho-type">Coaches & Offer Owners</div><div class="forwho-desc">Great offer, manual closing. You need a machine that finds, warms, and closes — consistently.</div><div class="forwho-range">→ <span class="svc-lead">Lead Engine</span> + <span class="svc-sales">Sales Engine</span></div></div>
+    <div class="forwho-card spotlight-card stagger-child"><span class="forwho-emoji" style="color:var(--green)"><svg width="28px" height="28px" style="flex-shrink:0"><use href="#ic-store"/></svg></span><div class="forwho-type">Retail & Multi-Branch Stores</div><div class="forwho-desc">Running branches on notebooks and group chats. You need one owned system for inventory, suppliers, and transfers — not a SaaS subscription.</div><div class="forwho-range">→ <span class="svc-bos">Business OS</span> · Store Operations</div></div>
   </div>
 </div>
 </div>

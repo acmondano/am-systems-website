@@ -189,6 +189,38 @@ body[data-cur="usd"] .offer-usd{font-size:22px;font-weight:900;color:var(--green
 .savings-box-highlight{font-size:26px;font-weight:900;color:var(--green);letter-spacing:-.3px;margin-top:4px;position:relative;text-shadow:0 0 20px rgba(57,255,20,.3)}
 .savings-cta{font-size:12px;color:var(--muted);margin-top:6px;position:relative;letter-spacing:.2px}
 @media(max-width:768px){.currency-toggle-wrap{margin-bottom:22px}.savings-box{padding:20px 18px;margin:28px 12px 56px}.savings-box-highlight{font-size:22px}}
+
+/* ── SURGICAL PER-SERVICE ACCENTS (Lead=violet · Sales=amber · Business OS=cyan) ── */
+#tab-lead{--accent:#a78bfa;--accent-dim:rgba(167,139,250,0.09);--accent-border:rgba(167,139,250,0.30);--accent-glow:rgba(167,139,250,0.18);--accent-bg:rgba(167,139,250,0.06)}
+#tab-sales{--accent:#ffb066;--accent-dim:rgba(255,176,102,0.09);--accent-border:rgba(255,176,102,0.30);--accent-glow:rgba(255,176,102,0.16);--accent-bg:rgba(255,176,102,0.06)}
+#tab-bos{--accent:#5fa8ff;--accent-dim:rgba(95,168,255,0.09);--accent-border:rgba(95,168,255,0.30);--accent-glow:rgba(95,168,255,0.16);--accent-bg:rgba(95,168,255,0.06)}
+
+#tab-lead .offer-icon-wrap,#tab-sales .offer-icon-wrap,#tab-bos .offer-icon-wrap{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent)}
+#tab-lead .tier:hover:not(.pop),#tab-sales .tier:hover:not(.pop),#tab-bos .tier:hover:not(.pop){border-color:var(--accent-border)}
+#tab-lead .tier.pop,#tab-sales .tier.pop,#tab-bos .tier.pop{border-color:var(--accent-border);background:linear-gradient(160deg,var(--accent-bg) 0%,#111 100%)}
+#tab-lead .tier.pop .tier-badge,#tab-sales .tier.pop .tier-badge,#tab-bos .tier.pop .tier-badge{background:var(--accent);color:#000}
+#tab-lead .tier-features li::before,#tab-sales .tier-features li::before,#tab-bos .tier-features li::before{color:var(--accent)}
+#tab-lead .tier-who,#tab-sales .tier-who,#tab-bos .tier-who{border-left-color:var(--accent-border)}
+#tab-lead .tier.pop .tier-cta,#tab-sales .tier.pop .tier-cta,#tab-bos .tier.pop .tier-cta{background:var(--accent);color:#000}
+#tab-lead .tier.pop .tier-cta:hover,#tab-sales .tier.pop .tier-cta:hover,#tab-bos .tier.pop .tier-cta:hover{box-shadow:0 0 28px var(--accent-glow);transform:translateY(-1px)}
+#tab-lead .tier:not(.pop) .tier-cta:hover,#tab-sales .tier:not(.pop) .tier-cta:hover,#tab-bos .tier:not(.pop) .tier-cta:hover{border-color:var(--accent-border);color:var(--accent)}
+
+/* ── SERVICE TILE SELECTOR — compact pill row, size-matched to currency toggle ── */
+.svc-selector{display:flex;justify-content:center;gap:10px;margin-bottom:44px;padding:0 20px;flex-wrap:wrap}
+.svc-tile{display:inline-flex;flex-direction:row;align-items:center;gap:8px;padding:8px 16px 8px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:100px;cursor:pointer;transition:transform .2s var(--spring),border-color .25s,box-shadow .3s;font-family:inherit;height:40px}
+.svc-tile:hover{transform:translateY(-1px)}
+.svc-tile-icon{width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);border:1px solid var(--border);color:var(--muted);transition:all .25s;flex-shrink:0}
+.svc-tile-icon svg{width:14px;height:14px}
+.svc-tile-label{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.4px;transition:color .25s;white-space:nowrap}
+.svc-tile-lead{--accent:#a78bfa;--accent-dim:rgba(167,139,250,0.10);--accent-border:rgba(167,139,250,0.35);--accent-glow:rgba(167,139,250,0.20)}
+.svc-tile-sales{--accent:#ffb066;--accent-dim:rgba(255,176,102,0.10);--accent-border:rgba(255,176,102,0.35);--accent-glow:rgba(255,176,102,0.18)}
+.svc-tile-bos{--accent:#5fa8ff;--accent-dim:rgba(95,168,255,0.10);--accent-border:rgba(95,168,255,0.35);--accent-glow:rgba(95,168,255,0.18)}
+.svc-tile:hover .svc-tile-icon{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent)}
+.svc-tile:hover .svc-tile-label{color:var(--accent)}
+.svc-tile.active{border-color:var(--accent-border);background:var(--accent-dim);box-shadow:0 4px 18px var(--accent-glow)}
+.svc-tile.active .svc-tile-icon{background:var(--accent);border-color:var(--accent);color:#000}
+.svc-tile.active .svc-tile-label{color:var(--accent)}
+@media(max-width:500px){.svc-selector{gap:6px;padding:0 12px}.svc-tile{padding:6px 12px 6px 6px;gap:6px;height:36px}.svc-tile-icon{width:24px;height:24px;border-radius:6px}.svc-tile-label{font-size:11px}}
 </style>
 </head>
 <body>
@@ -325,18 +357,29 @@ body[data-cur="usd"] .offer-usd{font-size:22px;font-weight:900;color:var(--green
   </div>
 </div>
 
+<!-- SERVICE SELECTOR -->
+<div class="svc-selector fade-up" role="tablist" aria-label="Service selector">
+  <button type="button" class="tab-btn svc-tile svc-tile-lead active" onclick="switchTab('lead')" role="tab" aria-selected="true" aria-controls="tab-lead">
+    <span class="svc-tile-icon"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-gear"/></svg></span>
+    <span class="svc-tile-label">Lead Engine</span>
+  </button>
+  <button type="button" class="tab-btn svc-tile svc-tile-sales" onclick="switchTab('sales')" role="tab" aria-selected="false" aria-controls="tab-sales">
+    <span class="svc-tile-icon"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></span>
+    <span class="svc-tile-label">Sales Engine</span>
+  </button>
+  <button type="button" class="tab-btn svc-tile svc-tile-bos" onclick="switchTab('bos')" role="tab" aria-selected="false" aria-controls="tab-bos">
+    <span class="svc-tile-icon"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-brain"/></svg></span>
+    <span class="svc-tile-label">Business OS</span>
+  </button>
+</div>
+
 <!-- PRICING TABS -->
 <div class="pricing-block">
-  <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('lead')"><svg width="14px" height="14px" style="flex-shrink:0"><use href="#ic-gear"/></svg> Lead Engine</button>
-    <button class="tab-btn" onclick="switchTab('sales')"><svg width="14px" height="14px" style="flex-shrink:0"><use href="#ic-dollar"/></svg> Sales Engine</button>
-    <button class="tab-btn" onclick="switchTab('bos')"><svg width="14px" height="14px" style="flex-shrink:0"><use href="#ic-brain"/></svg> Business OS</button>
-  </div>
 
   <!-- LEAD ENGINE -->
   <div class="tab-pane active" id="tab-lead">
     <div class="offer-header">
-      <div class="offer-left"><div class="offer-icon-wrap" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-gear"/></svg></div><div><div class="offer-name">Lead Engine</div><div class="offer-tagline">Turn traffic into qualified leads — automatically. <span style="font-size:11px;color:var(--green);font-weight:600">Powered by GoHighLevel.</span></div></div></div>
+      <div class="offer-left"><div class="offer-icon-wrap"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-gear"/></svg></div><div><div class="offer-name">Lead Engine</div><div class="offer-tagline">Turn traffic into qualified leads — automatically. <span style="font-size:11px;color:var(--green);font-weight:600">Powered by GoHighLevel.</span></div></div></div>
       <div class="offer-range"><div class="offer-price">₱30,000 – ₱60,000</div><div class="offer-usd">~$515 – $1,030 USD</div></div>
     </div>
     <div class="offer-callout"><div class="callout-icon" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-bulb"/></svg></div><p>US agencies charge <strong>$5,000–$15,000</strong> for this. We deliver the same outcome at <strong>70%+ savings</strong>.</p></div>
@@ -369,7 +412,7 @@ body[data-cur="usd"] .offer-usd{font-size:22px;font-weight:900;color:var(--green
   <!-- SALES ENGINE -->
   <div class="tab-pane" id="tab-sales">
     <div class="offer-header">
-      <div class="offer-left"><div class="offer-icon-wrap" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></div><div><div class="offer-name">Sales Engine</div><div class="offer-tagline">Turn leads into paying clients — consistently. <span style="font-size:11px;color:var(--green);font-weight:600">Powered by GoHighLevel + n8n.</span></div></div></div>
+      <div class="offer-left"><div class="offer-icon-wrap"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></div><div><div class="offer-name">Sales Engine</div><div class="offer-tagline">Turn leads into paying clients — consistently. <span style="font-size:11px;color:var(--green);font-weight:600">Powered by GoHighLevel + n8n.</span></div></div></div>
       <div class="offer-range"><div class="offer-price">₱80,000 – ₱150,000</div><div class="offer-usd">~$1,380 – $2,580 USD</div></div>
     </div>
     <div class="offer-callout"><div class="callout-icon" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-bulb"/></svg></div><p>Sales automation = highest ROI investment you can make. US equivalents: <strong>$15,000–$50,000</strong>. We build the same for <strong>70% less.</strong></p></div>
@@ -402,7 +445,7 @@ body[data-cur="usd"] .offer-usd{font-size:22px;font-weight:900;color:var(--green
   <!-- BUSINESS OS -->
   <div class="tab-pane" id="tab-bos">
     <div class="offer-header">
-      <div class="offer-left"><div class="offer-icon-wrap" style="color:var(--green)"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-brain"/></svg></div><div><div class="offer-name">Business OS</div><div class="offer-tagline">Run your entire operation in one place.</div></div></div>
+      <div class="offer-left"><div class="offer-icon-wrap"><svg width="22px" height="22px" style="flex-shrink:0"><use href="#ic-brain"/></svg></div><div><div class="offer-name">Business OS</div><div class="offer-tagline">Run your entire operation in one place.</div></div></div>
       <div class="offer-range"><div class="offer-price">₱150,000 – ₱400,000+</div><div class="offer-usd">~$2,580 – $6,900+ USD</div></div>
     </div>
     <div class="offer-callout"><div class="callout-icon" style="color:var(--green)"><svg width="15px" height="15px" style="flex-shrink:0"><use href="#ic-bulb"/></svg></div><p>US/AU equivalents: <strong>$50,000–$200,000+</strong>. We build the same at <strong>70–80% less</strong>. Senior-led. Zero hand-offs. <strong style="color:var(--green)">One-time build. You own it forever.</strong></p></div>
@@ -466,7 +509,7 @@ body[data-cur="usd"] .offer-usd{font-size:22px;font-weight:900;color:var(--green
   <div class="addons-grid">
     <div class="addon-card"><span class="addon-icon" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-bot"/></svg></span><div class="addon-name">AI Chatbot System</div><div class="addon-price">₱15K – ₱50K</div><div class="addon-desc">Lead qualification, support flows, 24/7 messaging on autopilot.</div></div>
     <div class="addon-card"><span class="addon-icon" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-chart"/></svg></span><div class="addon-name">Advanced Analytics</div><div class="addon-price">₱20K – ₱80K</div><div class="addon-desc">Real-time dashboards. See where leads drop off and what converts.</div></div>
-    <div class="addon-card"><span class="addon-icon" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-brain"/></svg></span><div class="addon-name">CRM Upgrade</div><div class="addon-price">₱30K – ₱100K</div><div class="addon-desc">CRM rebuilt for scale — structured pipelines, automation rules, clean workflows.</div></div>
+    <div class="addon-card"><span class="addon-icon" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-user"/></svg></span><div class="addon-name">CRM Upgrade</div><div class="addon-price">₱30K – ₱100K</div><div class="addon-desc">CRM rebuilt for scale — structured pipelines, automation rules, clean workflows.</div></div>
     <div class="addon-card"><span class="addon-icon" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-wrench"/></svg></span><div class="addon-name">Monthly Retainer</div><div class="addon-price">₱10K – ₱50K/mo</div><div class="addon-desc">Ongoing improvements, monitoring, and updates as you scale.</div></div>
     <div class="addon-card"><span class="addon-icon" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-plug"/></svg></span><div class="addon-name">Custom Integrations</div><div class="addon-price">₱20K – ₱100K+</div><div class="addon-desc">APIs, webhooks, data connections — every tool in your stack, connected.</div></div>
   </div>
@@ -612,7 +655,11 @@ window.addEventListener('scroll',()=>{const h=document.documentElement;document.
 })();
 
 function switchTab(id){
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>{b.classList.toggle('active',['lead','sales','bos'][i]===id)});
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
+    const isActive=['lead','sales','bos'][i]===id;
+    b.classList.toggle('active',isActive);
+    b.setAttribute('aria-selected',isActive?'true':'false');
+  });
   document.querySelectorAll('.tab-pane').forEach(p=>{p.classList.toggle('active',p.id==='tab-'+id)});
 }
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});

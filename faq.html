@@ -240,6 +240,19 @@ a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question
 .grad-text-alt .hl-char{background:linear-gradient(135deg,#ffffff 0%,#b2ff59 50%,#39FF14 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 h1[data-split-done]{opacity:1!important;animation:none!important}
 @media(prefers-reduced-motion:reduce){.hl-char{opacity:1!important;transform:none!important;animation:none!important}}
+
+/* ── SURGICAL PER-SERVICE ACCENTS (Lead=violet · Sales=amber · Business OS=cyan) ── */
+.tl-card.sys-lead{--accent:#a78bfa;--accent-border:rgba(167,139,250,0.30)}
+.tl-card.sys-sales{--accent:#ffb066;--accent-border:rgba(255,176,102,0.30)}
+.tl-card.sys-bos{--accent:#5fa8ff;--accent-border:rgba(95,168,255,0.30)}
+.tl-card.sys-lead .tl-system,.tl-card.sys-sales .tl-system,.tl-card.sys-bos .tl-system{color:var(--accent)}
+.tl-card.sys-lead .tl-duration,.tl-card.sys-sales .tl-duration,.tl-card.sys-bos .tl-duration{color:var(--accent)}
+.tl-card.sys-lead:hover,.tl-card.sys-sales:hover,.tl-card.sys-bos:hover{border-color:var(--accent-border)}
+
+/* Inline service-name callouts inside FAQ answer body (beats .faq-answer-inner strong) */
+.svc-lead,.faq-answer-inner strong.svc-lead{color:#a78bfa}
+.svc-sales,.faq-answer-inner strong.svc-sales{color:#ffb066}
+.svc-bos,.faq-answer-inner strong.svc-bos{color:#5fa8ff}
 </style>
 </head>
 <body>
@@ -370,14 +383,14 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
 
 <!-- IN-PAGE TABS -->
 <div class="page-tabs" id="pageTabs">
-  <a class="page-tab active" href="#process" onclick="switchTab('process',this)">Our Process</a>
-  <a class="page-tab" href="#faq" onclick="switchTab('faq',this)">Frequently Asked Questions</a>
+  <a class="page-tab" href="#process" onclick="switchTab('process',this)">Our Process</a>
+  <a class="page-tab active" href="#faq" onclick="switchTab('faq',this)">Frequently Asked Questions</a>
 </div>
 
 <!-- ============================
      PROCESS CONTENT
      ============================ -->
-<div id="tab-process">
+<div id="tab-process" style="display:none">
 
   <!-- 4-STEP ANIMATED TIMELINE -->
   <section class="overview-section">
@@ -386,8 +399,8 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
     <p class="section-sub fade-up">From the first call to a live system — you know exactly what's happening at every stage and what comes next.</p>
     <div class="process-steps fade-up">
       <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-target"/></svg><span class="step-num">01</span></div><div class="step-text"><div class="step-name">Strategy Call</div><p class="step-desc">Free 30-minute call. We map your bottleneck and scope exactly what gets built.</p></div></div>
-      <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-brain"/></svg><span class="step-num">02</span></div><div class="step-text"><div class="step-name">System Design</div><p class="step-desc">Architected around your business — not a template. Every component has a reason.</p></div></div>
-      <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-gear"/></svg><span class="step-num">03</span></div><div class="step-text"><div class="step-name">Build &amp; Automate</div><p class="step-desc">We build, connect, and configure. Weekly updates, no bottlenecks.</p></div></div>
+      <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-clipboard"/></svg><span class="step-num">02</span></div><div class="step-text"><div class="step-name">System Design</div><p class="step-desc">Architected around your business — not a template. Every component has a reason.</p></div></div>
+      <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-wrench"/></svg><span class="step-num">03</span></div><div class="step-text"><div class="step-name">Build &amp; Automate</div><p class="step-desc">We build, connect, and configure. Weekly updates, no bottlenecks.</p></div></div>
       <div class="process-step stagger-child"><div class="step-circle" style="color:var(--green)"><svg width="26px" height="26px" style="flex-shrink:0"><use href="#ic-rocket"/></svg><span class="step-num">04</span></div><div class="step-text"><div class="step-name">Launch &amp; Optimize</div><p class="step-desc">We go live, then refine based on real performance data during support.</p></div></div>
     </div>
   </section>
@@ -429,7 +442,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
             <div class="info-row"><span class="info-label">Delivery guarantee</span><span class="info-val green">Up to 50% refund</span></div>
           </div>
           <div class="info-card stagger-child">
-            <div class="info-card-title"><span style="color:var(--green)"><svg width="16px" height="16px" style="flex-shrink:0"><use href="#ic-dollar"/></svg></span> Fee structure</div>
+            <div class="info-card-title"><span style="color:var(--green)"><svg width="16px" height="16px" style="flex-shrink:0"><use href="#ic-chart"/></svg></span> Fee structure</div>
             <div class="info-row"><span class="info-label">Upfront (Step 5)</span><span class="info-val green">50%</span></div>
             <div class="info-row"><span class="info-label">On delivery (Step 10)</span><span class="info-val green">50%</span></div>
             <div class="info-row"><span class="info-label">Hidden fees</span><span class="info-val">None</span></div>
@@ -446,7 +459,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
     <h2 class="section-title fade-up">How long does it take?</h2>
     <p class="section-sub fade-up">Timelines vary by system and tier, but every project starts with a locked-in delivery date so you can plan around it.</p>
     <div class="timeline-grid">
-      <div class="tl-card stagger-child">
+      <div class="tl-card sys-lead stagger-child">
         <span class="tl-system">Lead Engine</span>
         <div class="tl-title">Lead capture &amp; funnel systems</div>
         <div class="tl-duration">1–4</div>
@@ -457,7 +470,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
           <li>Full Build: ~3–4 weeks</li>
         </ul>
       </div>
-      <div class="tl-card stagger-child">
+      <div class="tl-card sys-sales stagger-child">
         <span class="tl-system">Sales Engine</span>
         <div class="tl-title">Conversion &amp; follow-up systems</div>
         <div class="tl-duration">3–10</div>
@@ -468,7 +481,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
           <li>Full Build: ~7–10 weeks</li>
         </ul>
       </div>
-      <div class="tl-card stagger-child">
+      <div class="tl-card sys-bos stagger-child">
         <span class="tl-system">Business OS</span>
         <div class="tl-title">Operations &amp; internal infrastructure</div>
         <div class="tl-duration">6–20</div>
@@ -491,7 +504,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
 <!-- ============================
      FAQ CONTENT
      ============================ -->
-<div id="tab-faq" style="display:none">
+<div id="tab-faq">
   <section class="faq-section">
     <div class="faq-layout">
       <div class="faq-list">
@@ -508,7 +521,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">Do you build systems for retail and multi-branch stores?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
           <div class="faq-answer"><div class="faq-answer-inner">
-            <p>Yes. Under Business OS we build <strong>MAD Store Ops — a custom Store Operations &amp; Inventory System</strong> for retail, wholesale, and multi-branch businesses. It covers the 8 core modules most Filipino stores actually need: Inventory Management, Order Entry, Stocktake Sessions, Restock &amp; Delivery Log, Supplier Management, Purchase Orders, Branch Transfers, and an Operations Dashboard.</p>
+            <p>Yes. Under <strong class="svc-bos">Business OS</strong> we build <strong>MAD Store Ops — a custom Store Operations &amp; Inventory System</strong> for retail, wholesale, and multi-branch businesses. It covers the 8 core modules most Filipino stores actually need: Inventory Management, Order Entry, Stocktake Sessions, Restock &amp; Delivery Log, Supplier Management, Purchase Orders, Branch Transfers, and an Operations Dashboard.</p>
             <p>It's designed for how Filipino stores really run — multi-branch visibility, supplier workflow, and live inventory built in from day one.</p>
             <p><strong>Why clients choose us over monthly subscriptions:</strong> SaaS platforms charge you forever. AM Systems builds the system <strong>once</strong> and you own it forever. For stores that stay in business 2+ years, owning is already cheaper than renting.</p>
           </div></div>
@@ -517,7 +530,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
         <div class="faq-item" id="q2">
           <button class="faq-question" onclick="toggleFaq(this)">What if we already have a team or tools in place?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
           <div class="faq-answer"><div class="faq-answer-inner">
-            <p>Having an existing team or tools isn't a problem — in many cases, it's an advantage. We work with what you already have wherever possible. For Lead Engine and Sales Engine, we deliver primarily through GoHighLevel — a proven all-in-one platform. For Business OS, we build custom systems using our own MAD Store Ops stack. If you're already using other tools, we integrate where it makes sense.</p>
+            <p>Having an existing team or tools isn't a problem — in many cases, it's an advantage. We work with what you already have wherever possible. For <strong class="svc-lead">Lead Engine</strong> and <strong class="svc-sales">Sales Engine</strong>, we deliver primarily through GoHighLevel — a proven all-in-one platform. For <strong class="svc-bos">Business OS</strong>, we build custom systems using our own MAD Store Ops stack. If you're already using other tools, we integrate where it makes sense.</p>
             <p>If what you have isn't working, we'll tell you — and we'll help you migrate cleanly rather than layering more complexity on a broken foundation.</p>
           </div></div>
         </div>
@@ -526,7 +539,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
           <button class="faq-question" onclick="toggleFaq(this)">How long does a typical engagement take?<span class="faq-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></span></button>
           <div class="faq-answer"><div class="faq-answer-inner">
             <p>It depends on the system and tier, but here's a general range:</p>
-            <p><strong>Lead Engine:</strong> 2–6 weeks &nbsp;|&nbsp; <strong>Sales Engine:</strong> 3–7 weeks &nbsp;|&nbsp; <strong>Business OS:</strong> 4–10 weeks</p>
+            <p><strong class="svc-lead">Lead Engine:</strong> 2–6 weeks &nbsp;|&nbsp; <strong class="svc-sales">Sales Engine:</strong> 3–7 weeks &nbsp;|&nbsp; <strong class="svc-bos">Business OS:</strong> 4–10 weeks</p>
             <p>Every project starts with a locked-in delivery date so you can plan around it. The biggest factor in timeline accuracy is your responsiveness — fast feedback, complete assets, and accessible decision-makers always mean a faster delivery.</p>
           </div></div>
         </div>
@@ -732,13 +745,14 @@ function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('op
   document.addEventListener('mouseleave', function(){ btns.forEach(function(b){b.style.transform='';}); });
 })();
 // Tab switching
-function switchTab(tab, el){
-  event.preventDefault();
+function switchTab(tab, el, ev){
+  ev = ev || (typeof event !== 'undefined' ? event : null);
+  if (ev && ev.preventDefault) ev.preventDefault();
   document.getElementById('tab-process').style.display = tab==='process' ? '' : 'none';
   document.getElementById('tab-faq').style.display = tab==='faq' ? '' : 'none';
   document.querySelectorAll('.page-tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  window.scrollTo({top: document.getElementById('pageTabs').offsetTop - 80, behavior:'smooth'});
+  if (el) el.classList.add('active');
+  if (ev) window.scrollTo({top: document.getElementById('pageTabs').offsetTop - 80, behavior:'smooth'});
 }
 // FAQ accordion
 function toggleFaq(btn){
@@ -747,9 +761,11 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-question').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open');});
   if(!isOpen){btn.classList.add('open');answer.classList.add('open');}
 }
-// Hash routing: faq.html#faq or faq.html#q1 etc
+// Hash routing: faq.html#process opens Process tab, #faq opens FAQ tab (default), #q1 etc jumps to a specific question
 const hash=window.location.hash;
-if(hash==='#faq'){
+if(hash==='#process'){
+  switchTab('process', document.querySelectorAll('.page-tab')[0]);
+} else if(hash==='#faq'){
   switchTab('faq', document.querySelectorAll('.page-tab')[1]);
 } else if(hash && document.querySelector(hash)){
   switchTab('faq', document.querySelectorAll('.page-tab')[1]);
