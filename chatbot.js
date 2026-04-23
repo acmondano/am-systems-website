@@ -5,7 +5,7 @@
   if (window.__AMS_CHATBOT__) return; window.__AMS_CHATBOT__ = true;
 
   var WA = "https://wa.me/639706791242";
-  var EMAIL = "supportamtsociety@gmail.com";
+  var EMAIL = "amsystemsph@gmail.com";
 
   /* ---------- STYLES ---------- */
   var css = `
