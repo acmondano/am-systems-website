@@ -55,6 +55,15 @@
   @media(max-width:768px){.ams-bot-btn{width:56px !important;height:56px !important;right:calc(18px + env(safe-area-inset-right,0px)) !important;bottom:calc(18px + env(safe-area-inset-bottom,0px)) !important}.ams-bot-btn svg{width:26px !important;height:26px !important}}
   @media(max-width:500px){.ams-bot-panel{right:12px !important;left:12px !important;width:auto;max-width:none;bottom:calc(84px + env(safe-area-inset-bottom,0px)) !important;height:calc(100vh - 160px);max-height:calc(100vh - 160px)}}
   @media(prefers-reduced-motion:reduce){.ams-bot-panel,.ams-msg,.ams-typing span{animation:none}}
+  .ams-faq-drop{margin:6px 0 14px}
+  .ams-faq-toggle{width:100%;background:#0a0a0a;border:1px solid rgba(57,255,20,.3);color:#fff;padding:12px 16px;border-radius:10px;font-size:13px;cursor:pointer;text-align:left;font-family:inherit;transition:all .2s;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+  .ams-faq-toggle:hover{background:rgba(57,255,20,.08);border-color:#39FF14}
+  .ams-faq-toggle .chev{transition:transform .25s;font-size:11px;color:#39FF14}
+  .ams-faq-toggle.open .chev{transform:rotate(180deg)}
+  .ams-faq-list{display:flex;flex-direction:column;gap:8px;margin-top:0;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease,margin-top .25s,opacity .25s}
+  .ams-faq-list.open{max-height:600px;margin-top:8px;opacity:1;overflow-y:auto}
+  .ams-faq-list button{background:#0a0a0a;border:1px solid rgba(57,255,20,.2);color:#fff;padding:10px 14px;border-radius:10px;font-size:12.5px;cursor:pointer;text-align:left;font-family:inherit;transition:all .2s}
+  .ams-faq-list button:hover{background:rgba(57,255,20,.08);border-color:#39FF14;transform:translateX(3px)}
   `;
   var s = document.createElement('style'); s.textContent = css; document.head.appendChild(s);
 
@@ -294,29 +303,64 @@
   var FAQ = [
     {q:"How much does a project cost?", a:"It depends on scope. Lead Engine starts at \u20b130,000, Sales Engine at \u20b180,000, and Business OS at \u20b1150,000. Full pricing is on our <a href='pricing.html'>pricing page</a>."},
     {q:"How long does a project take?", a:"Lead Engine: 1\u20134 weeks. Sales Engine: 3\u201310 weeks. Business OS: 6\u201320 weeks depending on the tier."},
+    {q:"Do I own the system you build?", a:"Yes \u2014 you always own your data and the system we build. We offer two hosting paths: <strong>Option A</strong> where we host for you (\u20b13K/mo Lead, \u20b15K/mo Sales), or <strong>Option B</strong> where you buy your own GoHighLevel + n8n accounts and we build inside them. See <a href='pricing.html'>pricing page</a> for details."},
+    {q:"What's the monthly hosting fee for?", a:"If you pick Option A (we host), the monthly fee covers your GoHighLevel sub-account, uptime monitoring, and up to 2 hours of minor tweaks per month. If you pick Option B (you own), no monthly fee from us \u2014 you pay GoHighLevel (~$97\u2013$297/mo) and n8n Cloud (~$20\u2013$50/mo) directly."},
     {q:"Do you work with clients outside the Philippines?", a:"Yes \u2014 we serve clients globally but our pricing is built for the PH market, which means you get custom-grade work at a fraction of US/AU rates."},
     {q:"What's your process?", a:"Four steps: Strategy Call \u2192 System Design \u2192 Build & Automate \u2192 Launch & Optimize. See the full breakdown on our <a href='faq.html'>process page</a>."},
     {q:"Do you offer revisions?", a:"Yes. Every package includes rounds of revisions during the build phase. Scope is locked after the strategy call so expectations stay clear."},
-    {q:"Do you offer ongoing support?", a:"Yes \u2014 we offer monthly maintenance plans from \u20b115,000\u2013\u20b150,000/month for updates, monitoring, and continuous optimization."},
+    {q:"Do you offer ongoing support?", a:"Yes \u2014 we offer Monthly Retainer plans from \u20b110,000\u2013\u20b150,000/month for active optimization and new builds (separate from hosting fees)."},
     {q:"Can I see past work?", a:"Absolutely. Check our <a href='portfolio.html'>portfolio page</a> for case studies with real metrics and outcomes."},
     {q:"How do we get started?", a:"Easiest path is to book a free strategy call via <a href='"+WA+"' target='_blank'>WhatsApp</a> or email <strong>"+EMAIL+"</strong>. We'll scope the project and send a proposal within 48 hours."}
   ];
 
   function showFAQ(){
-    botMsg("Here are the most common questions. Tap one:", function(){
-      var opts = FAQ.map(function(f,i){ return {label:f.q, value:i}; });
-      opts.push({label:'\ud83d\udd0d Search help', value:'search'});
-      opts.push({label:'\ud83d\udcac Talk to human', value:'human'});
-      opts.push({label:'\u2190 Main menu', value:'menu'});
-      options(opts, function(v){
+    botMsg("Browse common questions \u2014 tap the dropdown to expand:", function(){
+      var wrap = document.createElement('div');
+      wrap.className = 'ams-faq-drop';
+      var toggle = document.createElement('button');
+      toggle.className = 'ams-faq-toggle';
+      toggle.innerHTML = '\ud83d\udcdd Common Questions <span class="chev">\u25be</span>';
+      var list = document.createElement('div');
+      list.className = 'ams-faq-list';
+      FAQ.forEach(function(f, i){
+        var qbtn = document.createElement('button');
+        qbtn.textContent = f.q;
+        qbtn.addEventListener('click', function(){
+          list.classList.remove('open');
+          toggle.classList.remove('open');
+          wrap.style.opacity = '0.5';
+          wrap.style.pointerEvents = 'none';
+          userMsg(f.q);
+          botMsg(f.a, showFAQQuickActions);
+        });
+        list.appendChild(qbtn);
+      });
+      toggle.addEventListener('click', function(){
+        var isOpen = toggle.classList.toggle('open');
+        list.classList.toggle('open', isOpen);
+        setTimeout(scroll, 300);
+      });
+      wrap.appendChild(toggle);
+      wrap.appendChild(list);
+      body.appendChild(wrap);
+      scroll();
+    });
+  }
+
+  function showFAQQuickActions(){
+    setTimeout(function(){
+      options([
+        {label:'\ud83d\udcdd Browse more questions', value:'faq'},
+        {label:'\ud83d\udd0d Search help',            value:'search'},
+        {label:'\ud83d\udcac Talk to human',          value:'human'},
+        {label:'\u2190 Main menu',                    value:'menu'}
+      ], function(v){
+        if (v==='faq')    return showFAQ();
         if (v==='search') return helpSearch();
         if (v==='human')  return talkHuman();
         if (v==='menu')   return start();
-        botMsg(FAQ[v].a, function(){
-          setTimeout(showFAQ, 400);
-        });
       });
-    });
+    }, 500);
   }
 
   function helpSearch(){
