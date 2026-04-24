@@ -330,7 +330,7 @@ body[data-cur="usd"] .offer-usd{font-size:22px;font-weight:900;color:var(--green
     <a href="portfolio.html">Portfolio</a>
     <a href="pricing.html" class="active">Pricing</a>
     <a href="faq.html">FAQ</a>
-    <a href="https://wa.me/639706791242" target="_blank" class="nav-cta">Book a Call</a>
+    <a href="https://calendly.com/arvinmondano/30min" target="_blank" class="nav-cta">Book a Call</a>
   </div>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
@@ -339,7 +339,7 @@ body[data-cur="usd"] .offer-usd{font-size:22px;font-weight:900;color:var(--green
   <a href="portfolio.html">Portfolio</a>
   <a href="pricing.html">Pricing</a>
   <a href="faq.html">FAQ</a>
-  <a href="https://wa.me/639706791242" target="_blank">Book a Call</a>
+  <a href="https://calendly.com/arvinmondano/30min" target="_blank">Book a Call</a>
 </div>
 
 <div class="page-hero fade-up" style="position:relative;overflow:hidden"><div class="warm-wash"></div><div class="particles-container" data-count="25"></div>
@@ -348,14 +348,6 @@ body[data-cur="usd"] .offer-usd{font-size:22px;font-weight:900;color:var(--green
   <p class="page-sub">No hourly rates. No scope creep. You know the price, scope, and deadline before we start.</p>
 </div>
 
-<!-- CURRENCY TOGGLE -->
-<div class="currency-toggle-wrap fade-up">
-  <div class="currency-toggle" role="tablist" aria-label="Currency toggle">
-    <span class="toggle-pill" aria-hidden="true"></span>
-    <button type="button" data-cur="php" class="active" role="tab" aria-selected="true">PHP (₱)</button>
-    <button type="button" data-cur="usd" role="tab" aria-selected="false">USD ($)</button>
-  </div>
-</div>
 
 <!-- SERVICE SELECTOR -->
 <div class="svc-selector fade-up" role="tablist" aria-label="Service selector">
@@ -480,12 +472,9 @@ body[data-cur="usd"] .offer-usd{font-size:22px;font-weight:900;color:var(--green
 <!-- ANNUAL SAVINGS BOX -->
 <div class="savings-box fade-up" aria-live="polite">
   <div class="savings-box-label">Year-One Math</div>
-  <div class="savings-box-line">US agency retainer for similar scope: <strong><span data-php>₱6,000,000/year</span><span data-usd style="display:none">$100,000/year</span></strong></div>
-  <div class="savings-box-line">AM Systems one-time Sales Engine build: <strong><span data-php>₱115,000</span><span data-usd style="display:none">$1,980</span></strong></div>
-  <div class="savings-box-highlight">
-    <span data-php>Year-1 savings: ₱5,885,000+</span>
-    <span data-usd style="display:none">Year-1 savings: $98,020+</span>
-  </div>
+  <div class="savings-box-line">US agency retainer for similar scope: <strong>₱6,000,000/year</strong></div>
+  <div class="savings-box-line">AM Systems one-time Sales Engine build: <strong>₱115,000</strong></div>
+  <div class="savings-box-highlight">Year-1 savings: ₱5,885,000+</div>
   <div class="savings-cta">You own the system. No retainers. No scope games.</div>
 </div>
 
@@ -678,31 +667,6 @@ window.addEventListener('scroll',()=>{const h=document.documentElement;document.
   document.addEventListener('mouseleave', function(){ btns.forEach(function(b){b.style.transform='';}); });
 })();
 
-/* ── PHP/USD toggle + annual savings calc ── */
-(function(){
-  var toggle=document.querySelector('.currency-toggle');
-  if(!toggle) return;
-  function applyCurrency(cur){
-    toggle.dataset.active=cur;
-    document.body.dataset.cur=cur;
-    toggle.querySelectorAll('button').forEach(function(b){
-      b.classList.toggle('active', b.dataset.cur===cur);
-    });
-    document.querySelectorAll('.savings-box [data-php]').forEach(function(el){
-      el.style.display = cur==='php' ? '' : 'none';
-    });
-    document.querySelectorAll('.savings-box [data-usd]').forEach(function(el){
-      el.style.display = cur==='usd' ? '' : 'none';
-    });
-    try{localStorage.setItem('ams-currency',cur);}catch(e){}
-  }
-  toggle.querySelectorAll('button').forEach(function(b){
-    b.addEventListener('click', function(){ applyCurrency(b.dataset.cur); });
-  });
-  var saved='php';
-  try{saved=localStorage.getItem('ams-currency')||'php';}catch(e){}
-  applyCurrency(saved);
-})();
 
 function switchTab(id){
   document.querySelectorAll('.tab-btn').forEach((b,i)=>{
