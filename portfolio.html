@@ -317,7 +317,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
       <div class="case-body ams-body-right">
         <span class="case-system-tag sys-bos">★ Featured Build — Business OS · Store Operations &amp; Inventory System</span>
         <div class="case-title">Store Operations &amp; Inventory System — a custom, owned operating system built for a four-branch retail business</div>
-        <div class="case-industry" style="margin-bottom:24px">Industry: Retail &amp; Multi-Branch Store Operations · Designed and built by Arvin Mondano under AM Systems</div>
+        <div class="case-industry" style="margin-bottom:24px">Industry: Retail &amp; Multi-Branch Store Operations · Designed and built by AM Systems</div>
         <div class="case-columns">
           <div>
             <div class="case-col-label red">Before</div>
@@ -362,59 +362,75 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
       </div>
     </div>
 
-    <!-- Case 1 -->
-    <div class="case-card stagger-child">
-      <div class="case-media">
-        <div class="media-placeholder">
-          <span class="media-icon" style="color:var(--green)"><svg width="42px" height="42px" style="flex-shrink:0"><use href="#ic-play"/></svg></span>
-          <div class="media-label">Video Walkthrough</div>
-          <div class="media-sub">Coming soon</div>
-        </div>
+    <!-- Featured Case — Inbox Agent (Lead Engine) -->
+    <style>
+    .inbox-case{display:flex;flex-direction:row;align-items:stretch;border:1px solid rgba(167,139,250,0.32) !important;box-shadow:0 0 40px rgba(167,139,250,0.07)}
+    .inbox-case:hover{border-color:rgba(167,139,250,0.55) !important}
+    .inbox-media-left{flex:0 0 38%;background:#000;display:flex;align-items:center;justify-content:center;padding:28px;border-right:1px solid var(--border);position:relative;overflow:hidden;min-height:540px}
+    .inbox-media-left::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(167,139,250,0.08) 0%,transparent 70%);pointer-events:none}
+    .inbox-reel{width:100%;max-width:300px;height:auto;display:block;border-radius:22px;position:relative;z-index:1;box-shadow:0 14px 44px rgba(0,0,0,0.7),0 0 28px rgba(167,139,250,0.22);background:#0a0a0a}
+    .inbox-body-right{flex:1 1 62%;padding:36px;display:flex;flex-direction:column;justify-content:center}
+    .inbox-body-right .case-columns{margin-bottom:28px}
+    .inbox-body-right .metric-num,.inbox-body-right .metric-placeholder{color:#a78bfa !important}
+    @media(max-width:1100px){
+      .inbox-case{flex-direction:column}
+      .inbox-media-left{flex:1 1 auto;border-right:none;border-bottom:1px solid var(--border);padding:24px;min-height:auto}
+      .inbox-reel{max-width:320px}
+      .inbox-body-right{padding:32px}
+    }
+    @media(max-width:768px){
+      .inbox-media-left{padding:18px}
+      .inbox-reel{max-width:260px}
+      .inbox-body-right{padding:24px 20px}
+    }
+    </style>
+    <div class="case-card inbox-case stagger-child">
+      <div class="inbox-media-left">
+        <video class="inbox-reel" src="./inbox-agent-reel.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Inbox Agent — 32-second launch reel showing trigger, classify, notify, draft, and log stages"></video>
       </div>
-      <div class="case-body">
-        <span class="placeholder-badge">Placeholder — proof being added</span>
-        <span class="case-system-tag sys-lead">Lead Engine — Full Build</span>
-        <div class="case-title">Local service business growing from referrals to a consistent inbound system</div>
-        <div class="case-industry">Industry: Home Services &amp; Local Trade</div>
+      <div class="case-body inbox-body-right">
+        <span class="case-system-tag sys-lead">★ Featured Build — Lead Engine · Inbox Agent</span>
+        <div class="case-title">An AI inbox agent that classifies, notifies, drafts, and logs every lead the moment it lands</div>
+        <div class="case-industry" style="margin-bottom:24px">For agencies, consultants &amp; service businesses · Built &amp; deployed first inside AM Systems</div>
         <div class="case-columns">
           <div>
             <div class="case-col-label red">Before</div>
-            <div class="case-col-item before">Relying entirely on word-of-mouth referrals</div>
-            <div class="case-col-item before">No way to capture or follow up with interested leads</div>
-            <div class="case-col-item before">Inconsistent monthly inquiries with no visibility</div>
-            <div class="case-col-item before">Owner answering every inquiry manually</div>
+            <div class="case-col-item before">Hot leads sitting unread for hours in a noisy inbox</div>
+            <div class="case-col-item before">Manual triage eating real working hours every day</div>
+            <div class="case-col-item before">Inconsistent reply times and no record of who got followed up</div>
+            <div class="case-col-item before">Real opportunities buried under newsletters, invoices, and noise</div>
           </div>
           <div>
             <div class="case-col-label green">System Built</div>
-            <div class="case-col-item system">High-converting landing page + lead capture form</div>
-            <div class="case-col-item system">Automated welcome sequence + appointment booking</div>
-            <div class="case-col-item system">Contact database with lead tracking</div>
-            <div class="case-col-item system">24/7 chatbot for off-hours lead capture</div>
+            <div class="case-col-item system">AI classifier reads every new Gmail message in real time and scores intent</div>
+            <div class="case-col-item system">Instant phone notification the moment a hot lead lands</div>
+            <div class="case-col-item system">Personalized reply auto-drafted in Gmail Drafts — review, edit, send</div>
+            <div class="case-col-item system">Every lead auto-logged to Airtable with full context, label, and confidence</div>
           </div>
           <div>
             <div class="case-col-label blue">After</div>
-            <div class="case-col-item after">Steady inbound leads captured automatically</div>
-            <div class="case-col-item after">Every lead followed up within minutes</div>
-            <div class="case-col-item after">Owner spends less time on inquiry management</div>
-            <div class="case-col-item after">Clear visibility into lead volume and conversion</div>
+            <div class="case-col-item after">Hot leads surfaced within seconds — none ever missed again</div>
+            <div class="case-col-item after">Replies drafted before you even open the inbox</div>
+            <div class="case-col-item after">A searchable lead database building itself in the background</div>
+            <div class="case-col-item after">The inbox runs itself — owner only spends time on what actually matters</div>
           </div>
         </div>
         <div class="metrics-bar">
           <div class="metric-item">
-            <div class="metric-placeholder">—</div>
-            <div class="metric-label">Leads / month</div>
+            <div class="metric-placeholder">&lt;30s</div>
+            <div class="metric-label">Lead → drafted reply</div>
           </div>
           <div class="metric-item">
-            <div class="metric-placeholder">—</div>
-            <div class="metric-label">Response time</div>
+            <div class="metric-placeholder">5</div>
+            <div class="metric-label">AI pipeline stages</div>
           </div>
           <div class="metric-item">
-            <div class="metric-placeholder">—</div>
-            <div class="metric-label">Conversion rate</div>
+            <div class="metric-placeholder">24/7</div>
+            <div class="metric-label">Always-on monitoring</div>
           </div>
           <div class="metric-item">
-            <div class="metric-placeholder">—</div>
-            <div class="metric-label">Time saved / week</div>
+            <div class="metric-placeholder">100%</div>
+            <div class="metric-label">Leads classified &amp; logged</div>
           </div>
         </div>
       </div>
