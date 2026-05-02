@@ -1,14 +1,18 @@
 # HANDOFF — Next Claude Session
 
-**Last updated:** 2026-05-02 night (Phase 7 GHL UI prep + smoke test ALL DONE — only the code-side widget swap is left 🟢)
+**Last updated:** 2026-05-02 night (Phase 7 SHIPPED — SDR Agent widget LIVE on production 🟢)
 
-> 🟢 **PHASE 7 GHL PREP IS COMPLETE (2026-05-02 night).** Pre-Phase-7 GHL UI tasks 1, 2, 3 are all DONE and the pre-push smoke test passed 4/4 (contact + Bottleneck custom field populated + opp at New Lead + reminder queued). Booking surface is now the GHL Discovery Call calendar at `https://api.leadconnectorhq.com/widget/bookings/discovery-call-ams` (slug `discovery-call-ams`). **Calendly is retired.** Smoke test data already cleaned from GHL. Workflow ID `9ipSydW4m2pZig3R` is the direct-booker opportunity creator; bottleneck custom field ID is `AmXXFbYYaS5bzB0fJq3D`.
+> 🟢 **PHASE 7 LIVE (commit `b665a21`, deployed to `acm-systems.netlify.app` 2026-05-02 night).** SDR Agent chat widget swapped in across all 5 HTML files. End-to-end verified 4/4 via test contact `EsSIgEtxoAnAxarwOlV7` "Marvel Stark": pre-chat form gates conversation, bot tags fire (`tier-fit-lead-engine` + `timeline-urgent`), opp moves New Lead → Qualified stage automatically, booking lands on GHL Discovery Call calendar (`DWFy4K8bLYjDmvsUCW7f`) for Tue 2026-05-06 11:30 AM. Calendly retired. WhatsApp float button (`.wa-float`) removed across all 5 HTML files (was overlapping the GHL bubble post-swap).
 >
-> Earlier-this-day v1.1 milestone (preserved for context): SDR Agent inbound bot bundle is COMPLETE — three fixes (Option (a) NO CONTACT CAPTURE prompt rule, booking-link toggle, widget pre-chat form via Sites → Chat Widgets → Chat Window → Live Chat Assigned → Enable Contact Form toggle). E2E verified via contact `I0ts6w0GMUNIF1sOXnIq` (Observe Shoe). Tags + opp + booking + identity all on ONE record per lead. Lessons banked as #18, #19, #20 in n8n project's `reference_ghl_workflow_architecture.md`.
+> **Bundled in same deploy:** Pricing page got 2 new add-on cards — **Website Build** (₱15K-₱40K) as foot-in-door foundation, **AI Sales Agent** (₱40K-₱100K) as productized SDR Agent for client deployments. Pricing add-on icons (10 cards) + index.html `forwho-grid` persona icons (4 cards) swapped from monochrome green SVG to colored emoji (🌐🤖🎯📞📧📊👤🚀🔌🔧 + 🏢📈💼🏪) for visual variety. "Two Ways to Run Your System" grid now mobile-responsive via `repeat(auto-fit, minmax(min(360px, 100%), 1fr))`.
 >
-> **What to do this session:** read `SDR_AGENT_INTEGRATION.md` for the step-by-step Phase 7 execution plan. Extract `chatbot.js` → Products folder → swap GHL widget snippet across 5 HTML files → delete `chatbot.js` here → local verify → stage + show diff → wait for Arvin's per-batch go-word → push → live verify on `acm-systems.netlify.app`. Per `feedback_push_discipline.md`, NEVER push without an explicit per-batch authorization.
+> **What's still open (post-launch housekeeping):**
+> - Bulk-delete the Phase 7 test contact in GHL UI (Marvel Stark, search `phase7live` — cascades opp + appointment)
+> - **Phase 5b** nurture workflows — now unblocked, write copy informed by real bot conversation data once a few prospects flow through
+> - **Phase 8** Calendly subscription cancellation — just the billing (~$12/mo); URLs already swapped everywhere
+> - **Phase 10** templatize SDR Agent for client deployments (the AI Sales Agent add-on is now sellable; productize the GHL bot config + n8n workflows for snapshot-style client onboarding)
 >
-> **CRM cleanup status:** smoke test contacts/opps/appointments already deleted by Arvin (2026-05-02 night). Earlier 17-test-contact bulk cleanup may still be partially pending — verify in GHL UI before Phase 7 live verification if you care about a totally clean pipeline view.
+> **Scheduled:** A read-only health-check agent fires 2026-05-18 10am Manila (`phase-7-postdeploy-2w-verify`) to verify Calendly cancellation, Discovery Call calendar booking volume + statuses, and pipeline routing correctness. Auto-writes a memo to `PHASE_7_POSTDEPLOY_2W_CHECK_2026-05-18.md`.
 
 ## Read FIRST
 1. MEMORY.md in `/Users/arvin/.claude/projects/-Users-arvin-Claude-AM-Systems-AM-Systems-Website/memory/` — auto-loaded. Especially:

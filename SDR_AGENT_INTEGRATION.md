@@ -1,8 +1,17 @@
-# SDR Agent Integration — Phase 7 PREP COMPLETE, Code Push Cleared 🟢
+# SDR Agent Integration — Phase 7 LIVE 🟢
 
-**Last updated:** 2026-05-02 night (Phase 7 GHL UI prep DONE + smoke test 4/4 passed)
+**Last updated:** 2026-05-02 night (Phase 7 SHIPPED + verified 4/4 e2e on production)
 
-> 🟢 **2026-05-02 evening update:** Pre-Phase-7 GHL UI tasks 1, 2, 3 are ALL DONE. Smoke test PASSED (4/4 criteria via direct calendar URL `api.leadconnectorhq.com/widget/bookings/discovery-call-ams` → contact + bottleneck custom field + opp at New Lead + reminder queued). The chatbot.js → SDR widget swap on the 5 HTML files is the only remaining Phase 7 work. **Calendar = GHL Discovery Call (slug `discovery-call-ams`) — Calendly is retired.**
+> 🟢 **PHASE 7 LIVE 2026-05-02 NIGHT.** chatbot.js → SDR Agent widget swap DEPLOYED (commit `b665a21`, live on `acm-systems.netlify.app`). Verified end-to-end 4/4 via test contact `EsSIgEtxoAnAxarwOlV7` "Marvel Stark":
+>
+> | # | Check | Result |
+> |---|---|---|
+> | 1 | Pre-chat form gates bot, single contact created | ✅ identity captured BEFORE bot conversation; no orphan guest visitor |
+> | 2 | Bot qualification tags fire | ✅ `tier-fit-lead-engine` + `timeline-urgent` |
+> | 3 | Opp moves New Lead → Qualified automatically | ✅ opp `IJMcBOiM81GW6a3FvnJK` at stage `3b8e9c2d-abc7-4bcc-8724-32e0279586b0` (Qualified) in pipeline `Ap3ndt8xms1SnCQhFTnW` |
+> | 4 | Booking confirmed on Discovery Call calendar | ✅ appt `aI40Z9IT3xRaaYtXfr01` for Tue 2026-05-06 11:30 AM |
+>
+> **Phase 7 IS DONE.** Bulk-delete the test contact in GHL UI when convenient (search `phase7live`). Phases 5b (nurture), 8 (Calendly subscription cancel), and 10 (templatization) now unblocked.
 
 This file is the authoritative Phase 7 execution plan for replacing `chatbot.js` with the GHL SDR Agent chat widget across the AM Systems website. Source-of-truth specs and build logs still live at `/Users/arvin/Claude/n8n/Projects:workflows/sdr-agent/`.
 
