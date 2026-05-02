@@ -1,6 +1,14 @@
 # HANDOFF — Next Claude Session
 
-**Last updated:** 2026-04-22 (surgical color + icon exclusivity batch shipped)
+**Last updated:** 2026-05-02 night (Phase 7 GHL UI prep + smoke test ALL DONE — only the code-side widget swap is left 🟢)
+
+> 🟢 **PHASE 7 GHL PREP IS COMPLETE (2026-05-02 night).** Pre-Phase-7 GHL UI tasks 1, 2, 3 are all DONE and the pre-push smoke test passed 4/4 (contact + Bottleneck custom field populated + opp at New Lead + reminder queued). Booking surface is now the GHL Discovery Call calendar at `https://api.leadconnectorhq.com/widget/bookings/discovery-call-ams` (slug `discovery-call-ams`). **Calendly is retired.** Smoke test data already cleaned from GHL. Workflow ID `9ipSydW4m2pZig3R` is the direct-booker opportunity creator; bottleneck custom field ID is `AmXXFbYYaS5bzB0fJq3D`.
+>
+> Earlier-this-day v1.1 milestone (preserved for context): SDR Agent inbound bot bundle is COMPLETE — three fixes (Option (a) NO CONTACT CAPTURE prompt rule, booking-link toggle, widget pre-chat form via Sites → Chat Widgets → Chat Window → Live Chat Assigned → Enable Contact Form toggle). E2E verified via contact `I0ts6w0GMUNIF1sOXnIq` (Observe Shoe). Tags + opp + booking + identity all on ONE record per lead. Lessons banked as #18, #19, #20 in n8n project's `reference_ghl_workflow_architecture.md`.
+>
+> **What to do this session:** read `SDR_AGENT_INTEGRATION.md` for the step-by-step Phase 7 execution plan. Extract `chatbot.js` → Products folder → swap GHL widget snippet across 5 HTML files → delete `chatbot.js` here → local verify → stage + show diff → wait for Arvin's per-batch go-word → push → live verify on `acm-systems.netlify.app`. Per `feedback_push_discipline.md`, NEVER push without an explicit per-batch authorization.
+>
+> **CRM cleanup status:** smoke test contacts/opps/appointments already deleted by Arvin (2026-05-02 night). Earlier 17-test-contact bulk cleanup may still be partially pending — verify in GHL UI before Phase 7 live verification if you care about a totally clean pipeline view.
 
 ## Read FIRST
 1. MEMORY.md in `/Users/arvin/.claude/projects/-Users-arvin-Claude-AM-Systems-AM-Systems-Website/memory/` — auto-loaded. Especially:
