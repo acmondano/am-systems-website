@@ -136,7 +136,6 @@ footer{padding:32px 80px;border-top:1px solid var(--border);display:flex;justify
 .btn-secondary:hover{box-shadow:inset 0 0 0 1px rgba(255,217,138,0.12),0 8px 22px rgba(255,190,120,0.06)}
 :focus-visible{outline:2px solid var(--warm);outline-offset:3px;border-radius:6px}
 a:focus-visible,button:focus-visible,details summary:focus-visible,.faq-question:focus-visible,.tab-btn:focus-visible,.btn-primary:focus-visible,.btn-secondary:focus-visible,.sys-link-btn:focus-visible,input:focus-visible,.nav-links a:focus-visible{outline:2px solid var(--warm);outline-offset:3px}
-[data-aos]{pointer-events:auto}
 @media(prefers-reduced-motion:reduce){.grain,.warm-particle,.warm-wash{display:none}}
 
 /* ── LETTER-REVEAL on headlines ── */
@@ -283,34 +282,32 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
 <section class="cases-section">
   <div class="cases-grid">
 
-    <!-- Featured Case — Store Operations & Inventory System (side-by-side layout) -->
+    <!-- Featured Case — Store Operations & Inventory System (top-center media layout) -->
     <style>
-    .ams-case{display:flex;flex-direction:row;align-items:stretch;border:1px solid rgba(57,255,20,0.4) !important;box-shadow:0 0 40px rgba(57,255,20,0.08)}
-    .ams-media-left{flex:0 0 58%;background:#000;display:flex;align-items:center;justify-content:center;padding:24px;border-right:1px solid var(--border);position:relative;overflow:hidden;min-height:360px}
-    .ams-media-left::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(57,255,20,0.06) 0%,transparent 70%);pointer-events:none}
-    .ams-media-left img{width:100%;height:auto;max-width:100%;max-height:640px;object-fit:contain;display:block;border-radius:10px;position:relative;z-index:1;box-shadow:0 10px 40px rgba(0,0,0,0.6);background:#0a0a0a}
-    .ams-body-right{flex:1 1 42%;padding:32px;display:flex;flex-direction:column;justify-content:center}
-    .ams-body-right .case-columns{grid-template-columns:1fr !important;gap:20px;margin-bottom:24px}
-    .ams-body-right .case-col-item{font-size:12.5px}
-    .ams-body-right .metrics-bar{grid-template-columns:repeat(4,1fr)}
+    .ams-case{display:flex;flex-direction:column;align-items:stretch;border:1px solid rgba(57,255,20,0.4) !important;box-shadow:0 0 40px rgba(57,255,20,0.08)}
+    .ams-case:hover{border-color:rgba(57,255,20,0.6) !important}
+    .ams-media-top{background:#000;display:flex;align-items:center;justify-content:center;padding:32px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;min-height:380px}
+    .ams-media-top::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(57,255,20,0.06) 0%,transparent 70%);pointer-events:none}
+    .ams-media-top img{width:100%;height:auto;max-width:920px;max-height:560px;object-fit:contain;display:block;border-radius:10px;position:relative;z-index:1;box-shadow:0 10px 40px rgba(0,0,0,0.6);background:#0a0a0a}
+    .ams-body-bottom{padding:36px}
+    .ams-body-bottom .case-columns{margin-bottom:28px}
+    .ams-body-bottom .case-col-item{font-size:12.5px}
     @media(max-width:1100px){
-      .ams-case{flex-direction:column}
-      .ams-media-left{flex:1 1 auto;border-right:none;border-bottom:1px solid var(--border);padding:16px}
-      .ams-media-left img{max-height:480px}
-      .ams-body-right{padding:28px}
+      .ams-media-top{padding:24px;min-height:auto}
+      .ams-media-top img{max-height:480px}
+      .ams-body-bottom{padding:32px}
     }
     @media(max-width:768px){
-      .ams-media-left{padding:12px}
-      .ams-media-left img{max-height:none}
-      .ams-body-right{padding:24px 20px}
-      .ams-body-right .metrics-bar{grid-template-columns:1fr 1fr;gap:12px}
+      .ams-media-top{padding:18px}
+      .ams-media-top img{max-height:380px}
+      .ams-body-bottom{padding:24px 20px}
     }
     </style>
     <div class="case-card ams-case stagger-child">
-      <div class="ams-media-left">
+      <div class="ams-media-top">
         <img src="./am-systems-tour.gif" alt="AM Systems — Store Operations &amp; Inventory System walkthrough" loading="eager" decoding="async">
       </div>
-      <div class="case-body ams-body-right">
+      <div class="case-body ams-body-bottom">
         <span class="case-system-tag sys-bos">★ Featured Build — Business OS · Store Operations &amp; Inventory System</span>
         <div class="case-title">Store Operations &amp; Inventory System — a custom, owned operating system built for a four-branch retail business</div>
         <div class="case-industry" style="margin-bottom:24px">Industry: Retail &amp; Multi-Branch Store Operations · Designed and built by AM Systems</div>
@@ -386,7 +383,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
       </div>
       <div class="case-body inbox-body-right">
         <span class="case-system-tag sys-lead">★ Featured Build — Lead Engine · Inbox Agent</span>
-        <div class="case-title">An AI inbox agent that classifies, notifies, drafts, and logs every lead the moment it lands</div>
+        <div class="case-title">An inbox agent that classifies, notifies, drafts, and logs every lead the moment it lands</div>
         <div class="case-industry" style="margin-bottom:24px">For agencies, consultants &amp; service businesses · Built &amp; deployed first inside AM Systems</div>
         <div class="case-columns">
           <div>
@@ -398,7 +395,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
           </div>
           <div>
             <div class="case-col-label green">System Built</div>
-            <div class="case-col-item system">AI classifier reads every new Gmail message in real time and scores intent</div>
+            <div class="case-col-item system">Inbox agent reads every new Gmail message in real time and scores intent</div>
             <div class="case-col-item system">Instant phone notification the moment a hot lead lands</div>
             <div class="case-col-item system">Personalized reply auto-drafted in Gmail Drafts — review, edit, send</div>
             <div class="case-col-item system">Every lead auto-logged to Airtable with full context, label, and confidence</div>
@@ -418,7 +415,7 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
           </div>
           <div class="metric-item">
             <div class="metric-placeholder">5</div>
-            <div class="metric-label">AI pipeline stages</div>
+            <div class="metric-label">Pipeline stages</div>
           </div>
           <div class="metric-item">
             <div class="metric-placeholder">24/7</div>
@@ -432,61 +429,77 @@ h1[data-split-done]{opacity:1!important;animation:none!important}
       </div>
     </div>
 
-    <!-- Case 2 -->
-    <div class="case-card stagger-child">
-      <div class="case-media">
-        <div class="media-placeholder">
-          <span class="media-icon" style="color:var(--green)"><svg width="42px" height="42px" style="flex-shrink:0"><use href="#ic-play"/></svg></span>
-          <div class="media-label">Video Walkthrough</div>
-          <div class="media-sub">Coming soon</div>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="placeholder-badge">Placeholder — proof being added</span>
-        <span class="case-system-tag sys-sales">Sales Engine — Growth</span>
-        <div class="case-title">Coaching business turning cold leads into booked calls through automated follow-up</div>
-        <div class="case-industry">Industry: Online Coaching &amp; Consulting</div>
+    <!-- Featured Case — SDR Agent (Sales Engine) -->
+    <style>
+    .sdr-case{display:flex;flex-direction:row;align-items:stretch;border:1px solid rgba(255,176,102,0.32) !important;box-shadow:0 0 40px rgba(255,176,102,0.07)}
+    .sdr-case:hover{border-color:rgba(255,176,102,0.55) !important}
+    .sdr-body-left{flex:1 1 62%;padding:36px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border)}
+    .sdr-body-left .case-columns{margin-bottom:28px}
+    .sdr-body-left .metric-num,.sdr-body-left .metric-placeholder{color:#ffb066 !important}
+    .sdr-media-right{flex:0 0 38%;background:#000;display:flex;align-items:center;justify-content:center;padding:28px;position:relative;overflow:hidden;min-height:540px}
+    .sdr-media-right::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,176,102,0.08) 0%,transparent 70%);pointer-events:none}
+    .sdr-reel{width:100%;max-width:300px;height:auto;display:block;border-radius:22px;position:relative;z-index:1;box-shadow:0 14px 44px rgba(0,0,0,0.7),0 0 28px rgba(255,176,102,0.22);background:#0a0a0a}
+    @media(max-width:1100px){
+      .sdr-case{flex-direction:column-reverse}
+      .sdr-media-right{flex:1 1 auto;border-bottom:1px solid var(--border);padding:24px;min-height:auto}
+      .sdr-reel{max-width:320px}
+      .sdr-body-left{padding:32px;border-right:none}
+    }
+    @media(max-width:768px){
+      .sdr-media-right{padding:18px}
+      .sdr-reel{max-width:260px}
+      .sdr-body-left{padding:24px 20px}
+    }
+    </style>
+    <div class="case-card sdr-case stagger-child">
+      <div class="case-body sdr-body-left">
+        <span class="case-system-tag sys-sales">★ Featured Build — Sales Engine · SDR Agent</span>
+        <div class="case-title">A sales agent that greets every visitor, qualifies the lead, books the call, and updates the pipeline — 24/7</div>
+        <div class="case-industry" style="margin-bottom:24px">For agencies, consultants &amp; service businesses · Live on AM Systems right now — chat with it bottom-right</div>
         <div class="case-columns">
           <div>
             <div class="case-col-label red">Before</div>
-            <div class="case-col-item before">Leads going cold after one touchpoint</div>
-            <div class="case-col-item before">No structured follow-up sequence in place</div>
-            <div class="case-col-item before">Manual outreach taking hours every week</div>
-            <div class="case-col-item before">Low call booking rate from lead list</div>
+            <div class="case-col-item before">Site visitors leaving without a single conversation captured</div>
+            <div class="case-col-item before">Inbound landing at 2 AM, on weekends, in the middle of every call</div>
+            <div class="case-col-item before">Discovery calls booked with tire-kickers and out-of-scope asks</div>
+            <div class="case-col-item before">A pipeline that's always one update behind because nobody has time</div>
           </div>
           <div>
             <div class="case-col-label green">System Built</div>
-            <div class="case-col-item system">10-email automated follow-up sequence</div>
-            <div class="case-col-item system">Sales page + booking funnel integration</div>
-            <div class="case-col-item system">Lead priority ranking system</div>
-            <div class="case-col-item system">Auto-advancing pipeline with SMS follow-ups</div>
+            <div class="case-col-item system">Sales agent greets every contact across Live Chat, email, Facebook, Instagram, or SMS — runs a real qualification conversation in any inbox</div>
+            <div class="case-col-item system">Captures name, email, phone, business, budget, timeline, and bottleneck — inline, no form</div>
+            <div class="case-col-item system">Only books Discovery Calls with right-fit prospects — politely filters everyone else</div>
+            <div class="case-col-item system">Auto-tags the contact, advances the GHL pipeline, and logs every conversation to Airtable</div>
           </div>
           <div>
             <div class="case-col-label blue">After</div>
-            <div class="case-col-item after">More calls booked from the same lead list</div>
-            <div class="case-col-item after">Follow-up happening automatically, no manual effort</div>
-            <div class="case-col-item after">High-priority leads flagged and fast-tracked</div>
-            <div class="case-col-item after">Clear dashboard showing pipeline status</div>
+            <div class="case-col-item after">Every visitor gets a real conversation — no inbound ever slips through again</div>
+            <div class="case-col-item after">Only qualified, right-fit prospects land on the Discovery Call calendar</div>
+            <div class="case-col-item after">Pipeline stages update themselves the moment the lead's status changes</div>
+            <div class="case-col-item after">Owner walks into every call already briefed, with the full conversation in Airtable</div>
           </div>
         </div>
         <div class="metrics-bar">
           <div class="metric-item">
-            <div class="metric-placeholder">—</div>
-            <div class="metric-label">Calls booked / mo</div>
+            <div class="metric-placeholder">24/7</div>
+            <div class="metric-label">Always-on qualification</div>
           </div>
           <div class="metric-item">
-            <div class="metric-placeholder">—</div>
-            <div class="metric-label">Email open rate</div>
+            <div class="metric-placeholder">7</div>
+            <div class="metric-label">Qualification fields per lead</div>
           </div>
           <div class="metric-item">
-            <div class="metric-placeholder">—</div>
-            <div class="metric-label">Show-up rate</div>
+            <div class="metric-placeholder">100%</div>
+            <div class="metric-label">Conversations logged</div>
           </div>
           <div class="metric-item">
-            <div class="metric-placeholder">—</div>
-            <div class="metric-label">Revenue change</div>
+            <div class="metric-placeholder">Live</div>
+            <div class="metric-label">Running on this site right now</div>
           </div>
         </div>
+      </div>
+      <div class="sdr-media-right">
+        <video class="sdr-reel" src="./sdr-agent-reel.mp4" autoplay muted loop playsinline preload="metadata" aria-label="SDR Agent — 42-second launch reel showing greet, qualify, book, and pipeline-update stages"></video>
       </div>
     </div>
 
@@ -700,35 +713,94 @@ document.querySelectorAll('.fade-up,.stagger-child').forEach((el,i)=>{
 })();
 </script>
 
-<!-- ── Cozy Shell CDNs (AOS for reveals) ── -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<!-- ── Cozy Shell runtime (grain + warm particles) ── -->
 <script>
-/* ── COZY SHELL runtime (grain, warm particles, AOS init) ── */
 (function(){
   var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  if(!reduced){
-    var g=document.createElement('div');g.className='grain';document.body.appendChild(g);
-    document.querySelectorAll('.particles-container').forEach(function(c){
-      var base=parseInt(c.dataset.count||'20',10);
-      var n=Math.max(3,Math.round(base*0.22));
-      for(var i=0;i<n;i++){
-        var p=document.createElement('div');p.className='warm-particle';
-        var dur=9+Math.random()*9,delay=-Math.random()*dur,op=0.28+Math.random()*0.35,travel=-(70+Math.random()*90);
-        p.style.left=(Math.random()*100)+'%';
-        p.style.bottom=(Math.random()*80)+'%';
-        p.style.setProperty('--dur',dur+'s');
-        p.style.setProperty('--delay',delay+'s');
-        p.style.setProperty('--op',op);
-        p.style.setProperty('--travel',travel+'vh');
-        c.appendChild(p);
-      }
-    });
-  }
-  window.addEventListener('load',function(){
-    if(window.AOS){try{AOS.init({duration:700,once:true,easing:'ease-out',offset:60,disable:reduced});}catch(e){}}
+  if(reduced) return;
+  var g=document.createElement('div');g.className='grain';document.body.appendChild(g);
+  document.querySelectorAll('.particles-container').forEach(function(c){
+    var base=parseInt(c.dataset.count||'20',10);
+    var n=Math.max(3,Math.round(base*0.22));
+    for(var i=0;i<n;i++){
+      var p=document.createElement('div');p.className='warm-particle';
+      var dur=9+Math.random()*9,delay=-Math.random()*dur,op=0.28+Math.random()*0.35,travel=-(70+Math.random()*90);
+      p.style.left=(Math.random()*100)+'%';
+      p.style.bottom=(Math.random()*80)+'%';
+      p.style.setProperty('--dur',dur+'s');
+      p.style.setProperty('--delay',delay+'s');
+      p.style.setProperty('--op',op);
+      p.style.setProperty('--travel',travel+'vh');
+      c.appendChild(p);
+    }
   });
 })();
+</script>
+
+<!-- ── GSAP + ScrollTrigger (Case 3 — SDR Agent story-driven scrub) ── -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script>
+window.addEventListener('load',function(){
+  if(!window.gsap||!window.ScrollTrigger) return;
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  var sdr=document.querySelector('.sdr-case');
+  if(!sdr) return;
+
+  var beforeItems=sdr.querySelectorAll('.case-columns > div:nth-child(1) .case-col-item');
+  var systemItems=sdr.querySelectorAll('.case-columns > div:nth-child(2) .case-col-item');
+  var afterItems =sdr.querySelectorAll('.case-columns > div:nth-child(3) .case-col-item');
+  var labels     =sdr.querySelectorAll('.case-col-label');
+  var metrics    =sdr.querySelectorAll('.metrics-bar .metric-item');
+
+  gsap.matchMedia().add({
+    isDesktop:'(min-width: 1100px)',
+    isTablet :'(min-width: 768px) and (max-width: 1099px)',
+    isPhone  :'(max-width: 767px)'
+  }, function(ctx){
+    var d=ctx.conditions.isDesktop, t=ctx.conditions.isTablet, p=ctx.conditions.isPhone;
+
+    var beforeRow=[labels[0]].concat([].slice.call(beforeItems));
+    var systemRow=[labels[1]].concat([].slice.call(systemItems));
+    var afterRow =[labels[2]].concat([].slice.call(afterItems));
+    var metricRow=[].slice.call(metrics);
+
+    if(d || t){
+      // Story-driven scrub: Before → System → After cascade tied to scroll position
+      // Lock initial hidden state explicitly so scrub renders from-state cleanly on init
+      var allItems=beforeRow.concat(systemRow,afterRow,metricRow);
+      gsap.set(allItems,{opacity:0,y:30,immediateRender:true});
+
+      var scrub=d?0.6:0.9;
+      gsap.to(beforeRow,{
+        opacity:1,y:0,stagger:0.06,ease:'power2.out',immediateRender:false,
+        scrollTrigger:{trigger:sdr,start:'top 88%',end:'top 58%',scrub:scrub}
+      });
+      gsap.to(systemRow,{
+        opacity:1,y:0,stagger:0.06,ease:'power2.out',immediateRender:false,
+        scrollTrigger:{trigger:sdr,start:'top 68%',end:'top 38%',scrub:scrub}
+      });
+      gsap.to(afterRow,{
+        opacity:1,y:0,stagger:0.06,ease:'power2.out',immediateRender:false,
+        scrollTrigger:{trigger:sdr,start:'top 48%',end:'top 18%',scrub:scrub}
+      });
+      gsap.to(metricRow,{
+        opacity:1,y:0,stagger:0.08,ease:'power2.out',immediateRender:false,
+        scrollTrigger:{trigger:sdr,start:'top 32%',end:'top 8%',scrub:scrub}
+      });
+    } else if(p){
+      // Mobile: non-scrub fade-in once on enter — avoids scrub-jank with iOS momentum scroll
+      var allItems=beforeRow.concat(systemRow,afterRow,metricRow);
+      gsap.fromTo(allItems,{opacity:0,y:24},{
+        opacity:1,y:0,stagger:0.04,ease:'power2.out',duration:0.55,
+        scrollTrigger:{trigger:sdr,start:'top 85%',toggleActions:'play none none none'}
+      });
+    }
+  });
+});
 </script>
 
 <!-- GHL SDR Agent chat widget (Phase 7 — replaces inline chatbot.js, 2026-05-02) -->
